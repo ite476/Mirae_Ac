@@ -32,25 +32,28 @@ namespace MiraePro.Windows.View
 
         private void btn_ToMainMenu_Click(object sender, EventArgs e)
         {
-            App.Instance().MainForm.ShowView(typeof(MainMenuView));
+            App.Instance().MainForm.ShowView<MainMenuView>();
         }
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
             SearchWaiting();
         }
-
-        DataTable DTable_SearchResult;
+        DataTable DTable_SearchResult { get; set; }
         void SearchWaiting()
         {
-            
-            DTable_SearchResult = ReadWaiting_BySearchOption(); 
+            DTable_SearchResult = ReadWaiting_BySearchOption();
             GridAssist.SetAuto_GridView_FromSourceTable(dgv_Display_Waiting, DTable_SearchResult);
         }
-
         private DataTable ReadWaiting_BySearchOption()
         {
             string _Field = cbox_SearchField.SelectedItem as string;
+            string _Seed = GetSeed_AsVisibleOption();            
+
+            return App.Instance().DBManager.ReadWaiting(_Field, _Seed);
+        }
+        private string GetSeed_AsVisibleOption()
+        {
             string _Seed;
             if (panel_cbox.Visible == true)
             {
@@ -62,80 +65,85 @@ namespace MiraePro.Windows.View
             }
             else
             {
-                throw new Exception();
+                throw new Exception("ALL Seed Panels Non-Visible");
             }
-            
-            return App.Instance().DBManager.ReadWaiting(_Field, _Seed);
+            return _Seed;
         }
+
 
         private void cbox_SearchField_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Reset_SeedBox_All();
+            Toggle_Visible_AsSearchField();            
+        }
+        private void Reset_SeedBox_All()
+        {
             cbox_Seed.SelectedIndex = 0;
             tbox_Seed.Text = string.Empty;
-
+        }
+        private void Toggle_Visible_AsSearchField()
+        {
+            bool isComboBox_Visible;
             if (cbox_SearchField.SelectedItem.ToString() == "상태")
             {
-                panel_cbox.Visible = true;
-                panel_tbox.Visible = false;                
+                isComboBox_Visible = true;                
             }
             else
             {
-                panel_cbox.Visible = false;
-                panel_tbox.Visible = true;                
+                isComboBox_Visible = false;
             }
+
+            panel_cbox.Visible = isComboBox_Visible;
+            panel_tbox.Visible = (! isComboBox_Visible);
         }
 
-        private void cbox_Seed_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        
 
-        }
+        private void cbox_Seed_SelectedIndexChanged(object sender, EventArgs e) { }
 
-        private void dgv_Display_Waiting_CellContentClick(object sender, DataGridViewCellEventArgs e) 
-        { 
-        }
+        private void dgv_Display_Waiting_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
 
+        
+        
         private void dgv_Display_Waiting_MouseClick(object sender, MouseEventArgs e)
+        {
+            RMB_ShowContextMenu_OnDataGrid(e);            
+        }
+        private void RMB_ShowContextMenu_OnDataGrid(MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
-                App.Instance().MouseHitManager.Show_CMenu_At_MouseCursor(e, dgv_Display_Waiting, out SelectedRowOf_DGV, contextMenuStrip1);
+                App.Instance().MouseHitManager.Show_CMenu_At_MouseCursor(e, dgv_Display_Waiting, contextMenuStrip1);   
             }
         }
-
-        DataRow SelectedRowOf_DGV;
-
-        private void dgv_Display_Waiting_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e) { }
-
-        
 
         private void dgv_Display_Waiting_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             ShowPop_CounselProceed();
         }
+        private void cmbtn_Modify_Click(object sender, EventArgs e)
+        {
+            ShowPop_CounselProceed();
+        }
+        DataRow SelectedRowOf_DGV { get; set; }
         private void ShowPop_CounselProceed()
         {
             SelectedRowOf_DGV = GridAssist.SelectedRow(dgv_Display_Waiting);
-            MessageBox.Show($"{SelectedRowOf_DGV["아이디"].ToString()} 선택!");
-
             if (isNotNull(SelectedRowOf_DGV))
             {
                 App.Instance().MainForm.ShowPop<CounselProceedPop>(ePopMode.Modify, SelectedRowOf_DGV["아이디"].ToString());
             }
         }
-
         private bool isNotNull(object aObject)
         {
             return aObject != null;
         }
 
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
+        
 
-        }
-
-        private void cmbtn_Modify_Click(object sender, EventArgs e)
+        private void cmbtn_AssignToHakGeup_Click(object sender, EventArgs e)
         {
-            ShowPop_CounselProceed();
+            MessageBox.Show("미구현"); //TODO
         }
     }
     

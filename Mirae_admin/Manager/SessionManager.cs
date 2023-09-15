@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MiraePro.Windows.View;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,16 +14,37 @@ namespace MiraePro.Manager
         public string SessionID { get; set; }
         public int SessionGrade { get; set; }
 
-        public bool OnLine { get; set; }
+        bool isOnLine = false;
+        public bool OnLine
+        {
+            get { return isOnLine; }
+
+            set { 
+                isOnLine = value;
+                if (isOnLine)
+                {
+                    App.Instance().MainForm.SetIcons_Login(SessionName);
+                    App.Instance().MainForm.ShowView<MainMenuView>();
+                }
+                else
+                {
+                    SessionName = string.Empty;
+                    SessionID = string.Empty;
+                    App.Instance().MainForm.SetIcons_Logout();
+                    App.Instance().MainForm.ShowView<AdminLoginView>();
+                }
+                
+            }
+        }
 
         public SessionManager() { }
 
-        public void Login(string aName, string aID, int aGrade)
+        public void Login(string aID)
         {
-            OnLine= true;
-            SessionName= aName;
-            SessionID= aID;
-            SessionGrade = aGrade;
+            SessionID = aID;
+            SessionName = App.Instance().DBManager.ReadTutor_Name(aID);            
+
+            OnLine = true;
         }
         public void Logout() { OnLine = false;}
     }

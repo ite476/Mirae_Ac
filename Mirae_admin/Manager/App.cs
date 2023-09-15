@@ -45,6 +45,7 @@ namespace MiraePro.Manager
         public FileManager FileManager { get; set; }
         public ComponentManager ComponentManager { get; set; }
         public MouseHitManager MouseHitManager { get; set; }
+        public Validator Validator { get; set; }
         internal void InitializeManagers()
         {
             this.DBManager = new DBManager();
@@ -52,6 +53,7 @@ namespace MiraePro.Manager
             this.FileManager = new FileManager();
             this.ComponentManager = new ComponentManager();
             this.MouseHitManager = new MouseHitManager();
+            this.Validator = new Validator();
             this.DBManager.SetConnectInfo("192.168.0.13", 1521, "MiraeDB", "kb603", "xe");
         }
 

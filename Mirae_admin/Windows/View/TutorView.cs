@@ -30,7 +30,7 @@ namespace MiraePro.Windows.View
 
         private void btn_ToMainMenu_Click(object sender, EventArgs e)
         {
-            App.Instance().MainForm.ShowView(typeof(MainMenuView));
+            App.Instance().MainForm.ShowView<MainMenuView>();
         }
 
         private void btn_Search_Click(object sender, EventArgs e)

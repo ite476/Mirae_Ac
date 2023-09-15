@@ -106,7 +106,7 @@ namespace MiraePro.Windows.View
         {
             Current_HakGeupCode = null;
             ClearTimeTable();
-            App.Instance().MainForm.ShowView(typeof(MainMenuView));
+            App.Instance().MainForm.ShowView<MainMenuView>();
         }
 
 

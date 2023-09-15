@@ -34,15 +34,15 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Login = new System.Windows.Forms.Button();
             this.panel20 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_ForDebug = new System.Windows.Forms.Button();
             this.panel21 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbox_Password = new System.Windows.Forms.TextBox();
             this.panel16 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
@@ -50,7 +50,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbox_ID = new System.Windows.Forms.TextBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -139,7 +139,7 @@
             // 
             // panel18
             // 
-            this.panel18.Controls.Add(this.button1);
+            this.panel18.Controls.Add(this.btn_Login);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel18.Location = new System.Drawing.Point(303, 3);
             this.panel18.Name = "panel18";
@@ -147,38 +147,38 @@
             this.panel18.Size = new System.Drawing.Size(294, 94);
             this.panel18.TabIndex = 2;
             // 
-            // button1
+            // btn_Login
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Font = new System.Drawing.Font("배달의민족 도현", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(286, 86);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "접속";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Login.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_Login.Font = new System.Drawing.Font("배달의민족 도현", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_Login.Location = new System.Drawing.Point(4, 4);
+            this.btn_Login.Name = "btn_Login";
+            this.btn_Login.Size = new System.Drawing.Size(286, 86);
+            this.btn_Login.TabIndex = 9;
+            this.btn_Login.Text = "접속";
+            this.btn_Login.UseVisualStyleBackColor = true;
+            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             // 
             // panel20
             // 
-            this.panel20.Controls.Add(this.button2);
+            this.panel20.Controls.Add(this.btn_ForDebug);
             this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel20.Location = new System.Drawing.Point(603, 3);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(294, 94);
             this.panel20.TabIndex = 1;
             // 
-            // button2
+            // btn_ForDebug
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Font = new System.Drawing.Font("배달의민족 도현", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(294, 94);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "테스트";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_ForDebug.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_ForDebug.Font = new System.Drawing.Font("배달의민족 도현", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_ForDebug.Location = new System.Drawing.Point(0, 0);
+            this.btn_ForDebug.Name = "btn_ForDebug";
+            this.btn_ForDebug.Size = new System.Drawing.Size(294, 94);
+            this.btn_ForDebug.TabIndex = 10;
+            this.btn_ForDebug.Text = "디버그용 로그인버튼";
+            this.btn_ForDebug.UseVisualStyleBackColor = true;
+            this.btn_ForDebug.Click += new System.EventHandler(this.btn_ForDebug_Click);
             // 
             // panel21
             // 
@@ -229,7 +229,7 @@
             // 
             // panel15
             // 
-            this.panel15.Controls.Add(this.textBox2);
+            this.panel15.Controls.Add(this.tbox_Password);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel15.Location = new System.Drawing.Point(453, 3);
             this.panel15.Name = "panel15";
@@ -237,13 +237,13 @@
             this.panel15.Size = new System.Drawing.Size(219, 94);
             this.panel15.TabIndex = 2;
             // 
-            // textBox2
+            // tbox_Password
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Location = new System.Drawing.Point(0, 35);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(219, 21);
-            this.textBox2.TabIndex = 0;
+            this.tbox_Password.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbox_Password.Location = new System.Drawing.Point(0, 35);
+            this.tbox_Password.Name = "tbox_Password";
+            this.tbox_Password.Size = new System.Drawing.Size(219, 21);
+            this.tbox_Password.TabIndex = 0;
             // 
             // panel16
             // 
@@ -314,7 +314,7 @@
             // 
             // panel12
             // 
-            this.panel12.Controls.Add(this.textBox1);
+            this.panel12.Controls.Add(this.tbox_ID);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(453, 3);
             this.panel12.Name = "panel12";
@@ -322,13 +322,13 @@
             this.panel12.Size = new System.Drawing.Size(219, 94);
             this.panel12.TabIndex = 2;
             // 
-            // textBox1
+            // tbox_ID
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(0, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(219, 21);
-            this.textBox1.TabIndex = 0;
+            this.tbox_ID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbox_ID.Location = new System.Drawing.Point(0, 35);
+            this.tbox_ID.Name = "tbox_ID";
+            this.tbox_ID.Size = new System.Drawing.Size(219, 21);
+            this.tbox_ID.TabIndex = 0;
             // 
             // panel11
             // 
@@ -439,14 +439,14 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Login;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbox_Password;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel17;
@@ -454,7 +454,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbox_ID;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel10;
@@ -463,6 +463,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_ForDebug;
     }
 }

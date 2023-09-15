@@ -70,6 +70,7 @@
     <Compile Include="Manager\FileManager.cs" />
     <Compile Include="Manager\MouseHitManager.cs" />
     <Compile Include="Manager\SessionManager.cs" />
+    <Compile Include="Manager\Validator.cs" />
     <Compile Include="Windows\Main\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +96,12 @@
     </Compile>
     <Compile Include="Windows\Pop\TutorListPop.Designer.cs">
       <DependentUpon>TutorListPop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Pop\TutorPop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Pop\TutorPop.Designer.cs">
+      <DependentUpon>TutorPop.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\View\AdminLoginView.cs">
       <SubType>Form</SubType>
@@ -160,6 +167,9 @@
     <EmbeddedResource Include="Windows\Pop\TutorListPop.resx">
       <DependentUpon>TutorListPop.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Pop\TutorPop.resx">
+      <DependentUpon>TutorPop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\View\AdminLoginView.resx">
       <DependentUpon>AdminLoginView.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +201,26 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\학생.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\선생님.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\상담.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\스케줄.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\관리자_활성.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\관리자_비활성.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -32,7 +32,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel_tutor = new System.Windows.Forms.Panel();
-            this.lable_tutor = new System.Windows.Forms.Label();
+            this.label_tutor = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.cbox_step = new System.Windows.Forms.ComboBox();
             this.panel29 = new System.Windows.Forms.Panel();
@@ -89,6 +89,8 @@
             this.btn_OK = new System.Windows.Forms.Button();
             this.panel31 = new System.Windows.Forms.Panel();
             this.btn_Cancel = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel_Base.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -117,6 +119,7 @@
             this.panel1.SuspendLayout();
             this.panel32.SuspendLayout();
             this.panel31.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Base
@@ -189,7 +192,7 @@
             // 
             // panel_tutor
             // 
-            this.panel_tutor.Controls.Add(this.lable_tutor);
+            this.panel_tutor.Controls.Add(this.label_tutor);
             this.panel_tutor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_tutor.Location = new System.Drawing.Point(153, 38);
             this.panel_tutor.Name = "panel_tutor";
@@ -197,18 +200,18 @@
             this.panel_tutor.Size = new System.Drawing.Size(204, 29);
             this.panel_tutor.TabIndex = 35;
             // 
-            // lable_tutor
+            // label_tutor
             // 
-            this.lable_tutor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lable_tutor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lable_tutor.Location = new System.Drawing.Point(10, 2);
-            this.lable_tutor.Name = "lable_tutor";
-            this.lable_tutor.Size = new System.Drawing.Size(184, 25);
-            this.lable_tutor.TabIndex = 5;
-            this.lable_tutor.Text = "최선생";
-            this.lable_tutor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lable_tutor.Click += new System.EventHandler(this.lable_tutor_Click);
-            this.lable_tutor.DoubleClick += new System.EventHandler(this.lable_tutor_DoubleClick);
+            this.label_tutor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label_tutor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_tutor.Location = new System.Drawing.Point(10, 2);
+            this.label_tutor.Name = "label_tutor";
+            this.label_tutor.Size = new System.Drawing.Size(184, 25);
+            this.label_tutor.TabIndex = 5;
+            this.label_tutor.Text = "최선생";
+            this.label_tutor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_tutor.Click += new System.EventHandler(this.label_tutor_Click);
+            this.label_tutor.DoubleClick += new System.EventHandler(this.lable_tutor_DoubleClick);
             // 
             // panel6
             // 
@@ -470,7 +473,6 @@
             this.cbox_gender.Size = new System.Drawing.Size(184, 20);
             this.cbox_gender.TabIndex = 13;
             this.cbox_gender.Text = "성별";
-            this.cbox_gender.SelectedIndexChanged += new System.EventHandler(this.cbox_gender_SelectedIndexChanged_1);
             // 
             // panel_score
             // 
@@ -722,6 +724,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.panel32);
             this.panel1.Controls.Add(this.panel31);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -772,6 +775,27 @@
             this.btn_Cancel.UseVisualStyleBackColor = true;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.button1);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Padding = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.panel8.Size = new System.Drawing.Size(90, 47);
+            this.panel8.TabIndex = 38;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.Location = new System.Drawing.Point(5, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(80, 41);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "즉시 반배정";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // CounselProceedPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -812,6 +836,7 @@
             this.panel1.ResumeLayout(false);
             this.panel32.ResumeLayout(false);
             this.panel31.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -849,7 +874,7 @@
         private System.Windows.Forms.Label label_parentContact;
         private System.Windows.Forms.Label label_contact;
         private System.Windows.Forms.Panel panel_tutor;
-        private System.Windows.Forms.Label lable_tutor;
+        private System.Windows.Forms.Label label_tutor;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.ComboBox cbox_step;
         private System.Windows.Forms.Panel panel29;
@@ -879,5 +904,7 @@
         private System.Windows.Forms.TextBox tbox_name;
         private System.Windows.Forms.TextBox tbox_score;
         private System.Windows.Forms.ComboBox cbox_gender;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button button1;
     }
 }

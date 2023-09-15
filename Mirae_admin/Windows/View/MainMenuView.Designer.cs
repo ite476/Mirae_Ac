@@ -29,9 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel_Menu6 = new System.Windows.Forms.Panel();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.btn_ExitProgram = new System.Windows.Forms.Button();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.panel26 = new System.Windows.Forms.Panel();
             this.panel_Menu5 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
-            this.btn_ExitProgram = new System.Windows.Forms.Button();
             this.panel22 = new System.Windows.Forms.Panel();
             this.panel23 = new System.Windows.Forms.Panel();
             this.panel_Menu4 = new System.Windows.Forms.Panel();
@@ -54,12 +58,10 @@
             this.btn_ToTutor = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.panel_Menu6 = new System.Windows.Forms.Panel();
-            this.panel24 = new System.Windows.Forms.Panel();
-            this.panel25 = new System.Windows.Forms.Panel();
-            this.panel26 = new System.Windows.Forms.Panel();
             this.panel_Base = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel_Menu6.SuspendLayout();
+            this.panel24.SuspendLayout();
             this.panel_Menu5.SuspendLayout();
             this.panel_Menu4.SuspendLayout();
             this.panel19.SuspendLayout();
@@ -69,8 +71,6 @@
             this.panel17.SuspendLayout();
             this.panel_Menu1.SuspendLayout();
             this.panel16.SuspendLayout();
-            this.panel_Menu6.SuspendLayout();
-            this.panel24.SuspendLayout();
             this.panel_Base.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,6 +87,56 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1249, 719);
             this.panel1.TabIndex = 0;
+            // 
+            // panel_Menu6
+            // 
+            this.panel_Menu6.Controls.Add(this.panel24);
+            this.panel_Menu6.Controls.Add(this.panel25);
+            this.panel_Menu6.Controls.Add(this.panel26);
+            this.panel_Menu6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_Menu6.Location = new System.Drawing.Point(0, 455);
+            this.panel_Menu6.Name = "panel_Menu6";
+            this.panel_Menu6.Size = new System.Drawing.Size(1249, 91);
+            this.panel_Menu6.TabIndex = 7;
+            // 
+            // panel24
+            // 
+            this.panel24.Controls.Add(this.btn_ExitProgram);
+            this.panel24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel24.Location = new System.Drawing.Point(300, 0);
+            this.panel24.Name = "panel24";
+            this.panel24.Padding = new System.Windows.Forms.Padding(8);
+            this.panel24.Size = new System.Drawing.Size(649, 91);
+            this.panel24.TabIndex = 6;
+            // 
+            // btn_ExitProgram
+            // 
+            this.btn_ExitProgram.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_ExitProgram.Font = new System.Drawing.Font("배달의민족 도현", 15F);
+            this.btn_ExitProgram.Location = new System.Drawing.Point(8, 8);
+            this.btn_ExitProgram.Name = "btn_ExitProgram";
+            this.btn_ExitProgram.Size = new System.Drawing.Size(633, 75);
+            this.btn_ExitProgram.TabIndex = 3;
+            this.btn_ExitProgram.TabStop = false;
+            this.btn_ExitProgram.Text = "프로그램 종료";
+            this.btn_ExitProgram.UseVisualStyleBackColor = true;
+            this.btn_ExitProgram.Click += new System.EventHandler(this.btn_ExitProgram_Click);
+            // 
+            // panel25
+            // 
+            this.panel25.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel25.Location = new System.Drawing.Point(949, 0);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(300, 91);
+            this.panel25.TabIndex = 5;
+            // 
+            // panel26
+            // 
+            this.panel26.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel26.Location = new System.Drawing.Point(0, 0);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(300, 91);
+            this.panel26.TabIndex = 3;
             // 
             // panel_Menu5
             // 
@@ -107,19 +157,6 @@
             this.panel21.Padding = new System.Windows.Forms.Padding(8);
             this.panel21.Size = new System.Drawing.Size(649, 91);
             this.panel21.TabIndex = 6;
-            // 
-            // btn_ExitProgram
-            // 
-            this.btn_ExitProgram.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_ExitProgram.Font = new System.Drawing.Font("배달의민족 도현", 15F);
-            this.btn_ExitProgram.Location = new System.Drawing.Point(8, 8);
-            this.btn_ExitProgram.Name = "btn_ExitProgram";
-            this.btn_ExitProgram.Size = new System.Drawing.Size(633, 75);
-            this.btn_ExitProgram.TabIndex = 3;
-            this.btn_ExitProgram.TabStop = false;
-            this.btn_ExitProgram.Text = "프로그램 종료";
-            this.btn_ExitProgram.UseVisualStyleBackColor = true;
-            this.btn_ExitProgram.Click += new System.EventHandler(this.btn_ExitProgram_Click);
             // 
             // panel22
             // 
@@ -337,43 +374,6 @@
             this.panel8.Size = new System.Drawing.Size(300, 91);
             this.panel8.TabIndex = 2;
             // 
-            // panel_Menu6
-            // 
-            this.panel_Menu6.Controls.Add(this.panel24);
-            this.panel_Menu6.Controls.Add(this.panel25);
-            this.panel_Menu6.Controls.Add(this.panel26);
-            this.panel_Menu6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_Menu6.Location = new System.Drawing.Point(0, 455);
-            this.panel_Menu6.Name = "panel_Menu6";
-            this.panel_Menu6.Size = new System.Drawing.Size(1249, 91);
-            this.panel_Menu6.TabIndex = 7;
-            // 
-            // panel24
-            // 
-            this.panel24.Controls.Add(this.btn_ExitProgram);
-            this.panel24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel24.Location = new System.Drawing.Point(300, 0);
-            this.panel24.Name = "panel24";
-            this.panel24.Padding = new System.Windows.Forms.Padding(8);
-            this.panel24.Size = new System.Drawing.Size(649, 91);
-            this.panel24.TabIndex = 6;
-            // 
-            // panel25
-            // 
-            this.panel25.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel25.Location = new System.Drawing.Point(949, 0);
-            this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(300, 91);
-            this.panel25.TabIndex = 5;
-            // 
-            // panel26
-            // 
-            this.panel26.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel26.Location = new System.Drawing.Point(0, 0);
-            this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(300, 91);
-            this.panel26.TabIndex = 3;
-            // 
             // panel_Base
             // 
             this.panel_Base.Controls.Add(this.panel1);
@@ -393,6 +393,8 @@
             this.Text = "Form1";
             this.ClientSizeChanged += new System.EventHandler(this.MainMenuView_ClientSizeChanged);
             this.panel1.ResumeLayout(false);
+            this.panel_Menu6.ResumeLayout(false);
+            this.panel24.ResumeLayout(false);
             this.panel_Menu5.ResumeLayout(false);
             this.panel_Menu4.ResumeLayout(false);
             this.panel19.ResumeLayout(false);
@@ -402,8 +404,6 @@
             this.panel17.ResumeLayout(false);
             this.panel_Menu1.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
-            this.panel_Menu6.ResumeLayout(false);
-            this.panel24.ResumeLayout(false);
             this.panel_Base.ResumeLayout(false);
             this.ResumeLayout(false);
 
