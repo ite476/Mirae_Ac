@@ -104,12 +104,16 @@ namespace MiraePro.Windows.View
         private void cbox_Seed_SelectedIndexChanged(object sender, EventArgs e) { }
 
         private void dgv_Display_Waiting_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
-        private void dgv_Display_Waiting_MouseClick(object sender, MouseEventArgs e)
+        private void dgv_Display_Waiting_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            RMB_ShowContextMenu_OnDataGrid(e);            
+            dgv_Display_Waiting.Rows[e.RowIndex].Selected = true;
+        }
+        private void dgv_Display_Waiting_MouseDown(object sender, MouseEventArgs e)
+        {
+            RMB_ShowContextMenu_OnDataGrid(e);
         }
         private void RMB_ShowContextMenu_OnDataGrid(MouseEventArgs e)
-        {
+        {            
             if (e.Button == MouseButtons.Right)
             {
                 App.Instance().MouseHitManager.Show_CMenu_At_MouseCursor(e, dgv_Display_Waiting, contextMenuStrip1);   
@@ -162,6 +166,8 @@ namespace MiraePro.Windows.View
         {
             MessageBox.Show("미구현"); //TODO
         }
+
+        
     }
     
 }

@@ -13,7 +13,7 @@ namespace Mirae_Tutor.Manager
     {
         internal void SetCategoryCbox(ComboBox aComboBox, bool isIncludingALLCategory = false)
         {
-            DataTable _dt = App.Instance().DBManager.ReadCategory();
+            /* DataTable _dt = App.Instance().DBManager.ReadCategory(); //TODO
 
             aComboBox.Items.Clear();
             if (isIncludingALLCategory) 
@@ -28,6 +28,7 @@ namespace Mirae_Tutor.Manager
 
             if (_dt.Rows.Count > 0)
             { aComboBox.SelectedIndex = 0; }
+            */
         }
     }
 }

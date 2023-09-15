@@ -69,6 +69,7 @@
     <Compile Include="Manager\FileManager.cs" />
     <Compile Include="Manager\MouseHitManager.cs" />
     <Compile Include="Manager\SessionManager.cs" />
+    <Compile Include="Manager\Validator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Windows\Main\MainForm.cs">
@@ -163,6 +164,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Windows\Main\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -213,6 +215,23 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\관리자_비활성.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\상담.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BookIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\스케줄.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-person-11081570.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuIcon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

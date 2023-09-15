@@ -62,7 +62,7 @@ namespace Mirae_Tutor.Windows.View
 
         private void btn_ToMainMenu_Click(object sender, EventArgs e)
         {
-            App.Instance().MainForm.ShowView(typeof(View_메인메뉴));
+            App.Instance().MainForm.ShowView<View_메인메뉴>();
         }
 
         private void 주간ToolStripMenuItem_Click(object sender, EventArgs e)

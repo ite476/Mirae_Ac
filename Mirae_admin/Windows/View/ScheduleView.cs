@@ -195,7 +195,6 @@ namespace MiraePro.Windows.View
         {
             SearchCourse();
         }
-
         #region <<< btn_Search Logics >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         void SearchCourse()
         {

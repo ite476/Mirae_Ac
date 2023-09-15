@@ -395,9 +395,9 @@ namespace MiraePro.Manager
                 case "이름":
                     return "WHERE T.name LIKE '%{0}%' ";
                 case "담당과목":
-                    return "WHERE T.subject LIKE '%{0}%'";
+                    return "WHERE T.subject LIKE '%{0}%' ";
                 case "연락처":
-                    return "WHERE T.contact LIKE '%{0}%'";
+                    return "WHERE T.contact LIKE '%{0}%' ";
                 default:
                     throw new FieldNotFoundException();
             }            
@@ -532,7 +532,7 @@ namespace MiraePro.Manager
                 case "아이디":
                     return "WHERE W.member_id = '{0}' ";
                 case "상태":
-                    return "WHERE W.step = '{0}'";
+                    return "WHERE W.step = '{0}' ";
                 default:
                     throw new FieldNotFoundException();
             }

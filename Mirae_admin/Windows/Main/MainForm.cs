@@ -16,6 +16,31 @@ namespace MiraePro
 {
     public partial class MainForm : Form
     {
+        public void SetIcons_Login_AsSession(string aSessionName)
+        {
+            로그인ToolStripMenuItem.Enabled = false;
+            로그아웃ToolStripMenuItem.Enabled = true;
+
+            toolStrip_WithIcons.Enabled = true;
+            tlabel_SessionName.Text = $"{aSessionName}님";
+        }
+        public void SetIcons_Logout()
+        {
+            로그인ToolStripMenuItem.Enabled = true;
+            로그아웃ToolStripMenuItem.Enabled = false;
+
+            toolStrip_WithIcons.Enabled = false;
+            tlabel_SessionName.Text = string.Empty;
+        }
+
+        private void LogOut()
+        {
+            SetIcons_Logout();
+            App.Instance().SessionManager.Logout();
+        }
+        
+
+
         public MainForm()
         {
             InitializeComponent();
@@ -25,8 +50,9 @@ namespace MiraePro
         {
             App.Instance().MainForm = this;
 
+            
             InitializeViews();
-            SetIcons_Logout();
+            LogOut();
         }
 
         #region <<< Show View&Pop + Public Methods >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -85,31 +111,8 @@ namespace MiraePro
             Application.Exit();
         }
 
-        public void SetIcons_Login(string SessionName)
-        {
-            로그인ToolStripMenuItem.Enabled = false;
-            로그아웃ToolStripMenuItem.Enabled = true;
-
-            foreach (ToolStripItem item in toolStrip_Icon.Items)
-            {
-                item.Enabled = true;
-                if (item.GetType() == typeof(ToolStripLabel))
-                {
-                    item.Text = $"{SessionName}님";
-                }
-            }
-        }
-        public void SetIcons_Logout()
-        {
-            로그인ToolStripMenuItem.Enabled = true;
-            로그아웃ToolStripMenuItem.Enabled = false;
-
-            foreach (ToolStripItem item in toolStrip_Icon.Items)
-            {
-                item.Enabled = false;
-                item.Text = string.Empty;
-            }
-        }
+        
+        
 
         #endregion
 
@@ -140,16 +143,21 @@ namespace MiraePro
         }
         private void 로그아웃ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            App.Instance().SessionManager.Logout();
+            LogOut();
         }
+        private void 로그아웃ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LogOut();
+        }
+        
+
+
         private void 로그인ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             App.Instance().MainForm.ShowView<AdminLoginView>();
         }
-        private void 로그아웃ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            App.Instance().SessionManager.Logout();
-        }
+        
+        
 
         private void tbtn_ToOption_MouseDown(object sender, MouseEventArgs e)
         {
@@ -163,6 +171,8 @@ namespace MiraePro
                     return;
             }
         }
+
+        
 
         #endregion
 

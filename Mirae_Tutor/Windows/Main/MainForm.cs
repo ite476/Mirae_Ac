@@ -19,34 +19,72 @@ namespace Mirae_Tutor
         {
             return ShowPop(typeof(T), aPopMode, aParam);
         }
+        
+        public void ShowView<T>()
+        {
+            ShowView(typeof(T));
+        }
+        
+
+        public void SetIcons_Login(string sessionName)
+        {
+            toolStrip_MenuIcons.Visible = true;
+            tlabel_SessionName.Text = $"{sessionName} 선생님";
+            
+            View_메인메뉴 메인메뉴 = (GetView<View_메인메뉴>() as View_메인메뉴);
+            메인메뉴.SetButtons_Login();
+
+        }
+        public MasterView GetView<T>()
+        {
+            return GetView(typeof(T));
+        }
+
+        public void SetIcons_Logout()
+        {
+            toolStrip_MenuIcons.Visible = false;
+            tlabel_SessionName.Text = string.Empty;
+        }
+
+        public void UpdateInfo()
+        {
+            View_메인메뉴 메인메뉴 = (GetView<View_메인메뉴>() as View_메인메뉴);
+            메인메뉴.UpdateInfo();
+        }
+
+
         private DialogResult ShowPop(Type PopType, ePopMode aPopMode = ePopMode.None, object aParam = null)
         {
             dynamic CurrentPop = Activator.CreateInstance(PopType);
             return CurrentPop.ShowPop(aPopMode, aParam);
         }
-        
-        public void ShowView(Type aType)
+        private void ShowView(Type aType)
         {
             HideAllView();
             GetView(aType).Visible = true;
         }
 
+        #region <<< 생성자 / 초기화 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
         public MainForm()
         {
             InitializeComponent();
-            InitializeMainForm();            
+            InitializeMainForm();
+            Application.Idle += (sender, e) =>
+            {
+                App.Instance().MainForm.UpdateInfo();
+            };
         }
 
         private void InitializeMainForm()
         {
             App.Instance().MainForm = this;
-
+            SetIcons_Logout();
             InitializeViews();
         }
-
-        #region <<< Views >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-        public List<MasterView> Views { get; set; }
-        void InitializeViews()
+        
+        private List<MasterView> Views { get; set; }
+        private void InitializeViews()
         {
             this.Views = new List<MasterView>();
             this.Views.Add(new View_로그인());
@@ -54,6 +92,7 @@ namespace Mirae_Tutor
             this.Views.Add(new View_일정());
             this.Views.Add(new View_수업());
             this.Views.Add(new View_학생());
+            this.Views.Add(new View_상담());
 
             foreach (MasterView view in this.Views)
             {
@@ -62,7 +101,7 @@ namespace Mirae_Tutor
                 view.Visible = false;
             }
 
-            ShowView(typeof(View_로그인));
+            ShowView<View_로그인>();
         }
         
         
@@ -73,7 +112,8 @@ namespace Mirae_Tutor
             { view.Visible = false; }
         }
 
-        public MasterView GetView(Type aType)
+        
+        private MasterView GetView(Type aType)
         {
             foreach (MasterView view in this.Views)
             {
@@ -98,22 +138,34 @@ namespace Mirae_Tutor
 
         private void tbtn_ToMainMenu_Click(object sender, EventArgs e)
         {
-            ShowView(typeof(View_메인메뉴));
+            ShowView<View_메인메뉴>();
         }
 
         private void tbtn_ToCourse_Click(object sender, EventArgs e)
         {
-            ShowView(typeof(View_수업));
+            ShowView<View_수업>();
         }
 
         private void tbtn_ToSchedule_Click(object sender, EventArgs e)
         {
-            ShowView(typeof(View_일정));
+            ShowView<View_일정>();
         }
 
         private void tbtn_ToStudent_Click(object sender, EventArgs e)
         {
-            ShowView(typeof(View_학생));
+            ShowView<View_학생>();
         }
+        private void tbtn_ToCounsel_Click(object sender, EventArgs e)
+        {
+            ShowView<View_상담>();
+        }
+
+
+        private void tbtn_ToOption_Click(object sender, EventArgs e)
+        {
+            App.Instance().SessionManager.Logout();
+        }
+
+        
     }
 }

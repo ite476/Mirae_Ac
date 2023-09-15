@@ -80,7 +80,7 @@ namespace MiraePro.Windows.View
             controls.Add(panel_Menu6);
             foreach(Control control in controls)
             {
-                control.Size = new Size(control.Size.Width, (this.Size.Height-50) / controls.Count);
+                control.Size = new Size(control.Size.Width, (this.Size.Height) / controls.Count);
             }
         }
         

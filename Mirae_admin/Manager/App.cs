@@ -54,7 +54,7 @@ namespace MiraePro.Manager
             this.ComponentManager = new ComponentManager();
             this.MouseHitManager = new MouseHitManager();
             this.Validator = new Validator();
-            this.DBManager.SetConnectInfo("192.168.0.13", 1521, "MiraeDB", "kb603", "xe");
+            this.DBManager.SetConnectInfo("192.168.0.13", 1521, "MiraeDB", "kb603", "xe"); //TODO
         }
 
         //public bool ShowMessage(string message) {

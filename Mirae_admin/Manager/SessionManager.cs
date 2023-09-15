@@ -23,7 +23,7 @@ namespace MiraePro.Manager
                 isOnLine = value;
                 if (isOnLine)
                 {
-                    App.Instance().MainForm.SetIcons_Login(SessionName);
+                    App.Instance().MainForm.SetIcons_Login_AsSession(SessionName);
                     App.Instance().MainForm.ShowView<MainMenuView>();
                 }
                 else

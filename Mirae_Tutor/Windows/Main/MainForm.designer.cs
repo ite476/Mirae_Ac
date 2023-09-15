@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.세션ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.로그인ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,15 +36,17 @@
             this.도구ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.환경설정ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStrip_MenuIcons = new System.Windows.Forms.ToolStrip();
             this.tbtn_ToMainMenu = new System.Windows.Forms.ToolStripButton();
             this.tbtn_ToSchedule = new System.Windows.Forms.ToolStripButton();
             this.tbtn_ToCourse = new System.Windows.Forms.ToolStripButton();
             this.tbtn_ToStudent = new System.Windows.Forms.ToolStripButton();
-            this.tbtn_To상담 = new System.Windows.Forms.ToolStripButton();
+            this.tbtn_ToCounsel = new System.Windows.Forms.ToolStripButton();
+            this.tbtn_ToOption = new System.Windows.Forms.ToolStripButton();
+            this.tlabel_SessionName = new System.Windows.Forms.ToolStripLabel();
             this.ViewSpace = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.toolStrip_MenuIcons.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -106,80 +107,91 @@
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(119, 6);
             // 
-            // toolStrip1
+            // toolStrip_MenuIcons
             // 
-            this.toolStrip1.AutoSize = false;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStrip_MenuIcons.AutoSize = false;
+            this.toolStrip_MenuIcons.ImageScalingSize = new System.Drawing.Size(40, 40);
+            this.toolStrip_MenuIcons.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tbtn_ToMainMenu,
             this.tbtn_ToSchedule,
             this.tbtn_ToCourse,
             this.tbtn_ToStudent,
-            this.tbtn_To상담});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1185, 43);
-            this.toolStrip1.TabIndex = 4;
-            this.toolStrip1.Text = "toolStrip1";
+            this.tbtn_ToCounsel,
+            this.tbtn_ToOption,
+            this.tlabel_SessionName});
+            this.toolStrip_MenuIcons.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip_MenuIcons.Name = "toolStrip_MenuIcons";
+            this.toolStrip_MenuIcons.Size = new System.Drawing.Size(1185, 43);
+            this.toolStrip_MenuIcons.TabIndex = 4;
+            this.toolStrip_MenuIcons.Text = "toolStrip1";
             // 
             // tbtn_ToMainMenu
             // 
-            this.tbtn_ToMainMenu.AutoSize = false;
-            this.tbtn_ToMainMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tbtn_ToMainMenu.BackgroundImage")));
-            this.tbtn_ToMainMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tbtn_ToMainMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbtn_ToMainMenu.Image = global::Mirae_Tutor.Properties.Resources.MenuIcon;
             this.tbtn_ToMainMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtn_ToMainMenu.Name = "tbtn_ToMainMenu";
-            this.tbtn_ToMainMenu.Size = new System.Drawing.Size(40, 40);
-            this.tbtn_ToMainMenu.Text = "toolStripButton4";
+            this.tbtn_ToMainMenu.Size = new System.Drawing.Size(44, 40);
+            this.tbtn_ToMainMenu.Text = "toolStripButton1";
             this.tbtn_ToMainMenu.Click += new System.EventHandler(this.tbtn_ToMainMenu_Click);
             // 
             // tbtn_ToSchedule
             // 
-            this.tbtn_ToSchedule.AutoSize = false;
-            this.tbtn_ToSchedule.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tbtn_ToSchedule.BackgroundImage")));
-            this.tbtn_ToSchedule.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tbtn_ToSchedule.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbtn_ToSchedule.Image = global::Mirae_Tutor.Properties.Resources.스케줄;
             this.tbtn_ToSchedule.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtn_ToSchedule.Name = "tbtn_ToSchedule";
-            this.tbtn_ToSchedule.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbtn_ToSchedule.Size = new System.Drawing.Size(40, 40);
-            this.tbtn_ToSchedule.Text = "toolStripButton3";
+            this.tbtn_ToSchedule.Size = new System.Drawing.Size(44, 40);
+            this.tbtn_ToSchedule.Text = "toolStripButton2";
             this.tbtn_ToSchedule.Click += new System.EventHandler(this.tbtn_ToSchedule_Click);
             // 
             // tbtn_ToCourse
             // 
-            this.tbtn_ToCourse.AutoSize = false;
-            this.tbtn_ToCourse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tbtn_ToCourse.BackgroundImage")));
-            this.tbtn_ToCourse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tbtn_ToCourse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbtn_ToCourse.Image = global::Mirae_Tutor.Properties.Resources.BookIcon;
             this.tbtn_ToCourse.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtn_ToCourse.Name = "tbtn_ToCourse";
-            this.tbtn_ToCourse.Size = new System.Drawing.Size(40, 40);
-            this.tbtn_ToCourse.Text = "toolStripButton2";
+            this.tbtn_ToCourse.Size = new System.Drawing.Size(44, 40);
+            this.tbtn_ToCourse.Text = "toolStripButton3";
             this.tbtn_ToCourse.Click += new System.EventHandler(this.tbtn_ToCourse_Click);
             // 
             // tbtn_ToStudent
             // 
-            this.tbtn_ToStudent.AutoSize = false;
-            this.tbtn_ToStudent.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tbtn_ToStudent.BackgroundImage")));
-            this.tbtn_ToStudent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tbtn_ToStudent.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbtn_ToStudent.Image = global::Mirae_Tutor.Properties.Resources.free_icon_person_11081570;
             this.tbtn_ToStudent.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtn_ToStudent.Name = "tbtn_ToStudent";
-            this.tbtn_ToStudent.Size = new System.Drawing.Size(40, 40);
-            this.tbtn_ToStudent.Text = "toolStripButton1";
+            this.tbtn_ToStudent.Size = new System.Drawing.Size(44, 40);
+            this.tbtn_ToStudent.Text = "toolStripButton4";
             this.tbtn_ToStudent.Click += new System.EventHandler(this.tbtn_ToStudent_Click);
             // 
-            // tbtn_To상담
+            // tbtn_ToCounsel
             // 
-            this.tbtn_To상담.AutoSize = false;
-            this.tbtn_To상담.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tbtn_To상담.BackgroundImage")));
-            this.tbtn_To상담.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tbtn_To상담.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbtn_To상담.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbtn_To상담.Name = "tbtn_To상담";
-            this.tbtn_To상담.Size = new System.Drawing.Size(40, 40);
-            this.tbtn_To상담.Text = "toolStripButton1";
+            this.tbtn_ToCounsel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbtn_ToCounsel.Image = global::Mirae_Tutor.Properties.Resources.상담;
+            this.tbtn_ToCounsel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbtn_ToCounsel.Name = "tbtn_ToCounsel";
+            this.tbtn_ToCounsel.Size = new System.Drawing.Size(44, 40);
+            this.tbtn_ToCounsel.Text = "toolStripButton5";
+            this.tbtn_ToCounsel.Click += new System.EventHandler(this.tbtn_ToCounsel_Click);
+            // 
+            // tbtn_ToOption
+            // 
+            this.tbtn_ToOption.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tbtn_ToOption.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbtn_ToOption.Image = global::Mirae_Tutor.Properties.Resources.관리자_비활성;
+            this.tbtn_ToOption.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbtn_ToOption.Name = "tbtn_ToOption";
+            this.tbtn_ToOption.Size = new System.Drawing.Size(44, 40);
+            this.tbtn_ToOption.Text = "toolStripButton1";
+            this.tbtn_ToOption.Click += new System.EventHandler(this.tbtn_ToOption_Click);
+            // 
+            // tlabel_SessionName
+            // 
+            this.tlabel_SessionName.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tlabel_SessionName.Name = "tlabel_SessionName";
+            this.tlabel_SessionName.Size = new System.Drawing.Size(83, 40);
+            this.tlabel_SessionName.Text = "김철수 선생님";
             // 
             // ViewSpace
             // 
@@ -195,15 +207,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1185, 638);
             this.Controls.Add(this.ViewSpace);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.toolStrip_MenuIcons);
             this.Controls.Add(this.menuStrip1);
             this.Name = "MainForm";
             this.Text = "미래학원 :: 강사 시스템";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.toolStrip_MenuIcons.ResumeLayout(false);
+            this.toolStrip_MenuIcons.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,16 +227,18 @@
         private System.Windows.Forms.ToolStripMenuItem 로그인ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 로그아웃ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 도구ToolStripMenuItem;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip toolStrip_MenuIcons;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 환경설정ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripButton tbtn_ToStudent;
-        private System.Windows.Forms.ToolStripButton tbtn_ToCourse;
-        private System.Windows.Forms.ToolStripButton tbtn_ToSchedule;
         private System.Windows.Forms.Panel ViewSpace;
         private System.Windows.Forms.ToolStripButton tbtn_ToMainMenu;
-        private System.Windows.Forms.ToolStripButton tbtn_To상담;
+        private System.Windows.Forms.ToolStripButton tbtn_ToSchedule;
+        private System.Windows.Forms.ToolStripButton tbtn_ToCourse;
+        private System.Windows.Forms.ToolStripButton tbtn_ToStudent;
+        private System.Windows.Forms.ToolStripButton tbtn_ToCounsel;
+        private System.Windows.Forms.ToolStripButton tbtn_ToOption;
+        private System.Windows.Forms.ToolStripLabel tlabel_SessionName;
     }
 }
 

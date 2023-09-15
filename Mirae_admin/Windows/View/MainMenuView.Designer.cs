@@ -94,9 +94,9 @@
             this.panel_Menu6.Controls.Add(this.panel25);
             this.panel_Menu6.Controls.Add(this.panel26);
             this.panel_Menu6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_Menu6.Location = new System.Drawing.Point(0, 455);
+            this.panel_Menu6.Location = new System.Drawing.Point(0, 460);
             this.panel_Menu6.Name = "panel_Menu6";
-            this.panel_Menu6.Size = new System.Drawing.Size(1249, 91);
+            this.panel_Menu6.Size = new System.Drawing.Size(1249, 92);
             this.panel_Menu6.TabIndex = 7;
             // 
             // panel24
@@ -106,7 +106,7 @@
             this.panel24.Location = new System.Drawing.Point(300, 0);
             this.panel24.Name = "panel24";
             this.panel24.Padding = new System.Windows.Forms.Padding(8);
-            this.panel24.Size = new System.Drawing.Size(649, 91);
+            this.panel24.Size = new System.Drawing.Size(649, 92);
             this.panel24.TabIndex = 6;
             // 
             // btn_ExitProgram
@@ -115,7 +115,7 @@
             this.btn_ExitProgram.Font = new System.Drawing.Font("배달의민족 도현", 15F);
             this.btn_ExitProgram.Location = new System.Drawing.Point(8, 8);
             this.btn_ExitProgram.Name = "btn_ExitProgram";
-            this.btn_ExitProgram.Size = new System.Drawing.Size(633, 75);
+            this.btn_ExitProgram.Size = new System.Drawing.Size(633, 76);
             this.btn_ExitProgram.TabIndex = 3;
             this.btn_ExitProgram.TabStop = false;
             this.btn_ExitProgram.Text = "프로그램 종료";
@@ -127,7 +127,7 @@
             this.panel25.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel25.Location = new System.Drawing.Point(949, 0);
             this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(300, 91);
+            this.panel25.Size = new System.Drawing.Size(300, 92);
             this.panel25.TabIndex = 5;
             // 
             // panel26
@@ -135,7 +135,7 @@
             this.panel26.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel26.Location = new System.Drawing.Point(0, 0);
             this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(300, 91);
+            this.panel26.Size = new System.Drawing.Size(300, 92);
             this.panel26.TabIndex = 3;
             // 
             // panel_Menu5
@@ -144,9 +144,9 @@
             this.panel_Menu5.Controls.Add(this.panel22);
             this.panel_Menu5.Controls.Add(this.panel23);
             this.panel_Menu5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_Menu5.Location = new System.Drawing.Point(0, 364);
+            this.panel_Menu5.Location = new System.Drawing.Point(0, 368);
             this.panel_Menu5.Name = "panel_Menu5";
-            this.panel_Menu5.Size = new System.Drawing.Size(1249, 91);
+            this.panel_Menu5.Size = new System.Drawing.Size(1249, 92);
             this.panel_Menu5.TabIndex = 6;
             // 
             // panel21
@@ -155,7 +155,7 @@
             this.panel21.Location = new System.Drawing.Point(300, 0);
             this.panel21.Name = "panel21";
             this.panel21.Padding = new System.Windows.Forms.Padding(8);
-            this.panel21.Size = new System.Drawing.Size(649, 91);
+            this.panel21.Size = new System.Drawing.Size(649, 92);
             this.panel21.TabIndex = 6;
             // 
             // panel22
@@ -163,7 +163,7 @@
             this.panel22.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel22.Location = new System.Drawing.Point(949, 0);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(300, 91);
+            this.panel22.Size = new System.Drawing.Size(300, 92);
             this.panel22.TabIndex = 5;
             // 
             // panel23
@@ -171,7 +171,7 @@
             this.panel23.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel23.Location = new System.Drawing.Point(0, 0);
             this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(300, 91);
+            this.panel23.Size = new System.Drawing.Size(300, 92);
             this.panel23.TabIndex = 3;
             // 
             // panel_Menu4
@@ -180,9 +180,9 @@
             this.panel_Menu4.Controls.Add(this.panel15);
             this.panel_Menu4.Controls.Add(this.panel11);
             this.panel_Menu4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_Menu4.Location = new System.Drawing.Point(0, 273);
+            this.panel_Menu4.Location = new System.Drawing.Point(0, 276);
             this.panel_Menu4.Name = "panel_Menu4";
-            this.panel_Menu4.Size = new System.Drawing.Size(1249, 91);
+            this.panel_Menu4.Size = new System.Drawing.Size(1249, 92);
             this.panel_Menu4.TabIndex = 4;
             // 
             // panel19
@@ -192,7 +192,7 @@
             this.panel19.Location = new System.Drawing.Point(300, 0);
             this.panel19.Name = "panel19";
             this.panel19.Padding = new System.Windows.Forms.Padding(8);
-            this.panel19.Size = new System.Drawing.Size(649, 91);
+            this.panel19.Size = new System.Drawing.Size(649, 92);
             this.panel19.TabIndex = 6;
             // 
             // btn_ToCounsel
@@ -201,7 +201,7 @@
             this.btn_ToCounsel.Font = new System.Drawing.Font("배달의민족 도현", 15F);
             this.btn_ToCounsel.Location = new System.Drawing.Point(8, 8);
             this.btn_ToCounsel.Name = "btn_ToCounsel";
-            this.btn_ToCounsel.Size = new System.Drawing.Size(633, 75);
+            this.btn_ToCounsel.Size = new System.Drawing.Size(633, 76);
             this.btn_ToCounsel.TabIndex = 6;
             this.btn_ToCounsel.TabStop = false;
             this.btn_ToCounsel.Text = "입학 신청 명단 (0)";
@@ -213,7 +213,7 @@
             this.panel15.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel15.Location = new System.Drawing.Point(949, 0);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(300, 91);
+            this.panel15.Size = new System.Drawing.Size(300, 92);
             this.panel15.TabIndex = 5;
             // 
             // panel11
@@ -221,7 +221,7 @@
             this.panel11.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel11.Location = new System.Drawing.Point(0, 0);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(300, 91);
+            this.panel11.Size = new System.Drawing.Size(300, 92);
             this.panel11.TabIndex = 3;
             // 
             // panel_Menu3
@@ -230,9 +230,9 @@
             this.panel_Menu3.Controls.Add(this.panel12);
             this.panel_Menu3.Controls.Add(this.panel10);
             this.panel_Menu3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_Menu3.Location = new System.Drawing.Point(0, 182);
+            this.panel_Menu3.Location = new System.Drawing.Point(0, 184);
             this.panel_Menu3.Name = "panel_Menu3";
-            this.panel_Menu3.Size = new System.Drawing.Size(1249, 91);
+            this.panel_Menu3.Size = new System.Drawing.Size(1249, 92);
             this.panel_Menu3.TabIndex = 3;
             // 
             // panel18
@@ -242,7 +242,7 @@
             this.panel18.Location = new System.Drawing.Point(300, 0);
             this.panel18.Name = "panel18";
             this.panel18.Padding = new System.Windows.Forms.Padding(8);
-            this.panel18.Size = new System.Drawing.Size(649, 91);
+            this.panel18.Size = new System.Drawing.Size(649, 92);
             this.panel18.TabIndex = 5;
             // 
             // btn_ToSchedule
@@ -251,7 +251,7 @@
             this.btn_ToSchedule.Font = new System.Drawing.Font("배달의민족 도현", 15F);
             this.btn_ToSchedule.Location = new System.Drawing.Point(8, 8);
             this.btn_ToSchedule.Name = "btn_ToSchedule";
-            this.btn_ToSchedule.Size = new System.Drawing.Size(633, 75);
+            this.btn_ToSchedule.Size = new System.Drawing.Size(633, 76);
             this.btn_ToSchedule.TabIndex = 4;
             this.btn_ToSchedule.TabStop = false;
             this.btn_ToSchedule.Text = "시간표 데이터베이스";
@@ -263,7 +263,7 @@
             this.panel12.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel12.Location = new System.Drawing.Point(949, 0);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(300, 91);
+            this.panel12.Size = new System.Drawing.Size(300, 92);
             this.panel12.TabIndex = 4;
             // 
             // panel10
@@ -271,7 +271,7 @@
             this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(300, 91);
+            this.panel10.Size = new System.Drawing.Size(300, 92);
             this.panel10.TabIndex = 3;
             // 
             // panel_Menu2
@@ -280,9 +280,9 @@
             this.panel_Menu2.Controls.Add(this.panel13);
             this.panel_Menu2.Controls.Add(this.panel9);
             this.panel_Menu2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_Menu2.Location = new System.Drawing.Point(0, 91);
+            this.panel_Menu2.Location = new System.Drawing.Point(0, 92);
             this.panel_Menu2.Name = "panel_Menu2";
-            this.panel_Menu2.Size = new System.Drawing.Size(1249, 91);
+            this.panel_Menu2.Size = new System.Drawing.Size(1249, 92);
             this.panel_Menu2.TabIndex = 2;
             // 
             // panel17
@@ -292,7 +292,7 @@
             this.panel17.Location = new System.Drawing.Point(300, 0);
             this.panel17.Name = "panel17";
             this.panel17.Padding = new System.Windows.Forms.Padding(8);
-            this.panel17.Size = new System.Drawing.Size(649, 91);
+            this.panel17.Size = new System.Drawing.Size(649, 92);
             this.panel17.TabIndex = 6;
             // 
             // btn_ToStudent
@@ -301,7 +301,7 @@
             this.btn_ToStudent.Font = new System.Drawing.Font("배달의민족 도현", 15F);
             this.btn_ToStudent.Location = new System.Drawing.Point(8, 8);
             this.btn_ToStudent.Name = "btn_ToStudent";
-            this.btn_ToStudent.Size = new System.Drawing.Size(633, 75);
+            this.btn_ToStudent.Size = new System.Drawing.Size(633, 76);
             this.btn_ToStudent.TabIndex = 3;
             this.btn_ToStudent.TabStop = false;
             this.btn_ToStudent.Text = "학생 데이터베이스";
@@ -313,7 +313,7 @@
             this.panel13.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel13.Location = new System.Drawing.Point(949, 0);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(300, 91);
+            this.panel13.Size = new System.Drawing.Size(300, 92);
             this.panel13.TabIndex = 5;
             // 
             // panel9
@@ -321,7 +321,7 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel9.Location = new System.Drawing.Point(0, 0);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(300, 91);
+            this.panel9.Size = new System.Drawing.Size(300, 92);
             this.panel9.TabIndex = 3;
             // 
             // panel_Menu1
@@ -332,7 +332,7 @@
             this.panel_Menu1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Menu1.Location = new System.Drawing.Point(0, 0);
             this.panel_Menu1.Name = "panel_Menu1";
-            this.panel_Menu1.Size = new System.Drawing.Size(1249, 91);
+            this.panel_Menu1.Size = new System.Drawing.Size(1249, 92);
             this.panel_Menu1.TabIndex = 1;
             // 
             // panel16
@@ -342,7 +342,7 @@
             this.panel16.Location = new System.Drawing.Point(300, 0);
             this.panel16.Name = "panel16";
             this.panel16.Padding = new System.Windows.Forms.Padding(8);
-            this.panel16.Size = new System.Drawing.Size(649, 91);
+            this.panel16.Size = new System.Drawing.Size(649, 92);
             this.panel16.TabIndex = 6;
             // 
             // btn_ToTutor
@@ -351,7 +351,7 @@
             this.btn_ToTutor.Font = new System.Drawing.Font("배달의민족 도현", 15F);
             this.btn_ToTutor.Location = new System.Drawing.Point(8, 8);
             this.btn_ToTutor.Name = "btn_ToTutor";
-            this.btn_ToTutor.Size = new System.Drawing.Size(633, 75);
+            this.btn_ToTutor.Size = new System.Drawing.Size(633, 76);
             this.btn_ToTutor.TabIndex = 5;
             this.btn_ToTutor.TabStop = false;
             this.btn_ToTutor.Text = "교직원 데이터베이스";
@@ -363,7 +363,7 @@
             this.panel14.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel14.Location = new System.Drawing.Point(949, 0);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(300, 91);
+            this.panel14.Size = new System.Drawing.Size(300, 92);
             this.panel14.TabIndex = 5;
             // 
             // panel8
@@ -371,7 +371,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(300, 91);
+            this.panel8.Size = new System.Drawing.Size(300, 92);
             this.panel8.TabIndex = 2;
             // 
             // panel_Base

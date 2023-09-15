@@ -34,14 +34,15 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Connect = new System.Windows.Forms.Button();
             this.panel20 = new System.Windows.Forms.Panel();
+            this.btn_ForDebug = new System.Windows.Forms.Button();
             this.panel21 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbox_Password = new System.Windows.Forms.TextBox();
             this.panel16 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
@@ -49,7 +50,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbox_ID = new System.Windows.Forms.TextBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -63,6 +64,7 @@
             this.panel9.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel18.SuspendLayout();
+            this.panel20.SuspendLayout();
             this.panel8.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel15.SuspendLayout();
@@ -137,7 +139,7 @@
             // 
             // panel18
             // 
-            this.panel18.Controls.Add(this.button1);
+            this.panel18.Controls.Add(this.btn_Connect);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel18.Location = new System.Drawing.Point(294, 3);
             this.panel18.Name = "panel18";
@@ -145,25 +147,38 @@
             this.panel18.Size = new System.Drawing.Size(285, 94);
             this.panel18.TabIndex = 2;
             // 
-            // button1
+            // btn_Connect
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Font = new System.Drawing.Font("배달의민족 도현", 15F);
-            this.button1.Location = new System.Drawing.Point(4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(277, 86);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "접속";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Connect.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_Connect.Font = new System.Drawing.Font("배달의민족 도현", 15F);
+            this.btn_Connect.Location = new System.Drawing.Point(4, 4);
+            this.btn_Connect.Name = "btn_Connect";
+            this.btn_Connect.Size = new System.Drawing.Size(277, 86);
+            this.btn_Connect.TabIndex = 9;
+            this.btn_Connect.Text = "접속";
+            this.btn_Connect.UseVisualStyleBackColor = true;
+            this.btn_Connect.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel20
             // 
+            this.panel20.Controls.Add(this.btn_ForDebug);
             this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel20.Location = new System.Drawing.Point(585, 3);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(287, 94);
             this.panel20.TabIndex = 1;
+            // 
+            // btn_ForDebug
+            // 
+            this.btn_ForDebug.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_ForDebug.Font = new System.Drawing.Font("배달의민족 도현", 15F);
+            this.btn_ForDebug.Location = new System.Drawing.Point(0, 0);
+            this.btn_ForDebug.Name = "btn_ForDebug";
+            this.btn_ForDebug.Size = new System.Drawing.Size(287, 94);
+            this.btn_ForDebug.TabIndex = 10;
+            this.btn_ForDebug.Text = "디버그용";
+            this.btn_ForDebug.UseVisualStyleBackColor = true;
+            this.btn_ForDebug.Click += new System.EventHandler(this.btn_ForDebug_Click);
             // 
             // panel21
             // 
@@ -214,7 +229,7 @@
             // 
             // panel15
             // 
-            this.panel15.Controls.Add(this.textBox2);
+            this.panel15.Controls.Add(this.tbox_Password);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel15.Location = new System.Drawing.Point(439, 3);
             this.panel15.Name = "panel15";
@@ -222,13 +237,13 @@
             this.panel15.Size = new System.Drawing.Size(212, 94);
             this.panel15.TabIndex = 2;
             // 
-            // textBox2
+            // tbox_Password
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Location = new System.Drawing.Point(0, 35);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(212, 21);
-            this.textBox2.TabIndex = 0;
+            this.tbox_Password.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbox_Password.Location = new System.Drawing.Point(0, 35);
+            this.tbox_Password.Name = "tbox_Password";
+            this.tbox_Password.Size = new System.Drawing.Size(212, 21);
+            this.tbox_Password.TabIndex = 0;
             // 
             // panel16
             // 
@@ -299,7 +314,7 @@
             // 
             // panel12
             // 
-            this.panel12.Controls.Add(this.textBox1);
+            this.panel12.Controls.Add(this.tbox_ID);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(439, 3);
             this.panel12.Name = "panel12";
@@ -307,13 +322,13 @@
             this.panel12.Size = new System.Drawing.Size(212, 94);
             this.panel12.TabIndex = 2;
             // 
-            // textBox1
+            // tbox_ID
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(0, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(212, 21);
-            this.textBox1.TabIndex = 0;
+            this.tbox_ID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbox_ID.Location = new System.Drawing.Point(0, 35);
+            this.tbox_ID.Name = "tbox_ID";
+            this.tbox_ID.Size = new System.Drawing.Size(212, 21);
+            this.tbox_ID.TabIndex = 0;
             // 
             // panel11
             // 
@@ -400,6 +415,7 @@
             this.panel9.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel18.ResumeLayout(false);
+            this.panel20.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
@@ -423,14 +439,14 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Connect;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbox_Password;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel17;
@@ -438,7 +454,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbox_ID;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel10;
@@ -447,5 +463,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btn_ForDebug;
     }
 }

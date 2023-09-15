@@ -26,7 +26,7 @@ namespace Mirae_Tutor.Windows.View.SubView
 
         private void button3_Click(object sender, EventArgs e)
         {
-            (App.Instance().MainForm.GetView(typeof(View_일정)) as View_일정).ShowView(typeof(View_월간일정));
+            (App.Instance().MainForm.GetView<View_일정>() as View_일정).ShowView(typeof(View_월간일정));
         }
     }
 }

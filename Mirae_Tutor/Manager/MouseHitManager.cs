@@ -11,17 +11,17 @@ namespace Mirae_Tutor.Manager
 {
     internal class MouseHitManager
     {
-        public void Show_CMenu_At_MouseCursor(MouseEventArgs e, DataGridView dataGridView, out DataRow selectedDataRow, ContextMenuStrip contextMenuStrip, bool isTestRun = false)
+        public void Show_CMenu_At_MouseCursor(MouseEventArgs e, DataGridView dataGridView, out DataRow aDataRow, ContextMenuStrip contextMenuStrip, bool isTestRun = false)
         {
             DataGridView.HitTestInfo _hitTestInfo = dataGridView.HitTest(e.X, e.Y);
-            if (isValidHit(dataGridView, out selectedDataRow, _hitTestInfo) || isTestRun)
+            if (isValidHit(dataGridView, out aDataRow, _hitTestInfo) || isTestRun)
             { contextMenuStrip.Show(dataGridView.PointToScreen(e.Location)); }
         }
 
-        bool isValidHit(DataGridView theDataGridView, out DataRow selectedDataRow, DataGridView.HitTestInfo theHitTestInfo)
+        public bool isValidHit(DataGridView theDataGridView, out DataRow aDataRow, DataGridView.HitTestInfo theHitTestInfo)
         {
             bool isValidHit = false;
-            selectedDataRow = null;
+            aDataRow = null;
             if (theHitTestInfo != null)
             {
                 int _row_index = theHitTestInfo.RowIndex;
@@ -29,7 +29,8 @@ namespace Mirae_Tutor.Manager
                     && _row_index >= 0)
                 {
                     theDataGridView.Rows[_row_index].Selected = true;
-                    selectedDataRow = GridAssist.SelectedRow(theDataGridView, _row_index);
+                    aDataRow = GridAssist.SelectedRow(theDataGridView);
+                    
                     isValidHit = true;
                 }
             }

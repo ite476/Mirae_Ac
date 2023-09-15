@@ -28,7 +28,7 @@ namespace Mirae_Tutor.Windows.View
 
         private void btn_ToMainMenu_Click(object sender, EventArgs e)
         {
-            App.Instance().MainForm.ShowView(typeof(View_메인메뉴));
+            App.Instance().MainForm.ShowView<View_메인메뉴>();
         }
 
         
@@ -37,7 +37,7 @@ namespace Mirae_Tutor.Windows.View
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
-            { App.Instance().MouseHitManager.Show_CMenu_At_MouseCursor(e, dataGridView1, out m_CurrentDataRow, contextMenuStrip1, true); }
+            { App.Instance().MouseHitManager.Show_CMenu_At_MouseCursor(e, dgv_Display_Student, out m_CurrentDataRow, contextMenuStrip1, true); }
         }
 
         DataRow m_CurrentDataRow;
@@ -52,5 +52,19 @@ namespace Mirae_Tutor.Windows.View
         {
             App.Instance().MainForm.ShowPop<Pop_학생개인정보>();
         }
+
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+            SearchStudent();
+        }
+        DataTable DTable_SearchResult { get; set; }
+        void SearchStudent()
+        {
+            string _Field = cbox_SearchField.SelectedItem as string;
+            string _Seed = tbox_Seed.Text;
+            DTable_SearchResult = App.Instance().DBManager.ReadStudent_AsSession(_Field, _Seed);
+            GridAssist.SetAuto_GridView_FromSourceTable(dgv_Display_Student, DTable_SearchResult);
+        }
+    
     }
 }

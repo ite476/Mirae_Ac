@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -6,20 +7,89 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Lib.Utility {
-    public static class GridAssist {
-        public static String GetGridSortQuery(DataGridView aGirdView) {
+namespace Lib.Utility
+{
+    public static class GridAssist
+    {
+
+
+        public static void SetAuto_GridView_FromSourceTable
+            (DataGridView aGridView, DataTable aSourceDataTable, Dictionary<string, string> aDictionary = null)
+        {
+
+
+            DataTable _target_Table = GetTable_FromGrid(aGridView);
+            _target_Table.Rows.Clear();
+
+            foreach (DataRow _sourceDataRow in aSourceDataTable.Rows)
+            {
+                DataRow _target_Row = _target_Table.NewRow();
+                foreach (DataColumn _target_Column in _target_Table.Columns)
+                {
+                    string _target_Name = _target_Column.ColumnName;
+                    Type _target_Type = _target_Column.DataType;
+
+                    if (aDictionary != null)
+                    {
+                        if (aDictionary.ContainsKey(_target_Name))
+                        {
+                            string _source_Name = aDictionary[_target_Name];
+                            SetValue(_sourceDataRow[_source_Name], _target_Row, _target_Name, _target_Type);
+                        }
+
+                    }
+                    else
+                    {
+                        if (aSourceDataTable.Columns.Contains(_target_Name))
+                        { SetValue(_sourceDataRow[_target_Name], _target_Row, _target_Name, _target_Type); }
+                    }
+                }
+
+
+                _target_Table.Rows.Add(_target_Row);
+            }
+
+        }
+
+        private static DataTable GetTable_FromGrid(DataGridView aGridView)
+        {
+            return (aGridView.DataSource as DataSet).Tables[aGridView.DataMember];
+        }
+
+        public static void SetValue(object aSrc, DataRow aTarRow, string aTarName, Type aTarType)
+        {
+            Type _SrcType = aSrc.GetType();
+            //Type _TarType = aTar.GetType();
+            if (_SrcType == aTarType)
+            {
+                aTarRow[aTarName] = aSrc;
+            }
+            else if (_SrcType == typeof(System.Decimal) && aTarType == typeof(System.Int32))
+            {
+                aTarRow[aTarName] = Convert.ToInt32(aSrc);
+            }
+            else if (_SrcType == typeof(System.Decimal) && aTarType == typeof(System.Double))
+            {
+                aTarRow[aTarName] = Convert.ToDouble(aSrc);
+            }
+        }
+
+        public static String GetGridSortQuery(DataGridView aGirdView)
+        {
             String _SortQuery = "";
             DataGridViewColumn _Column = aGirdView.SortedColumn;
 
-            if (_Column != null) {
+            if (_Column != null)
+            {
                 String _SortFieldName = _Column.DataPropertyName;
 
                 SortOrder _SortOrder = aGirdView.SortOrder;
-                if (_SortOrder == SortOrder.Ascending) {
+                if (_SortOrder == SortOrder.Ascending)
+                {
                     _SortQuery = String.Format(" {0} ASC", _SortFieldName);
                 }
-                else {
+                else
+                {
                     _SortQuery = String.Format(" {0} DESC", _SortFieldName);
                 }
             }
@@ -27,28 +97,34 @@ namespace Lib.Utility {
             return _SortQuery;
         }
 
-        public static DataRow SelectedRow(DataGridView aGridView) {
+        public static DataRow SelectedRow(DataGridView aGridView)
+        {
             DataRow _Row = null;
             DataTable _Table = null;
             String _TableName = aGridView.DataMember;
-            if (aGridView.DataSource is DataSet) {
+            if (aGridView.DataSource is DataSet)
+            {
                 DataSet _DataSet = aGridView.DataSource as DataSet;
                 _Table = _DataSet.Tables[_TableName];
             }
-            else if (aGridView.DataSource is DataTable) {
+            else if (aGridView.DataSource is DataTable)
+            {
                 _Table = aGridView.DataSource as DataTable;
             }
 
-            if (_Table != null) {
+            if (_Table != null)
+            {
                 String _SortQuery = GetGridSortQuery(aGridView);
                 DataRow[] _SortedRows = _Table.Select("", _SortQuery);
 
                 int _SelectedIndex = -1;
-                if (aGridView.CurrentRow != null) {
+                if (aGridView.CurrentRow != null)
+                {
                     _SelectedIndex = aGridView.CurrentRow.Index;
                 }
 
-                if (_SelectedIndex >= 0 && _SelectedIndex < _SortedRows.Length) {
+                if (_SelectedIndex >= 0 && _SelectedIndex < _SortedRows.Length)
+                {
                     _Row = _SortedRows[_SelectedIndex];
                 }
 
@@ -58,19 +134,23 @@ namespace Lib.Utility {
             return _Row;
         }
 
-        public static DataRow SelectedRow(DataGridView aGridView, int _SelectedIndex) {
+        public static DataRow SelectedRow(DataGridView aGridView, int _SelectedIndex)
+        {
             DataRow _Row = null;
             DataTable _Table = null;
             String _TableName = aGridView.DataMember;
-            if (aGridView.DataSource is DataSet) {
+            if (aGridView.DataSource is DataSet)
+            {
                 DataSet _DataSet = aGridView.DataSource as DataSet;
                 _Table = _DataSet.Tables[_TableName];
             }
-            else if (aGridView.DataSource is DataTable) {
+            else if (aGridView.DataSource is DataTable)
+            {
                 _Table = aGridView.DataSource as DataTable;
             }
 
-            if (_Table != null) {
+            if (_Table != null)
+            {
                 String _SortQuery = GetGridSortQuery(aGridView);
                 DataRow[] _SortedRows = _Table.Select("", _SortQuery);
 
@@ -80,7 +160,8 @@ namespace Lib.Utility {
                 //    _SelectedIndex = aGridView.CurrentRow.Index;
                 //}
 
-                if (_SelectedIndex >= 0 && _SelectedIndex < _SortedRows.Length) {
+                if (_SelectedIndex >= 0 && _SelectedIndex < _SortedRows.Length)
+                {
                     _Row = _SortedRows[_SelectedIndex];
                 }
 
@@ -89,22 +170,27 @@ namespace Lib.Utility {
 
             return _Row;
         }
-        public static DataRow SortedRow(DataGridView aGridView, int _SelectedIndex) {
+        public static DataRow SortedRow(DataGridView aGridView, int _SelectedIndex)
+        {
             DataRow _Row = null;
             DataTable _Table = null;
             String _TableName = aGridView.DataMember;
-            if (aGridView.DataSource is DataSet) {
+            if (aGridView.DataSource is DataSet)
+            {
                 DataSet _DataSet = aGridView.DataSource as DataSet;
                 _Table = _DataSet.Tables[_TableName];
             }
-            else if (aGridView.DataSource is DataTable) {
+            else if (aGridView.DataSource is DataTable)
+            {
                 _Table = aGridView.DataSource as DataTable;
             }
-            if (_Table != null) {
+            if (_Table != null)
+            {
                 String _SortQuery = GetGridSortQuery(aGridView);
                 DataRow[] _SortedRows = _Table.Select("", _SortQuery);
 
-                if (_SelectedIndex >= 0 && _SelectedIndex < _SortedRows.Length) {
+                if (_SelectedIndex >= 0 && _SelectedIndex < _SortedRows.Length)
+                {
                     _Row = _SortedRows[_SelectedIndex];
                 }
             }
