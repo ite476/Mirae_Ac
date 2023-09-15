@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MiraePro.Properties {
+namespace Mirae_admin.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace MiraePro.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MiraePro.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Mirae_admin.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -73,9 +73,9 @@ namespace MiraePro.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap 관리자_비활성 {
+        internal static System.Drawing.Bitmap 관리자 {
             get {
-                object obj = ResourceManager.GetObject("관리자_비활성", resourceCulture);
+                object obj = ResourceManager.GetObject("관리자", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

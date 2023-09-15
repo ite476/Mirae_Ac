@@ -1,4 +1,4 @@
-﻿using MiraePro.Windows.View;
+﻿using Mirae_admin.Windows.View;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiraePro.Manager
+namespace Mirae_admin.Manager
 {
     internal class SessionManager
     {
@@ -42,7 +42,7 @@ namespace MiraePro.Manager
         public void Login(string aID)
         {
             SessionID = aID;
-            SessionName = App.Instance().DBManager.ReadTutor_Name(aID);            
+            SessionName = App.Instance().DBManager.Tutor.Read_Name(aID);            
 
             OnLine = true;
         }

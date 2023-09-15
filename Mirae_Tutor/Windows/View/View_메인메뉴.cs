@@ -14,6 +14,11 @@ namespace Mirae_Tutor.Windows.View
 {
     public partial class View_메인메뉴 : MasterView
     {
+        public override void Refresh_View()
+        {
+            UpdateInfo();
+        }
+
         public View_메인메뉴()
         {
             InitializeComponent();
@@ -58,18 +63,9 @@ namespace Mirae_Tutor.Windows.View
             }
         }
 
-        internal void SetButtons_Login()
+        internal void SetButtons_Login(bool isShowMyStudents)
         {
-            int Count_AssignedHakGeups = App.Instance().SessionManager.Session_Count_AssignedHakGeups;
-            bool isShowMyStudents = false;
-            if (Count_AssignedHakGeups > 0)
-            {
-                isShowMyStudents = true;
-            }
-            else
-            {
-                isShowMyStudents = false;
-            }
+            
 
             btn_ToStudent.Enabled = isShowMyStudents;
         }
@@ -81,7 +77,8 @@ namespace Mirae_Tutor.Windows.View
 
         private string GetString_NewWaiting_Notification()
         {
-            int Count_Unassigned_Waiting = App.Instance().DBManager.ReadWaiting_NumberOf_Unassigned();
+            int Count_Unassigned_Waiting = App.Instance().DBManager.Waiting.Read_NumberOf_Unassigned();
+            
             string theText;
             if (Count_Unassigned_Waiting > 0)
             {

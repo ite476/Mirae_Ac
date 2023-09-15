@@ -8,11 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MiraePro.Manager;
+using Mirae_admin.Manager;
 using Lib.Control;
 using Lib.Utility;
 
-namespace MiraePro.Windows.View
+namespace Mirae_admin.Windows.View
 {
     public partial class StudentView : MasterView
     {
@@ -48,7 +48,7 @@ namespace MiraePro.Windows.View
         {
             string _Field = cbox_SearchField.SelectedItem as string;
             string _Seed = tbox_Seed.Text;
-            DTable_SearchResult = App.Instance().DBManager.ReadStudent(_Field, _Seed);
+            DTable_SearchResult = App.Instance().DBManager.Student.Read(_Field, _Seed);
             GridAssist.SetAuto_GridView_FromSourceTable(dgv_Display_Student, DTable_SearchResult);
         }
     }

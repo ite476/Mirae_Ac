@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Lib.Frame;
-using MiraePro.Manager;
+using Mirae_admin.Manager;
 
-namespace MiraePro.Windows.View
+namespace Mirae_admin.Windows.View
 {
     public partial class MainMenuView : MasterView
     {
         
         public void Update_Waiting_Info()
         {
-            Waiting_NOW = App.Instance().DBManager.ReadWaiting_NumberOf_Unassigned();
+            Waiting_NOW = App.Instance().DBManager.Waiting.Read_NumberOf_Unassigned();
         }
 
         int NumberOfWaiting;
@@ -27,7 +27,10 @@ namespace MiraePro.Windows.View
             set
             {
                 NumberOfWaiting = value;
-                btn_ToCounsel.Text = $"입학 신청 명단 ({NumberOfWaiting}명 배정 대기중)";
+                string theString = "";
+                if (NumberOfWaiting > 0) { theString = $"새로 접수된 원서가 있습니다. ({NumberOfWaiting}) NEW"; }
+
+                label_NewWaiting.Text = theString;
             }
         }
 

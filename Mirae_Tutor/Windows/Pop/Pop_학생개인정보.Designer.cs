@@ -30,45 +30,44 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pop_학생개인정보));
             this.panel_Base = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbox_Picture = new System.Windows.Forms.PictureBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
+            this.label_ParentName_Contact = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
+            this.label_Address = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
+            this.label_Contact = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.label_Gender = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.label_HakGeupName = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
+            this.label_Name = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel_Base.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox_Picture)).BeginInit();
             this.panel13.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -82,6 +81,7 @@
             this.panel3.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel16.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel17.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,17 +92,8 @@
             this.panel_Base.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Base.Location = new System.Drawing.Point(0, 0);
             this.panel_Base.Name = "panel_Base";
-            this.panel_Base.Size = new System.Drawing.Size(485, 510);
+            this.panel_Base.Size = new System.Drawing.Size(386, 510);
             this.panel_Base.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.panel17);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 470);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(485, 40);
-            this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
@@ -110,7 +101,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(485, 470);
+            this.panel2.Size = new System.Drawing.Size(386, 470);
             this.panel2.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -144,29 +135,29 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(485, 470);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(386, 470);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // panel14
             // 
-            this.panel14.Controls.Add(this.pictureBox1);
+            this.panel14.Controls.Add(this.pbox_Picture);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel14.Location = new System.Drawing.Point(153, 213);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(329, 254);
+            this.panel14.Size = new System.Drawing.Size(230, 254);
             this.panel14.TabIndex = 13;
             // 
-            // pictureBox1
+            // pbox_Picture
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(329, 254);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbox_Picture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbox_Picture.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbox_Picture.Image = ((System.Drawing.Image)(resources.GetObject("pbox_Picture.Image")));
+            this.pbox_Picture.Location = new System.Drawing.Point(0, 0);
+            this.pbox_Picture.Name = "pbox_Picture";
+            this.pbox_Picture.Size = new System.Drawing.Size(230, 254);
+            this.pbox_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbox_Picture.TabIndex = 0;
+            this.pbox_Picture.TabStop = false;
             // 
             // panel13
             // 
@@ -189,23 +180,23 @@
             // 
             // panel12
             // 
-            this.panel12.Controls.Add(this.label13);
+            this.panel12.Controls.Add(this.label_ParentName_Contact);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(153, 178);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(329, 29);
+            this.panel12.Size = new System.Drawing.Size(230, 29);
             this.panel12.TabIndex = 11;
             // 
-            // label13
+            // label_ParentName_Contact
             // 
-            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label13.Location = new System.Drawing.Point(0, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(329, 29);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "-";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_ParentName_Contact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_ParentName_Contact.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_ParentName_Contact.Location = new System.Drawing.Point(0, 0);
+            this.label_ParentName_Contact.Name = "label_ParentName_Contact";
+            this.label_ParentName_Contact.Size = new System.Drawing.Size(230, 29);
+            this.label_ParentName_Contact.TabIndex = 2;
+            this.label_ParentName_Contact.Text = "-";
+            this.label_ParentName_Contact.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel11
             // 
@@ -223,28 +214,28 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(144, 29);
             this.label6.TabIndex = 1;
-            this.label6.Text = "보호자 성함 / 연락처";
+            this.label6.Text = "보호자 연락처";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.label12);
+            this.panel10.Controls.Add(this.label_Address);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel10.Location = new System.Drawing.Point(153, 143);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(329, 29);
+            this.panel10.Size = new System.Drawing.Size(230, 29);
             this.panel10.TabIndex = 9;
             // 
-            // label12
+            // label_Address
             // 
-            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.Location = new System.Drawing.Point(0, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(329, 29);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "대구광역시 동구 동부로 121";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_Address.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_Address.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_Address.Location = new System.Drawing.Point(0, 0);
+            this.label_Address.Name = "label_Address";
+            this.label_Address.Size = new System.Drawing.Size(230, 29);
+            this.label_Address.TabIndex = 2;
+            this.label_Address.Text = "대구광역시 동구 동부로 121";
+            this.label_Address.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel9
             // 
@@ -267,23 +258,23 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.label11);
+            this.panel8.Controls.Add(this.label_Contact);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(153, 108);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(329, 29);
+            this.panel8.Size = new System.Drawing.Size(230, 29);
             this.panel8.TabIndex = 7;
             // 
-            // label11
+            // label_Contact
             // 
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Location = new System.Drawing.Point(0, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(329, 29);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "010-0000-0000";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_Contact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_Contact.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_Contact.Location = new System.Drawing.Point(0, 0);
+            this.label_Contact.Name = "label_Contact";
+            this.label_Contact.Size = new System.Drawing.Size(230, 29);
+            this.label_Contact.TabIndex = 2;
+            this.label_Contact.Text = "010-0000-0000";
+            this.label_Contact.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel7
             // 
@@ -306,23 +297,23 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.label10);
+            this.panel6.Controls.Add(this.label_Gender);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(153, 73);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(329, 29);
+            this.panel6.Size = new System.Drawing.Size(230, 29);
             this.panel6.TabIndex = 5;
             // 
-            // label10
+            // label_Gender
             // 
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Location = new System.Drawing.Point(0, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(329, 29);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "남";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_Gender.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_Gender.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_Gender.Location = new System.Drawing.Point(0, 0);
+            this.label_Gender.Name = "label_Gender";
+            this.label_Gender.Size = new System.Drawing.Size(230, 29);
+            this.label_Gender.TabIndex = 2;
+            this.label_Gender.Text = "남";
+            this.label_Gender.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel5
             // 
@@ -345,23 +336,23 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.label9);
+            this.panel4.Controls.Add(this.label_HakGeupName);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(153, 38);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(329, 29);
+            this.panel4.Size = new System.Drawing.Size(230, 29);
             this.panel4.TabIndex = 3;
             // 
-            // label9
+            // label_HakGeupName
             // 
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Location = new System.Drawing.Point(0, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(329, 29);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "SKY - A";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_HakGeupName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_HakGeupName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_HakGeupName.Location = new System.Drawing.Point(0, 0);
+            this.label_HakGeupName.Name = "label_HakGeupName";
+            this.label_HakGeupName.Size = new System.Drawing.Size(230, 29);
+            this.label_HakGeupName.TabIndex = 2;
+            this.label_HakGeupName.Text = "SKY - A";
+            this.label_HakGeupName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 
@@ -384,23 +375,23 @@
             // 
             // panel15
             // 
-            this.panel15.Controls.Add(this.label8);
+            this.panel15.Controls.Add(this.label_Name);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel15.Location = new System.Drawing.Point(153, 3);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(329, 29);
+            this.panel15.Size = new System.Drawing.Size(230, 29);
             this.panel15.TabIndex = 1;
             // 
-            // label8
+            // label_Name
             // 
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Location = new System.Drawing.Point(0, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(329, 29);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "김철수";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_Name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_Name.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_Name.Location = new System.Drawing.Point(0, 0);
+            this.label_Name.Name = "label_Name";
+            this.label_Name.Size = new System.Drawing.Size(230, 29);
+            this.label_Name.TabIndex = 2;
+            this.label_Name.Text = "김철수";
+            this.label_Name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel16
             // 
@@ -421,11 +412,20 @@
             this.label1.Text = "이름";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel17);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 470);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(386, 40);
+            this.panel1.TabIndex = 0;
+            // 
             // panel17
             // 
             this.panel17.Controls.Add(this.button1);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel17.Location = new System.Drawing.Point(343, 0);
+            this.panel17.Location = new System.Drawing.Point(244, 0);
             this.panel17.Name = "panel17";
             this.panel17.Padding = new System.Windows.Forms.Padding(3);
             this.panel17.Size = new System.Drawing.Size(142, 40);
@@ -442,20 +442,19 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // StudentPersonalInfoPop
+            // Pop_학생개인정보
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(485, 510);
+            this.ClientSize = new System.Drawing.Size(386, 510);
             this.Controls.Add(this.panel_Base);
-            this.Name = "StudentPersonalInfoPop";
+            this.Name = "Pop_학생개인정보";
             this.Text = "학생 개인정보";
             this.panel_Base.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox_Picture)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
@@ -469,6 +468,7 @@
             this.panel3.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -480,31 +480,31 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbox_Picture;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label_ParentName_Contact;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label_Address;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label_Contact;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label_Gender;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label_HakGeupName;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label_Name;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;

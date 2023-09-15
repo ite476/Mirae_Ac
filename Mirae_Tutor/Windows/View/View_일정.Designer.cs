@@ -49,7 +49,7 @@
             this.panel_Base.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Base.Location = new System.Drawing.Point(0, 0);
             this.panel_Base.Name = "panel_Base";
-            this.panel_Base.Size = new System.Drawing.Size(1249, 719);
+            this.panel_Base.Size = new System.Drawing.Size(1249, 666);
             this.panel_Base.TabIndex = 6;
             // 
             // panel3
@@ -58,7 +58,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1249, 654);
+            this.panel3.Size = new System.Drawing.Size(1249, 601);
             this.panel3.TabIndex = 9;
             // 
             // panel_SubViewSpace
@@ -66,7 +66,7 @@
             this.panel_SubViewSpace.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_SubViewSpace.Location = new System.Drawing.Point(0, 0);
             this.panel_SubViewSpace.Name = "panel_SubViewSpace";
-            this.panel_SubViewSpace.Size = new System.Drawing.Size(1249, 654);
+            this.panel_SubViewSpace.Size = new System.Drawing.Size(1249, 601);
             this.panel_SubViewSpace.TabIndex = 2;
             // 
             // panel2
@@ -75,7 +75,7 @@
             this.panel2.Controls.Add(this.panel10);
             this.panel2.Controls.Add(this.panel9);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 654);
+            this.panel2.Location = new System.Drawing.Point(0, 601);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1249, 65);
             this.panel2.TabIndex = 7;
@@ -122,7 +122,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1249, 719);
+            this.ClientSize = new System.Drawing.Size(1249, 666);
             this.Controls.Add(this.panel_Base);
             this.Name = "View_일정";
             this.Text = "ScheduleView";

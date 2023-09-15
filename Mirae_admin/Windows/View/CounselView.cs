@@ -1,7 +1,7 @@
 ﻿using Lib.Frame;
 using Lib.Utility;
-using MiraePro.Manager;
-using MiraePro.Windows.Pop;
+using Mirae_admin.Manager;
+using Mirae_admin.Windows.Pop;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,10 +12,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MiraePro.Windows.View
+namespace Mirae_admin.Windows.View
 {
     public partial class CounselView : MasterView
     {
+        private DataTable DTable_SearchResult { get; set; }
+        private string Field_Latest { get; set; }
+        private string Seed_Latest { get; set; }
+        private DataRow SelectedRowOf_DGV { get; set; }
+
         public CounselView()
         {
             InitializeComponent();
@@ -39,20 +44,19 @@ namespace MiraePro.Windows.View
         {
             SearchWaiting();
         }
-        DataTable DTable_SearchResult { get; set; }
-        void SearchWaiting()
+        
+        private void SearchWaiting()
         {
             DTable_SearchResult = ReadWaiting_BySearchOption();
             GridAssist.SetAuto_GridView_FromSourceTable(dgv_Display_Waiting, DTable_SearchResult);
         }
-        string Field_Latest { get; set; }
-        string Seed_Latest { get; set; }
+        
         private DataTable ReadWaiting_BySearchOption()
         {
             Field_Latest = cbox_SearchField.SelectedItem as string;
             Seed_Latest = GetSeed_AsVisibleOption();            
 
-            return App.Instance().DBManager.ReadWaiting(Field_Latest, Seed_Latest);
+            return App.Instance().DBManager.Waiting.Read(Field_Latest, Seed_Latest);
         }
         private string GetSeed_AsVisibleOption()
         {
@@ -98,37 +102,45 @@ namespace MiraePro.Windows.View
             panel_cbox.Visible = isComboBox_Visible;
             panel_tbox.Visible = (! isComboBox_Visible);
         }
-
         
-
         private void cbox_Seed_SelectedIndexChanged(object sender, EventArgs e) { }
 
         private void dgv_Display_Waiting_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
         private void dgv_Display_Waiting_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            if (e.RowIndex < 0) { return; }
             dgv_Display_Waiting.Rows[e.RowIndex].Selected = true;
         }
-        private void dgv_Display_Waiting_MouseDown(object sender, MouseEventArgs e)
+        private void dgv_Display_Waiting_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
-            RMB_ShowContextMenu_OnDataGrid(e);
-        }
-        private void RMB_ShowContextMenu_OnDataGrid(MouseEventArgs e)
-        {            
-            if (e.Button == MouseButtons.Right)
+            if (e.RowIndex < 0) { return; }
+
+            if (e.Button == MouseButtons.Left)
             {
-                App.Instance().MouseHitManager.Show_CMenu_At_MouseCursor(e, dgv_Display_Waiting, contextMenuStrip1);   
+                SelectRow(e.RowIndex); 
             }
+            else if (e.Button == MouseButtons.Right)
+            {
+                SelectRow(e.RowIndex);                
+                contextMenuStrip1.Show(Cursor.Position);
+            }
+        }
+        private void SelectRow(int rowIndex)
+        {
+            dgv_Display_Waiting.Rows[rowIndex].Selected = true;
+            SelectedRowOf_DGV = GridAssist.SelectedRow(dgv_Display_Waiting, rowIndex);
         }
 
         private void dgv_Display_Waiting_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) { return; }
             ShowPop_CounselProceed();
         }
         private void cmbtn_Modify_Click(object sender, EventArgs e)
         {
             ShowPop_CounselProceed();
         }
-        DataRow SelectedRowOf_DGV { get; set; }
+        
         private void ShowPop_CounselProceed()
         {
             SelectedRowOf_DGV = GridAssist.SelectedRow(dgv_Display_Waiting);
@@ -145,9 +157,9 @@ namespace MiraePro.Windows.View
         {
             if (Exist_String(Field_Latest) && Seed_Latest != null)
             {
-                DTable_SearchResult = App.Instance().DBManager.ReadWaiting(Field_Latest, Seed_Latest);
+                DTable_SearchResult = App.Instance().DBManager.Waiting.Read(Field_Latest, Seed_Latest);
                 GridAssist.SetAuto_GridView_FromSourceTable(dgv_Display_Waiting, DTable_SearchResult);
-            }            
+            }
         }
 
         private bool Exist_String(string aString)

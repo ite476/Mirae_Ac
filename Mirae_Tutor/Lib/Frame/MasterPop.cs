@@ -35,5 +35,7 @@ namespace Lib.Frame
         {
             m_PopMode = aPopMode;
         }
+
+        
     }
 }

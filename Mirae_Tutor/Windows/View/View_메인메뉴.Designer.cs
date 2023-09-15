@@ -89,7 +89,7 @@ namespace Mirae_Tutor.Windows.View
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1249, 719);
+            this.panel1.Size = new System.Drawing.Size(1274, 719);
             this.panel1.TabIndex = 1;
             // 
             // panel7
@@ -99,7 +99,7 @@ namespace Mirae_Tutor.Windows.View
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 360);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1249, 359);
+            this.panel7.Size = new System.Drawing.Size(1274, 359);
             this.panel7.TabIndex = 5;
             // 
             // panel_Menu6
@@ -110,7 +110,7 @@ namespace Mirae_Tutor.Windows.View
             this.panel_Menu6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Menu6.Location = new System.Drawing.Point(0, 90);
             this.panel_Menu6.Name = "panel_Menu6";
-            this.panel_Menu6.Size = new System.Drawing.Size(1249, 90);
+            this.panel_Menu6.Size = new System.Drawing.Size(1274, 90);
             this.panel_Menu6.TabIndex = 6;
             // 
             // panel25
@@ -120,7 +120,7 @@ namespace Mirae_Tutor.Windows.View
             this.panel25.Location = new System.Drawing.Point(300, 0);
             this.panel25.Name = "panel25";
             this.panel25.Padding = new System.Windows.Forms.Padding(8);
-            this.panel25.Size = new System.Drawing.Size(649, 90);
+            this.panel25.Size = new System.Drawing.Size(674, 90);
             this.panel25.TabIndex = 6;
             // 
             // btn_ExitProgram
@@ -129,7 +129,7 @@ namespace Mirae_Tutor.Windows.View
             this.btn_ExitProgram.Font = new System.Drawing.Font("배달의민족 도현", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_ExitProgram.Location = new System.Drawing.Point(8, 8);
             this.btn_ExitProgram.Name = "btn_ExitProgram";
-            this.btn_ExitProgram.Size = new System.Drawing.Size(633, 74);
+            this.btn_ExitProgram.Size = new System.Drawing.Size(658, 74);
             this.btn_ExitProgram.TabIndex = 4;
             this.btn_ExitProgram.TabStop = false;
             this.btn_ExitProgram.Text = "프로그램 종료";
@@ -139,7 +139,7 @@ namespace Mirae_Tutor.Windows.View
             // panel26
             // 
             this.panel26.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel26.Location = new System.Drawing.Point(949, 0);
+            this.panel26.Location = new System.Drawing.Point(974, 0);
             this.panel26.Name = "panel26";
             this.panel26.Size = new System.Drawing.Size(300, 90);
             this.panel26.TabIndex = 5;
@@ -160,7 +160,7 @@ namespace Mirae_Tutor.Windows.View
             this.panel_Menu5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Menu5.Location = new System.Drawing.Point(0, 0);
             this.panel_Menu5.Name = "panel_Menu5";
-            this.panel_Menu5.Size = new System.Drawing.Size(1249, 90);
+            this.panel_Menu5.Size = new System.Drawing.Size(1274, 90);
             this.panel_Menu5.TabIndex = 5;
             // 
             // panel21
@@ -169,13 +169,13 @@ namespace Mirae_Tutor.Windows.View
             this.panel21.Location = new System.Drawing.Point(300, 0);
             this.panel21.Name = "panel21";
             this.panel21.Padding = new System.Windows.Forms.Padding(8);
-            this.panel21.Size = new System.Drawing.Size(649, 90);
+            this.panel21.Size = new System.Drawing.Size(674, 90);
             this.panel21.TabIndex = 6;
             // 
             // panel22
             // 
             this.panel22.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel22.Location = new System.Drawing.Point(949, 0);
+            this.panel22.Location = new System.Drawing.Point(974, 0);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(300, 90);
             this.panel22.TabIndex = 5;
@@ -196,7 +196,7 @@ namespace Mirae_Tutor.Windows.View
             this.panel_Menu4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Menu4.Location = new System.Drawing.Point(0, 270);
             this.panel_Menu4.Name = "panel_Menu4";
-            this.panel_Menu4.Size = new System.Drawing.Size(1249, 90);
+            this.panel_Menu4.Size = new System.Drawing.Size(1274, 90);
             this.panel_Menu4.TabIndex = 4;
             // 
             // panel19
@@ -206,7 +206,7 @@ namespace Mirae_Tutor.Windows.View
             this.panel19.Location = new System.Drawing.Point(300, 0);
             this.panel19.Name = "panel19";
             this.panel19.Padding = new System.Windows.Forms.Padding(8);
-            this.panel19.Size = new System.Drawing.Size(649, 90);
+            this.panel19.Size = new System.Drawing.Size(674, 90);
             this.panel19.TabIndex = 6;
             // 
             // btn_Counsel
@@ -215,7 +215,7 @@ namespace Mirae_Tutor.Windows.View
             this.btn_Counsel.Font = new System.Drawing.Font("배달의민족 도현", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_Counsel.Location = new System.Drawing.Point(8, 8);
             this.btn_Counsel.Name = "btn_Counsel";
-            this.btn_Counsel.Size = new System.Drawing.Size(633, 74);
+            this.btn_Counsel.Size = new System.Drawing.Size(658, 74);
             this.btn_Counsel.TabIndex = 3;
             this.btn_Counsel.TabStop = false;
             this.btn_Counsel.Text = "상담 관리";
@@ -226,7 +226,7 @@ namespace Mirae_Tutor.Windows.View
             // 
             this.panel15.Controls.Add(this.label_NewWaiting);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel15.Location = new System.Drawing.Point(949, 0);
+            this.panel15.Location = new System.Drawing.Point(974, 0);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(300, 90);
             this.panel15.TabIndex = 5;
@@ -258,7 +258,7 @@ namespace Mirae_Tutor.Windows.View
             this.panel_Menu3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Menu3.Location = new System.Drawing.Point(0, 180);
             this.panel_Menu3.Name = "panel_Menu3";
-            this.panel_Menu3.Size = new System.Drawing.Size(1249, 90);
+            this.panel_Menu3.Size = new System.Drawing.Size(1274, 90);
             this.panel_Menu3.TabIndex = 3;
             // 
             // panel18
@@ -268,7 +268,7 @@ namespace Mirae_Tutor.Windows.View
             this.panel18.Location = new System.Drawing.Point(300, 0);
             this.panel18.Name = "panel18";
             this.panel18.Padding = new System.Windows.Forms.Padding(8);
-            this.panel18.Size = new System.Drawing.Size(649, 90);
+            this.panel18.Size = new System.Drawing.Size(674, 90);
             this.panel18.TabIndex = 5;
             // 
             // btn_ToStudent
@@ -277,7 +277,7 @@ namespace Mirae_Tutor.Windows.View
             this.btn_ToStudent.Font = new System.Drawing.Font("배달의민족 도현", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_ToStudent.Location = new System.Drawing.Point(8, 8);
             this.btn_ToStudent.Name = "btn_ToStudent";
-            this.btn_ToStudent.Size = new System.Drawing.Size(633, 74);
+            this.btn_ToStudent.Size = new System.Drawing.Size(658, 74);
             this.btn_ToStudent.TabIndex = 2;
             this.btn_ToStudent.TabStop = false;
             this.btn_ToStudent.Text = "담당 학생 관리";
@@ -287,7 +287,7 @@ namespace Mirae_Tutor.Windows.View
             // panel12
             // 
             this.panel12.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel12.Location = new System.Drawing.Point(949, 0);
+            this.panel12.Location = new System.Drawing.Point(974, 0);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(300, 90);
             this.panel12.TabIndex = 4;
@@ -308,7 +308,7 @@ namespace Mirae_Tutor.Windows.View
             this.panel_Menu2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Menu2.Location = new System.Drawing.Point(0, 90);
             this.panel_Menu2.Name = "panel_Menu2";
-            this.panel_Menu2.Size = new System.Drawing.Size(1249, 90);
+            this.panel_Menu2.Size = new System.Drawing.Size(1274, 90);
             this.panel_Menu2.TabIndex = 2;
             // 
             // panel17
@@ -318,7 +318,7 @@ namespace Mirae_Tutor.Windows.View
             this.panel17.Location = new System.Drawing.Point(300, 0);
             this.panel17.Name = "panel17";
             this.panel17.Padding = new System.Windows.Forms.Padding(8);
-            this.panel17.Size = new System.Drawing.Size(649, 90);
+            this.panel17.Size = new System.Drawing.Size(674, 90);
             this.panel17.TabIndex = 6;
             // 
             // btn_ToCourse
@@ -327,7 +327,7 @@ namespace Mirae_Tutor.Windows.View
             this.btn_ToCourse.Font = new System.Drawing.Font("배달의민족 도현", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_ToCourse.Location = new System.Drawing.Point(8, 8);
             this.btn_ToCourse.Name = "btn_ToCourse";
-            this.btn_ToCourse.Size = new System.Drawing.Size(633, 74);
+            this.btn_ToCourse.Size = new System.Drawing.Size(658, 74);
             this.btn_ToCourse.TabIndex = 2;
             this.btn_ToCourse.TabStop = false;
             this.btn_ToCourse.Text = "교과 관리";
@@ -337,7 +337,7 @@ namespace Mirae_Tutor.Windows.View
             // panel13
             // 
             this.panel13.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel13.Location = new System.Drawing.Point(949, 0);
+            this.panel13.Location = new System.Drawing.Point(974, 0);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(300, 90);
             this.panel13.TabIndex = 5;
@@ -358,7 +358,7 @@ namespace Mirae_Tutor.Windows.View
             this.panel_Menu1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Menu1.Location = new System.Drawing.Point(0, 0);
             this.panel_Menu1.Name = "panel_Menu1";
-            this.panel_Menu1.Size = new System.Drawing.Size(1249, 90);
+            this.panel_Menu1.Size = new System.Drawing.Size(1274, 90);
             this.panel_Menu1.TabIndex = 1;
             // 
             // panel16
@@ -368,7 +368,7 @@ namespace Mirae_Tutor.Windows.View
             this.panel16.Location = new System.Drawing.Point(300, 0);
             this.panel16.Name = "panel16";
             this.panel16.Padding = new System.Windows.Forms.Padding(8);
-            this.panel16.Size = new System.Drawing.Size(649, 90);
+            this.panel16.Size = new System.Drawing.Size(674, 90);
             this.panel16.TabIndex = 6;
             // 
             // btn_ToSchedule
@@ -377,7 +377,7 @@ namespace Mirae_Tutor.Windows.View
             this.btn_ToSchedule.Font = new System.Drawing.Font("배달의민족 도현", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_ToSchedule.Location = new System.Drawing.Point(8, 8);
             this.btn_ToSchedule.Name = "btn_ToSchedule";
-            this.btn_ToSchedule.Size = new System.Drawing.Size(633, 74);
+            this.btn_ToSchedule.Size = new System.Drawing.Size(658, 74);
             this.btn_ToSchedule.TabIndex = 1;
             this.btn_ToSchedule.TabStop = false;
             this.btn_ToSchedule.Text = "일정 관리";
@@ -387,7 +387,7 @@ namespace Mirae_Tutor.Windows.View
             // panel14
             // 
             this.panel14.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel14.Location = new System.Drawing.Point(949, 0);
+            this.panel14.Location = new System.Drawing.Point(974, 0);
             this.panel14.Name = "panel14";
             this.panel14.Padding = new System.Windows.Forms.Padding(8);
             this.panel14.Size = new System.Drawing.Size(300, 90);
@@ -405,7 +405,7 @@ namespace Mirae_Tutor.Windows.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1249, 719);
+            this.ClientSize = new System.Drawing.Size(1274, 719);
             this.Controls.Add(this.panel1);
             this.Name = "View_메인메뉴";
             this.Text = "MainMenuView";

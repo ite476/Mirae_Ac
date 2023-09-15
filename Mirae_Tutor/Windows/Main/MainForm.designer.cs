@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.세션ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.로그인ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,6 +37,7 @@
             this.도구ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.환경설정ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip_MenuIcons = new System.Windows.Forms.ToolStrip();
             this.tbtn_ToMainMenu = new System.Windows.Forms.ToolStripButton();
             this.tbtn_ToSchedule = new System.Windows.Forms.ToolStripButton();
@@ -45,8 +47,12 @@
             this.tbtn_ToOption = new System.Windows.Forms.ToolStripButton();
             this.tlabel_SessionName = new System.Windows.Forms.ToolStripLabel();
             this.ViewSpace = new System.Windows.Forms.Panel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.마이페이지ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.로그아웃ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip_MenuIcons.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -73,14 +79,16 @@
             // 로그인ToolStripMenuItem
             // 
             this.로그인ToolStripMenuItem.Name = "로그인ToolStripMenuItem";
-            this.로그인ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.로그인ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.로그인ToolStripMenuItem.Text = "로그인";
+            this.로그인ToolStripMenuItem.Click += new System.EventHandler(this.로그인ToolStripMenuItem_Click);
             // 
             // 로그아웃ToolStripMenuItem
             // 
             this.로그아웃ToolStripMenuItem.Name = "로그아웃ToolStripMenuItem";
-            this.로그아웃ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.로그아웃ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.로그아웃ToolStripMenuItem.Text = "로그아웃";
+            this.로그아웃ToolStripMenuItem.Click += new System.EventHandler(this.로그아웃ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -91,7 +99,8 @@
             // 
             this.도구ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.환경설정ToolStripMenuItem1,
-            this.toolStripMenuItem2});
+            this.toolStripMenuItem2,
+            this.aboutToolStripMenuItem});
             this.도구ToolStripMenuItem.Name = "도구ToolStripMenuItem";
             this.도구ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.도구ToolStripMenuItem.Text = "도구";
@@ -101,11 +110,19 @@
             this.환경설정ToolStripMenuItem1.Name = "환경설정ToolStripMenuItem1";
             this.환경설정ToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
             this.환경설정ToolStripMenuItem1.Text = "환경설정";
+            this.환경설정ToolStripMenuItem1.Click += new System.EventHandler(this.환경설정ToolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(119, 6);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // toolStrip_MenuIcons
             // 
@@ -132,7 +149,7 @@
             this.tbtn_ToMainMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtn_ToMainMenu.Name = "tbtn_ToMainMenu";
             this.tbtn_ToMainMenu.Size = new System.Drawing.Size(44, 40);
-            this.tbtn_ToMainMenu.Text = "toolStripButton1";
+            this.tbtn_ToMainMenu.Text = "메인메뉴";
             this.tbtn_ToMainMenu.Click += new System.EventHandler(this.tbtn_ToMainMenu_Click);
             // 
             // tbtn_ToSchedule
@@ -142,7 +159,7 @@
             this.tbtn_ToSchedule.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtn_ToSchedule.Name = "tbtn_ToSchedule";
             this.tbtn_ToSchedule.Size = new System.Drawing.Size(44, 40);
-            this.tbtn_ToSchedule.Text = "toolStripButton2";
+            this.tbtn_ToSchedule.Text = "일정 관리";
             this.tbtn_ToSchedule.Click += new System.EventHandler(this.tbtn_ToSchedule_Click);
             // 
             // tbtn_ToCourse
@@ -152,7 +169,7 @@
             this.tbtn_ToCourse.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtn_ToCourse.Name = "tbtn_ToCourse";
             this.tbtn_ToCourse.Size = new System.Drawing.Size(44, 40);
-            this.tbtn_ToCourse.Text = "toolStripButton3";
+            this.tbtn_ToCourse.Text = "교과 관리";
             this.tbtn_ToCourse.Click += new System.EventHandler(this.tbtn_ToCourse_Click);
             // 
             // tbtn_ToStudent
@@ -162,7 +179,7 @@
             this.tbtn_ToStudent.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtn_ToStudent.Name = "tbtn_ToStudent";
             this.tbtn_ToStudent.Size = new System.Drawing.Size(44, 40);
-            this.tbtn_ToStudent.Text = "toolStripButton4";
+            this.tbtn_ToStudent.Text = "담당 학생 관리";
             this.tbtn_ToStudent.Click += new System.EventHandler(this.tbtn_ToStudent_Click);
             // 
             // tbtn_ToCounsel
@@ -172,7 +189,7 @@
             this.tbtn_ToCounsel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtn_ToCounsel.Name = "tbtn_ToCounsel";
             this.tbtn_ToCounsel.Size = new System.Drawing.Size(44, 40);
-            this.tbtn_ToCounsel.Text = "toolStripButton5";
+            this.tbtn_ToCounsel.Text = "상담 관리";
             this.tbtn_ToCounsel.Click += new System.EventHandler(this.tbtn_ToCounsel_Click);
             // 
             // tbtn_ToOption
@@ -185,6 +202,7 @@
             this.tbtn_ToOption.Size = new System.Drawing.Size(44, 40);
             this.tbtn_ToOption.Text = "toolStripButton1";
             this.tbtn_ToOption.Click += new System.EventHandler(this.tbtn_ToOption_Click);
+            this.tbtn_ToOption.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbtn_ToOption_MouseDown);
             // 
             // tlabel_SessionName
             // 
@@ -201,6 +219,28 @@
             this.ViewSpace.Size = new System.Drawing.Size(1185, 571);
             this.ViewSpace.TabIndex = 6;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.마이페이지ToolStripMenuItem,
+            this.로그아웃ToolStripMenuItem1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(135, 48);
+            // 
+            // 마이페이지ToolStripMenuItem
+            // 
+            this.마이페이지ToolStripMenuItem.Name = "마이페이지ToolStripMenuItem";
+            this.마이페이지ToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.마이페이지ToolStripMenuItem.Text = "마이페이지";
+            this.마이페이지ToolStripMenuItem.Click += new System.EventHandler(this.마이페이지ToolStripMenuItem_Click);
+            // 
+            // 로그아웃ToolStripMenuItem1
+            // 
+            this.로그아웃ToolStripMenuItem1.Name = "로그아웃ToolStripMenuItem1";
+            this.로그아웃ToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.로그아웃ToolStripMenuItem1.Text = "로그아웃";
+            this.로그아웃ToolStripMenuItem1.Click += new System.EventHandler(this.로그아웃ToolStripMenuItem1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -211,11 +251,11 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "MainForm";
             this.Text = "미래학원 :: 강사 시스템";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip_MenuIcons.ResumeLayout(false);
             this.toolStrip_MenuIcons.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,6 +279,10 @@
         private System.Windows.Forms.ToolStripButton tbtn_ToCounsel;
         private System.Windows.Forms.ToolStripButton tbtn_ToOption;
         private System.Windows.Forms.ToolStripLabel tlabel_SessionName;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 마이페이지ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 로그아웃ToolStripMenuItem1;
     }
 }
 

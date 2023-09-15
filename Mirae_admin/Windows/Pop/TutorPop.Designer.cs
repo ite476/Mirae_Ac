@@ -1,4 +1,4 @@
-﻿namespace MiraePro.Windows.Pop
+﻿namespace Mirae_admin.Windows.Pop
 {
     partial class TutorPop
     {
@@ -70,11 +70,11 @@
             this.label15 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.btn_Delete = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
             this.btn_Confirm = new System.Windows.Forms.Button();
             this.panel13 = new System.Windows.Forms.Panel();
             this.btn_Cancel = new System.Windows.Forms.Button();
+            this.btn_Delete = new System.Windows.Forms.Button();
             this.panel_Base.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -536,16 +536,6 @@
             this.panel15.Size = new System.Drawing.Size(98, 45);
             this.panel15.TabIndex = 5;
             // 
-            // btn_Delete
-            // 
-            this.btn_Delete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Delete.Location = new System.Drawing.Point(5, 5);
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(88, 35);
-            this.btn_Delete.TabIndex = 1;
-            this.btn_Delete.Text = "정보 삭제";
-            this.btn_Delete.UseVisualStyleBackColor = true;
-            // 
             // panel14
             // 
             this.panel14.Controls.Add(this.btn_Confirm);
@@ -588,6 +578,16 @@
             this.btn_Cancel.UseVisualStyleBackColor = true;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
+            // btn_Delete
+            // 
+            this.btn_Delete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_Delete.Location = new System.Drawing.Point(5, 5);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(88, 35);
+            this.btn_Delete.TabIndex = 2;
+            this.btn_Delete.Text = "정보 삭제";
+            this.btn_Delete.UseVisualStyleBackColor = true;
+            // 
             // TutorPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -595,7 +595,7 @@
             this.ClientSize = new System.Drawing.Size(343, 475);
             this.Controls.Add(this.panel_Base);
             this.Name = "TutorPop";
-            this.Text = "TutorPop";
+            this.Text = "선생님 정보 수정";
             this.panel_Base.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -638,7 +638,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Button btn_Confirm;
         private System.Windows.Forms.Panel panel13;
@@ -679,7 +678,8 @@
         private System.Windows.Forms.TextBox tbox_Contact;
         private System.Windows.Forms.TextBox tbox_Address;
         private System.Windows.Forms.TextBox tbox_Name;
-        private System.Windows.Forms.TextBox tbox_Subject;
         private System.Windows.Forms.TextBox tbox_Password;
+        private System.Windows.Forms.TextBox tbox_Subject;
+        private System.Windows.Forms.Button btn_Delete;
     }
 }

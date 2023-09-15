@@ -1,6 +1,8 @@
 ﻿using Lib.Frame;
 using Lib.Utility;
 using Mirae_Tutor.Manager;
+using Mirae_Tutor.Manager.DBManager;
+using Mirae_Tutor.Windows.Pop;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +17,8 @@ namespace Mirae_Tutor.Windows.View
 {
     public partial class View_상담 : MasterView
     {
+        DataRow SelectedRow { get; set; } = null;
+
         public View_상담()
         {
             InitializeComponent();
@@ -44,15 +48,30 @@ namespace Mirae_Tutor.Windows.View
             DTable_SearchResult = ReadWaiting_BySearchOption_LimitedToSessionID();
             GridAssist.SetAuto_GridView_FromSourceTable(dgv_Display_Waiting, DTable_SearchResult);
         }
-        string Field_Latest { get; set; }
-        string Seed_Latest { get; set; }
+        string Field_Latest { get; set; } = null;
+        string Seed_Latest { get; set; } = null;
         private DataTable ReadWaiting_BySearchOption_LimitedToSessionID()
         {
             Field_Latest = cbox_SearchField.SelectedItem as string;
             Seed_Latest = GetSeed_AsVisibleOption();
 
-            return App.Instance().DBManager.ReadWaiting_LimitedToSessionID(Field_Latest, Seed_Latest);
+            return App.Instance().DBManager.Waiting.Read_LimitedToSessionID(Field_Latest, Seed_Latest);
         }
+
+        void Refresh_DGV_asLatestSearchOption()
+        {
+            if (Field_Latest != null)
+            {
+                DTable_SearchResult = App.Instance().DBManager.Waiting.Read_LimitedToSessionID(Field_Latest, Seed_Latest);
+                GridAssist.SetAuto_GridView_FromSourceTable(dgv_Display_Waiting, DTable_SearchResult);
+            }
+            else
+            {
+                throw new Exception("Not Been Searched Once After Loading View");
+            }
+        }
+
+
         private string GetSeed_AsVisibleOption()
         {
             string _Seed;
@@ -97,50 +116,119 @@ namespace Mirae_Tutor.Windows.View
             panel_tbox.Visible = (!isComboBox_Visible);
         }
 
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
+        
 
-        }
         private void dgv_Display_Waiting_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
 
         private void dgv_Display_Waiting_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+            if (e.RowIndex < 0) { return; }
 
+            SelectedRow = GridAssist.SelectedRow(dgv_Display_Waiting);
+            if (SelectedRow["담당 선생님 아이디"] != DBNull.Value)
+            {
+                ShowPop_CounselProceed();
+            }
+            else
+            {
+                상담배정();
+            }
+            
         }
 
         private void dgv_Display_Waiting_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            dgv_Display_Waiting.Rows[e.RowIndex].Selected = true;
-            // TODO
-            DataGridCell test;
-        }
+            if (e.RowIndex < 0) {
+                return;
+            }
 
-        private void dgv_Display_Waiting_MouseDown(object sender, MouseEventArgs e)
-        {
-            RMB_ShowContextMenu_OnDataGrid(e);
-        }
-        private void RMB_ShowContextMenu_OnDataGrid(MouseEventArgs e)
-        {
             if (e.Button == MouseButtons.Right)
             {
-                App.Instance().MouseHitManager.Show_CMenu_At_MouseCursor(e, dgv_Display_Waiting, out SelectedRow, contextMenuStrip1);
+                SelectDGVRow_ByIndex(e.RowIndex);                
+                contextMenuStrip1.Show(Cursor.Position);
             }
-        }
-        DataRow SelectedRow = null;
-
-        private void SelectRow_OnCursor(DataGridView dgv_Display_Waiting, MouseEventArgs e)
-        {
             
         }
+        private void SelectDGVRow_ByIndex(int rowIndex)
+        {
+            dgv_Display_Waiting.Rows[rowIndex].Selected = true;
+            SelectedRow = GridAssist.SelectedRow(dgv_Display_Waiting, rowIndex);
+        }        
 
-        private void contextMenuStrip1_Opened(object sender, EventArgs e)
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
             if (SelectedRow != null)
             {
-                MessageBox.Show(Convert.ToString(SelectedRow["담당 선생님"]) + " " + Convert.ToString(SelectedRow["이름"]));
-            }            
+                bool isAssigned = (SelectedRow["담당 선생님"] != DBNull.Value);
+                SetContextMenu_ItemsEnableOptions(isAssigned);
+            }
+            else
+            {
+                contextMenuStrip1.Close();
+            }
+        }
+        private void SetContextMenu_ItemsEnableOptions(bool isAssigned)
+        {
+            상담배정ToolStripMenuItem.Visible = (!isAssigned);
+            담당취소ToolStripMenuItem.Visible = isAssigned;
+            정보수정ToolStripMenuItem.Visible = isAssigned;
         }
 
-        
+        private void 상담배정ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            상담배정();           
+        }
+
+        private void 상담배정()
+        {
+            string wt_ID = Convert.ToString(SelectedRow["아이디"]);
+            string tt_ID = App.Instance().SessionManager.SessionID;
+            int result = App.Instance().DBManager.Waiting.Modify_AssignedTutorID(wt_ID, tt_ID);
+            if (result > 0)
+            {
+                MessageBox.Show($"{SelectedRow["이름"]} 학생에게 배정이 완료되었습니다.");
+            }
+            else
+            {
+                MessageBox.Show("상담 배정에 실패했습니다.");
+            }
+            Refresh_DGV_asLatestSearchOption();
+        }
+
+        private void 담당취소ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string wt_ID = Convert.ToString(SelectedRow["아이디"]);
+            string tt_ID = null;
+            int result = App.Instance().DBManager.Waiting.Modify_AssignedTutorID(wt_ID,tt_ID);
+            if (result > 0)
+            {
+                MessageBox.Show("성공적으로 배정 취소 되었습니다.");
+            }
+            else
+            {
+                MessageBox.Show("배정 취소에 실패했습니다.");
+            }
+            Refresh_DGV_asLatestSearchOption();
+        }
+
+        private void 정보수정ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowPop_CounselProceed();
+        }
+        private void ShowPop_CounselProceed()
+        {
+            Waiting thePersonnel = new Waiting(SelectedRow);
+            if (thePersonnel != null)
+            {
+                DialogResult _Result = App.Instance().MainForm.ShowPop<Pop_상담>(ePopMode.Modify, thePersonnel);
+                if (_Result == DialogResult.OK)
+                {
+                    Refresh_DGV_asLatestSearchOption();
+                }
+            }
+        }
+
     }
 }

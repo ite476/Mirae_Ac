@@ -8,14 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Lib.Frame;
-using MiraePro.Manager;
-using MiraePro.Windows.Pop;
-using MiraePro.Windows.View;
+using Mirae_admin.Manager;
+using Mirae_admin.Windows.Pop;
+using Mirae_admin.Windows.View;
+using Mirae_Tutor.Windows.Pop.Appendix;
 
-namespace MiraePro
+namespace Mirae_admin
 {
     public partial class MainForm : Form
     {
+        private List<MasterView> Views { get; set; }
+
+
         public void SetIcons_Login_AsSession(string aSessionName)
         {
             로그인ToolStripMenuItem.Enabled = false;
@@ -54,10 +58,7 @@ namespace MiraePro
             InitializeViews();
             LogOut();
         }
-
-        #region <<< Show View&Pop + Public Methods >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-        List<MasterView> Views { get; set; }
-        void InitializeViews()
+        private void InitializeViews()
         {
             Views = new List<MasterView>();
             this.Views.Add(new AdminLoginView());
@@ -75,6 +76,8 @@ namespace MiraePro
 
             ShowView<AdminLoginView>();
         }
+
+
         public void ShowView<T>()
         {
             ShowView(typeof(T));
@@ -105,16 +108,16 @@ namespace MiraePro
             return CurrentPop.ShowPop(aPopMode, aParam);
         }
 
-        internal void ExitProgram()
+        public void ExitProgram()
         {
             if (MessageBox.Show("프로그램을 종료하시겠습니까?", "알림", MessageBoxButtons.YesNo) == DialogResult.Yes)
             Application.Exit();
         }
 
-        
-        
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        #endregion
+
+
 
         #region <<< Button-Like Click Events >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         private void tbtn_ToMainMenu_Click(object sender, EventArgs e)
@@ -172,9 +175,18 @@ namespace MiraePro
             }
         }
 
-        
+
 
         #endregion
 
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowPop<VersionInfoPop>();
+        }
+
+        private void 환경설정ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ShowPop<SettingsPop>();
+        }
     }
 }

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MiraePro.Manager
+namespace Mirae_admin.Manager
 {
     internal class FileManager
     {

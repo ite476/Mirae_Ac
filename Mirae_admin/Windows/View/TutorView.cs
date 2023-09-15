@@ -8,10 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MiraePro.Manager;
+using Mirae_admin.Manager;
 using Lib.Utility;
 
-namespace MiraePro.Windows.View
+namespace Mirae_admin.Windows.View
 {
     public partial class TutorView : MasterView
     {
@@ -42,11 +42,16 @@ namespace MiraePro.Windows.View
         void SearchTutor()
         {
             string _Field = cbox_SearchField.SelectedItem as string;
-            DTable_SearchResult = App.Instance().DBManager.ReadTutor(_Field, tbox_Seed.Text);
+            DTable_SearchResult = App.Instance().DBManager.Tutor.Read(_Field, tbox_Seed.Text);
             GridAssist.SetAuto_GridView_FromSourceTable(dgv_Display_Tutor, DTable_SearchResult);
         }
 
         private void cbox_Seed_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_Display_Tutor_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

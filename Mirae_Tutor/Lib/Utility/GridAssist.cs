@@ -16,8 +16,6 @@ namespace Lib.Utility
         public static void SetAuto_GridView_FromSourceTable
             (DataGridView aGridView, DataTable aSourceDataTable, Dictionary<string, string> aDictionary = null)
         {
-
-
             DataTable _target_Table = GetTable_FromGrid(aGridView);
             _target_Table.Rows.Clear();
 
@@ -44,11 +42,14 @@ namespace Lib.Utility
                         { SetValue(_sourceDataRow[_target_Name], _target_Row, _target_Name, _target_Type); }
                     }
                 }
-
-
                 _target_Table.Rows.Add(_target_Row);
             }
 
+        }
+
+        private static DataRow GetTargetRow()
+        {
+            throw new NotImplementedException();
         }
 
         private static DataTable GetTable_FromGrid(DataGridView aGridView)

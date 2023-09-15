@@ -1,4 +1,4 @@
-﻿namespace MiraePro
+﻿namespace Mirae_admin
 {
     partial class MainForm
     {
@@ -37,6 +37,7 @@
             this.도구ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.환경설정ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip_WithIcons = new System.Windows.Forms.ToolStrip();
             this.tbtn_ToMainMenu = new System.Windows.Forms.ToolStripButton();
             this.tbtn_ToStudent = new System.Windows.Forms.ToolStripButton();
@@ -98,7 +99,8 @@
             // 
             this.도구ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.환경설정ToolStripMenuItem1,
-            this.toolStripMenuItem2});
+            this.toolStripMenuItem2,
+            this.aboutToolStripMenuItem});
             this.도구ToolStripMenuItem.Name = "도구ToolStripMenuItem";
             this.도구ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.도구ToolStripMenuItem.Text = "도구";
@@ -106,13 +108,21 @@
             // 환경설정ToolStripMenuItem1
             // 
             this.환경설정ToolStripMenuItem1.Name = "환경설정ToolStripMenuItem1";
-            this.환경설정ToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
+            this.환경설정ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.환경설정ToolStripMenuItem1.Text = "환경설정";
+            this.환경설정ToolStripMenuItem1.Click += new System.EventHandler(this.환경설정ToolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(119, 6);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // toolStrip_WithIcons
             // 
@@ -120,8 +130,8 @@
             this.toolStrip_WithIcons.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.toolStrip_WithIcons.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tbtn_ToMainMenu,
-            this.tbtn_ToStudent,
             this.tbtn_ToTutor,
+            this.tbtn_ToStudent,
             this.tbtn_ToSchedule,
             this.tbtn_ToCounsel,
             this.tbtn_ToOption,
@@ -135,62 +145,62 @@
             // tbtn_ToMainMenu
             // 
             this.tbtn_ToMainMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbtn_ToMainMenu.Image = global::MiraePro.Properties.Resources.MenuIcon;
+            this.tbtn_ToMainMenu.Image = global::Mirae_admin.Properties.Resources.MenuIcon;
             this.tbtn_ToMainMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtn_ToMainMenu.Name = "tbtn_ToMainMenu";
             this.tbtn_ToMainMenu.Size = new System.Drawing.Size(44, 40);
-            this.tbtn_ToMainMenu.Text = "toolStripButton2";
+            this.tbtn_ToMainMenu.Text = "메인메뉴";
             this.tbtn_ToMainMenu.Click += new System.EventHandler(this.tbtn_ToMainMenu_Click);
             // 
             // tbtn_ToStudent
             // 
             this.tbtn_ToStudent.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbtn_ToStudent.Image = global::MiraePro.Properties.Resources.학생;
+            this.tbtn_ToStudent.Image = global::Mirae_admin.Properties.Resources.학생;
             this.tbtn_ToStudent.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtn_ToStudent.Name = "tbtn_ToStudent";
             this.tbtn_ToStudent.Size = new System.Drawing.Size(44, 40);
-            this.tbtn_ToStudent.Text = "toolStripButton1";
+            this.tbtn_ToStudent.Text = "학생 데이터베이스";
             this.tbtn_ToStudent.Click += new System.EventHandler(this.tbtn_ToStudent_Click);
             // 
             // tbtn_ToTutor
             // 
             this.tbtn_ToTutor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbtn_ToTutor.Image = global::MiraePro.Properties.Resources.선생님;
+            this.tbtn_ToTutor.Image = global::Mirae_admin.Properties.Resources.선생님;
             this.tbtn_ToTutor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtn_ToTutor.Name = "tbtn_ToTutor";
             this.tbtn_ToTutor.Size = new System.Drawing.Size(44, 40);
-            this.tbtn_ToTutor.Text = "toolStripButton3";
+            this.tbtn_ToTutor.Text = "교직원 데이터베이스";
             this.tbtn_ToTutor.Click += new System.EventHandler(this.tbtn_ToTutor_Click);
             // 
             // tbtn_ToSchedule
             // 
             this.tbtn_ToSchedule.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbtn_ToSchedule.Image = global::MiraePro.Properties.Resources.스케줄;
+            this.tbtn_ToSchedule.Image = global::Mirae_admin.Properties.Resources.스케줄;
             this.tbtn_ToSchedule.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtn_ToSchedule.Name = "tbtn_ToSchedule";
             this.tbtn_ToSchedule.Size = new System.Drawing.Size(44, 40);
-            this.tbtn_ToSchedule.Text = "toolStripButton4";
+            this.tbtn_ToSchedule.Text = "시간표 데이터베이스";
             this.tbtn_ToSchedule.Click += new System.EventHandler(this.tbtn_ToSchedule_Click);
             // 
             // tbtn_ToCounsel
             // 
             this.tbtn_ToCounsel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbtn_ToCounsel.Image = global::MiraePro.Properties.Resources.상담;
+            this.tbtn_ToCounsel.Image = global::Mirae_admin.Properties.Resources.상담;
             this.tbtn_ToCounsel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtn_ToCounsel.Name = "tbtn_ToCounsel";
             this.tbtn_ToCounsel.Size = new System.Drawing.Size(44, 40);
-            this.tbtn_ToCounsel.Text = "toolStripButton5";
+            this.tbtn_ToCounsel.Text = "입학 신청 명단";
             this.tbtn_ToCounsel.Click += new System.EventHandler(this.tbtn_ToCounsel_Click);
             // 
             // tbtn_ToOption
             // 
             this.tbtn_ToOption.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.tbtn_ToOption.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbtn_ToOption.Image = global::MiraePro.Properties.Resources.관리자_비활성;
+            this.tbtn_ToOption.Image = global::Mirae_admin.Properties.Resources.관리자;
             this.tbtn_ToOption.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtn_ToOption.Name = "tbtn_ToOption";
             this.tbtn_ToOption.Size = new System.Drawing.Size(44, 40);
-            this.tbtn_ToOption.Text = "toolStripButton6";
+            this.tbtn_ToOption.Text = "환경설정";
             this.tbtn_ToOption.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbtn_ToOption_MouseDown);
             // 
             // tlabel_SessionName
@@ -271,6 +281,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip_SessionIcon;
         private System.Windows.Forms.ToolStripMenuItem 개인정보ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 로그아웃ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 

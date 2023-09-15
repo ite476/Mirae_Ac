@@ -13,6 +13,7 @@ namespace Lib.Frame
     public partial class MasterView : Form
     {
         public event Action<object> eCloseAction = null;
+
         public MasterView()
         {
             InitializeComponent();
@@ -47,5 +48,7 @@ namespace Lib.Frame
         {
 
         }
+
+        public virtual void Refresh_View() { }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using Lib.Frame;
 using Lib.Utility;
-using MiraePro.Manager;
+using Mirae_admin.Manager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MiraePro.Windows.Pop
+namespace Mirae_admin.Windows.Pop
 {
     public partial class HakGeupListPop : MasterPop
     {
@@ -29,7 +29,7 @@ namespace MiraePro.Windows.Pop
         public HakGeupListPop()
         {
             InitializeComponent();
-            DataTable dt = App.Instance().DBManager.ReadHakGeup_All();
+            DataTable dt = App.Instance().DBManager.HakGeup.Read_ALL();
             GridAssist.SetAuto_GridView_FromSourceTable(dgv_Display_HakGeup, dt);
         }
 

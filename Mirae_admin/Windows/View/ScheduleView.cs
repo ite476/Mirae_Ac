@@ -1,8 +1,8 @@
 ﻿using Lib.Control;
 using Lib.Frame;
 using Lib.Utility;
-using MiraePro.Manager;
-using MiraePro.Windows.Pop;
+using Mirae_admin.Manager;
+using Mirae_admin.Windows.Pop;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,20 +13,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MiraePro.Windows.View
+namespace Mirae_admin.Windows.View
 {
     public partial class ScheduleView : MasterView
     {
 
-        DataTable DTable_SearchResult { get; set; }
-        int? Current_HakGeupCode { get; set; } = null;
+        private DataTable DTable_SearchResult { get; set; }
+        private int? Current_HakGeupCode { get; set; } = null;
+
         
+
+
+        #region <<< ScheduleView 공용 로직 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         string[] Weekday { get; } = new string[7]
         {
             "Sun","Mon","Tue","Wed","Thu","Fri","Sat"
         };
-
-        #region <<< ScheduleView 공용 로직 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
         private bool isValid_TimeTableLabel(Label theLabel)
         {
@@ -34,7 +36,13 @@ namespace MiraePro.Windows.View
         }
         private void SetTimeTableAs_DataTable(DataTable aDataTable)
         {
-            ClearTimeTable();
+            ClearTimeTable(true);
+            if (Current_HakGeupCode != null)
+            {
+                string HName = App.Instance().DBManager.HakGeup.Read_Specific_Name((int)Current_HakGeupCode);
+                groupBox1.Text = $"{HName} 시간표";
+            }
+            
             foreach (DataRow dr in aDataTable.Rows)
             {
                 string wkday = Weekday[Convert.ToInt32(dr["요일"]) - 1];
@@ -43,6 +51,7 @@ namespace MiraePro.Windows.View
                 Label Label_ToSet = GetLabelByName(wkday, period);
                 Label_ToSet.Text = description;
             }
+
         }
         Label GetLabelByIndex(int aWeekdayIndex, int aPeriod)
         {
@@ -93,7 +102,7 @@ namespace MiraePro.Windows.View
         }
         private void INIT_cbox_Seed()
         {
-            App.Instance().ComponentManager.SetCategoryCbox_WithHakgeup(cbox_Seed);
+            App.Instance().ComponentManager.SetCombobox_WithHakgeup(cbox_Seed);
         }
         private void INIT_TimeTable()
         {
@@ -103,12 +112,11 @@ namespace MiraePro.Windows.View
                 {
                     Label foundLabel = GetLabelByIndex(wkday, period);
                     foundLabel.Tag = new int[] { wkday, period };
-                    foundLabel.BorderStyle = BorderStyle.Fixed3D;
                     foundLabel.DoubleClick += DoubleClick_Label_OnTimeTable;
                 }
             }
         }
-        private void ClearTimeTable()
+        private void ClearTimeTable(bool isSearched = false)
         {
             for (int period = 1; period <= 8; period++)
             {
@@ -116,8 +124,32 @@ namespace MiraePro.Windows.View
                 {
                     Label foundLabel = GetLabelByIndex(wkday, period);
                     foundLabel.Text = string.Empty;
+                    foundLabel.BorderStyle = isSearched ? BorderStyle.Fixed3D : BorderStyle.FixedSingle;
+                    
+                    SetMouseHoverLeave_OnLabel(foundLabel, isSearched);                    
                 }
             }
+        }
+        private void SetMouseHoverLeave_OnLabel(Label foundLabel, bool isSearched)
+        {
+            if (isSearched)
+            {
+                foundLabel.MouseHover += MouseHover_Interactive;
+                foundLabel.MouseLeave += MouseLeave_Interactive;
+            }
+            else
+            {
+                foundLabel.MouseHover -= MouseHover_Interactive;
+                foundLabel.MouseLeave -= MouseLeave_Interactive;
+            }
+        }
+        private void MouseLeave_Interactive(object sender, EventArgs e)
+        {
+            App.Instance().ComponentManager.MouseLeave_InteractiveControl(sender);
+        }
+        void MouseHover_Interactive(object sender, EventArgs e)
+        {
+            App.Instance().ComponentManager.MouseHover_InteractiveControl(sender);
         }
 
         #endregion
@@ -156,12 +188,12 @@ namespace MiraePro.Windows.View
             if (isValid_TimeTableLabel(senderLabel) && Current_HakGeupCode != null)
             {
                 int[] intTag = (int[])senderLabel.Tag;
-                DataRow _Result = App.Instance().DBManager.ReadCourse_Specific(Current_HakGeupCode, intTag[0] + 1, intTag[1]);
+                DataRow _Result = App.Instance().DBManager.Course.Read_Specific(Current_HakGeupCode, intTag[0] + 1, intTag[1]);
                 if (_Result == null)
                 {
                     _Result = DTable_SearchResult.NewRow();
                     _Result["학급코드"] = Current_HakGeupCode;
-                    _Result["학급"] = App.Instance().DBManager.ReadHakGeupName((int)Current_HakGeupCode);
+                    _Result["학급"] = App.Instance().DBManager.HakGeup.Read_Specific_Name((int)Current_HakGeupCode);
                     _Result["요일"] = intTag[0] + 1;
                     _Result["교시"] = intTag[1];
                 }
@@ -178,7 +210,7 @@ namespace MiraePro.Windows.View
         {
             string _Field = "학급코드";
             string _Seed = Convert.ToString(Current_HakGeupCode);
-            return App.Instance().DBManager.ReadCourse(_Field, _Seed);
+            return App.Instance().DBManager.Course.Read(_Field, _Seed);
         }
         
         #endregion
@@ -235,13 +267,13 @@ namespace MiraePro.Windows.View
             string _Field = cbox_SearchField.SelectedItem.ToString();
             string _Seed = GetSeedBy_VisibleOption();
 
-            return App.Instance().DBManager.ReadHakGeup_Distinct(_Field, _Seed);
+            return App.Instance().DBManager.HakGeup.Read_Distinct(_Field, _Seed);
         }
         private DataTable ReadCourseBy_SearchOption()
         {
             string _Field = cbox_SearchField.SelectedItem.ToString();
             string _Seed = GetSeedBy_VisibleOption();
-            return App.Instance().DBManager.ReadCourse(_Field, _Seed);
+            return App.Instance().DBManager.Course.Read(_Field, _Seed);
         }
         private string GetSeedBy_VisibleOption()
         {

@@ -1,4 +1,4 @@
-﻿namespace MiraePro.Windows.Pop
+﻿namespace Mirae_admin.Windows.Pop
 {
     partial class CounselProceedPop
     {
@@ -48,22 +48,18 @@
             this.panel23 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
             this.panel_address = new System.Windows.Forms.Panel();
-            this.tbox_address = new System.Windows.Forms.TextBox();
             this.label_address = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
             this.label_parentContact = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.tbox_contact = new System.Windows.Forms.TextBox();
             this.label_contact = new System.Windows.Forms.Label();
             this.panel_gender = new System.Windows.Forms.Panel();
             this.cbox_gender = new System.Windows.Forms.ComboBox();
             this.panel_score = new System.Windows.Forms.Panel();
-            this.tbox_score = new System.Windows.Forms.TextBox();
             this.label_score = new System.Windows.Forms.Label();
             this.panel_name = new System.Windows.Forms.Panel();
-            this.tbox_name = new System.Windows.Forms.TextBox();
             this.label_name = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -226,6 +222,7 @@
             // cbox_step
             // 
             this.cbox_step.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbox_step.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_step.FormattingEnabled = true;
             this.cbox_step.Items.AddRange(new object[] {
             "상담",
@@ -235,7 +232,6 @@
             this.cbox_step.Name = "cbox_step";
             this.cbox_step.Size = new System.Drawing.Size(184, 20);
             this.cbox_step.TabIndex = 0;
-            this.cbox_step.Text = "상태 범주";
             // 
             // panel29
             // 
@@ -345,7 +341,6 @@
             // 
             // panel_address
             // 
-            this.panel_address.Controls.Add(this.tbox_address);
             this.panel_address.Controls.Add(this.label_address);
             this.panel_address.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_address.Location = new System.Drawing.Point(153, 248);
@@ -353,17 +348,6 @@
             this.panel_address.Padding = new System.Windows.Forms.Padding(10, 2, 10, 2);
             this.panel_address.Size = new System.Drawing.Size(204, 29);
             this.panel_address.TabIndex = 24;
-            // 
-            // tbox_address
-            // 
-            this.tbox_address.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbox_address.Location = new System.Drawing.Point(10, 2);
-            this.tbox_address.Name = "tbox_address";
-            this.tbox_address.Size = new System.Drawing.Size(184, 21);
-            this.tbox_address.TabIndex = 6;
-            this.tbox_address.Visible = false;
-            this.tbox_address.TextChanged += new System.EventHandler(this.tbox_TextChanged);
-            this.tbox_address.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Check_DoneEdit);
             // 
             // label_address
             // 
@@ -375,7 +359,6 @@
             this.label_address.TabIndex = 5;
             this.label_address.Text = "대구 수성구";
             this.label_address.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_address.Click += new System.EventHandler(this.label_address_Click);
             // 
             // panel19
             // 
@@ -419,7 +402,6 @@
             // 
             // panel14
             // 
-            this.panel14.Controls.Add(this.tbox_contact);
             this.panel14.Controls.Add(this.label_contact);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel14.Location = new System.Drawing.Point(153, 178);
@@ -427,17 +409,6 @@
             this.panel14.Padding = new System.Windows.Forms.Padding(10, 2, 10, 2);
             this.panel14.Size = new System.Drawing.Size(204, 29);
             this.panel14.TabIndex = 20;
-            // 
-            // tbox_contact
-            // 
-            this.tbox_contact.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbox_contact.Location = new System.Drawing.Point(10, 2);
-            this.tbox_contact.Name = "tbox_contact";
-            this.tbox_contact.Size = new System.Drawing.Size(184, 21);
-            this.tbox_contact.TabIndex = 8;
-            this.tbox_contact.Visible = false;
-            this.tbox_contact.TextChanged += new System.EventHandler(this.tbox_TextChanged);
-            this.tbox_contact.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Check_DoneEdit);
             // 
             // label_contact
             // 
@@ -449,7 +420,6 @@
             this.label_contact.TabIndex = 5;
             this.label_contact.Text = "010-0000-1122";
             this.label_contact.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_contact.Click += new System.EventHandler(this.label_contact_Click);
             // 
             // panel_gender
             // 
@@ -464,6 +434,7 @@
             // cbox_gender
             // 
             this.cbox_gender.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbox_gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_gender.FormattingEnabled = true;
             this.cbox_gender.Items.AddRange(new object[] {
             "남성",
@@ -472,11 +443,9 @@
             this.cbox_gender.Name = "cbox_gender";
             this.cbox_gender.Size = new System.Drawing.Size(184, 20);
             this.cbox_gender.TabIndex = 13;
-            this.cbox_gender.Text = "성별";
             // 
             // panel_score
             // 
-            this.panel_score.Controls.Add(this.tbox_score);
             this.panel_score.Controls.Add(this.label_score);
             this.panel_score.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_score.Location = new System.Drawing.Point(153, 108);
@@ -484,17 +453,6 @@
             this.panel_score.Padding = new System.Windows.Forms.Padding(10, 2, 10, 2);
             this.panel_score.Size = new System.Drawing.Size(204, 29);
             this.panel_score.TabIndex = 18;
-            // 
-            // tbox_score
-            // 
-            this.tbox_score.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbox_score.Location = new System.Drawing.Point(10, 2);
-            this.tbox_score.Name = "tbox_score";
-            this.tbox_score.Size = new System.Drawing.Size(184, 21);
-            this.tbox_score.TabIndex = 12;
-            this.tbox_score.Visible = false;
-            this.tbox_score.TextChanged += new System.EventHandler(this.tbox_score_TextChanged);
-            this.tbox_score.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Check_DoneEdit);
             // 
             // label_score
             // 
@@ -505,11 +463,9 @@
             this.label_score.Size = new System.Drawing.Size(184, 25);
             this.label_score.TabIndex = 4;
             this.label_score.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_score.Click += new System.EventHandler(this.label_score_Click);
             // 
             // panel_name
             // 
-            this.panel_name.Controls.Add(this.tbox_name);
             this.panel_name.Controls.Add(this.label_name);
             this.panel_name.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_name.Location = new System.Drawing.Point(153, 73);
@@ -517,17 +473,6 @@
             this.panel_name.Padding = new System.Windows.Forms.Padding(10, 2, 10, 2);
             this.panel_name.Size = new System.Drawing.Size(204, 29);
             this.panel_name.TabIndex = 17;
-            // 
-            // tbox_name
-            // 
-            this.tbox_name.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbox_name.Location = new System.Drawing.Point(10, 2);
-            this.tbox_name.Name = "tbox_name";
-            this.tbox_name.Size = new System.Drawing.Size(184, 21);
-            this.tbox_name.TabIndex = 12;
-            this.tbox_name.Visible = false;
-            this.tbox_name.TextChanged += new System.EventHandler(this.tbox_TextChanged);
-            this.tbox_name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Check_DoneEdit);
             // 
             // label_name
             // 
@@ -539,7 +484,6 @@
             this.label_name.TabIndex = 4;
             this.label_name.Text = "김학생";
             this.label_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_name.Click += new System.EventHandler(this.label_name_Click);
             // 
             // panel17
             // 
@@ -813,16 +757,12 @@
             this.panel30.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel_address.ResumeLayout(false);
-            this.panel_address.PerformLayout();
             this.panel19.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
             this.panel_gender.ResumeLayout(false);
             this.panel_score.ResumeLayout(false);
-            this.panel_score.PerformLayout();
             this.panel_name.ResumeLayout(false);
-            this.panel_name.PerformLayout();
             this.panel17.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
@@ -899,10 +839,6 @@
         private System.Windows.Forms.Button btn_OK;
         private System.Windows.Forms.Panel panel31;
         private System.Windows.Forms.Button btn_Cancel;
-        private System.Windows.Forms.TextBox tbox_address;
-        private System.Windows.Forms.TextBox tbox_contact;
-        private System.Windows.Forms.TextBox tbox_name;
-        private System.Windows.Forms.TextBox tbox_score;
         private System.Windows.Forms.ComboBox cbox_gender;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button btn_AssignToHakGeup;

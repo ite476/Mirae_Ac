@@ -44,10 +44,16 @@ namespace Mirae_Tutor.Manager
         public void Login(string aID)
         {
             SessionID = aID;
-            SessionName = App.Instance().DBManager.ReadTutor_Name(aID);
-            Session_Count_AssignedHakGeups = App.Instance().DBManager.ReadHakGeup_Count(aID);
+            SessionName = App.Instance().DBManager.Tutor.Read_Name(aID);
+            Session_Count_AssignedHakGeups = App.Instance().DBManager.HakGeup.Read_Count(aID);
             OnLine = true;
         }
         public void Logout() { OnLine = false; }
+
+        internal string RefreshSessionName()
+        {
+            this.SessionName = App.Instance().DBManager.Tutor.Read_Name(SessionID);
+            return SessionName;
+        }
     }
 }

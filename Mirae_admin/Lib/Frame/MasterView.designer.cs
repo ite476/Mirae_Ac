@@ -37,7 +37,6 @@
             this.ClientSize = new System.Drawing.Size(1024, 600);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MasterView";
-            this.Load += new System.EventHandler(this.MasterView_Load);
             this.ResumeLayout(false);
 
         }

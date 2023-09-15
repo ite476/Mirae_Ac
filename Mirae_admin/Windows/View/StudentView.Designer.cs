@@ -1,4 +1,4 @@
-﻿namespace MiraePro.Windows.View
+﻿namespace Mirae_admin.Windows.View
 {
     partial class StudentView
     {
@@ -33,13 +33,13 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv_Display_Student = new System.Windows.Forms.DataGridView();
-            this.아이디DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.학생명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.학생아이디DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.학생DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.성별DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.연락처DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.주소DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.등록일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.학급명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.학원등록일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.학급DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.보호자연락처DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.출석률DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.평균성적DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,7 +97,7 @@
             this.panel_Base.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Base.Location = new System.Drawing.Point(0, 0);
             this.panel_Base.Name = "panel_Base";
-            this.panel_Base.Size = new System.Drawing.Size(1249, 636);
+            this.panel_Base.Size = new System.Drawing.Size(949, 607);
             this.panel_Base.TabIndex = 7;
             // 
             // panel3
@@ -106,7 +106,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 29);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1249, 542);
+            this.panel3.Size = new System.Drawing.Size(949, 513);
             this.panel3.TabIndex = 9;
             // 
             // groupBox1
@@ -116,10 +116,10 @@
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox1.Size = new System.Drawing.Size(1249, 542);
+            this.groupBox1.Size = new System.Drawing.Size(949, 513);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "목록";
+            this.groupBox1.Text = "등록 학생 목록";
             // 
             // dgv_Display_Student
             // 
@@ -128,13 +128,13 @@
             this.dgv_Display_Student.AutoGenerateColumns = false;
             this.dgv_Display_Student.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Display_Student.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.아이디DataGridViewTextBoxColumn,
-            this.학생명DataGridViewTextBoxColumn,
+            this.학생아이디DataGridViewTextBoxColumn,
+            this.학생DataGridViewTextBoxColumn,
             this.성별DataGridViewTextBoxColumn,
             this.연락처DataGridViewTextBoxColumn,
             this.주소DataGridViewTextBoxColumn,
-            this.등록일DataGridViewTextBoxColumn,
-            this.학급명DataGridViewTextBoxColumn,
+            this.학원등록일DataGridViewTextBoxColumn,
+            this.학급DataGridViewTextBoxColumn,
             this.보호자연락처DataGridViewTextBoxColumn,
             this.출석률DataGridViewTextBoxColumn,
             this.평균성적DataGridViewTextBoxColumn,
@@ -148,23 +148,23 @@
             this.dgv_Display_Student.ReadOnly = true;
             this.dgv_Display_Student.RowTemplate.Height = 23;
             this.dgv_Display_Student.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Display_Student.Size = new System.Drawing.Size(1229, 508);
+            this.dgv_Display_Student.Size = new System.Drawing.Size(929, 479);
             this.dgv_Display_Student.TabIndex = 0;
             this.dgv_Display_Student.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // 아이디DataGridViewTextBoxColumn
+            // 학생아이디DataGridViewTextBoxColumn
             // 
-            this.아이디DataGridViewTextBoxColumn.DataPropertyName = "아이디";
-            this.아이디DataGridViewTextBoxColumn.HeaderText = "아이디";
-            this.아이디DataGridViewTextBoxColumn.Name = "아이디DataGridViewTextBoxColumn";
-            this.아이디DataGridViewTextBoxColumn.ReadOnly = true;
+            this.학생아이디DataGridViewTextBoxColumn.DataPropertyName = "학생 아이디";
+            this.학생아이디DataGridViewTextBoxColumn.HeaderText = "학생 아이디";
+            this.학생아이디DataGridViewTextBoxColumn.Name = "학생아이디DataGridViewTextBoxColumn";
+            this.학생아이디DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 학생명DataGridViewTextBoxColumn
+            // 학생DataGridViewTextBoxColumn
             // 
-            this.학생명DataGridViewTextBoxColumn.DataPropertyName = "학생명";
-            this.학생명DataGridViewTextBoxColumn.HeaderText = "학생명";
-            this.학생명DataGridViewTextBoxColumn.Name = "학생명DataGridViewTextBoxColumn";
-            this.학생명DataGridViewTextBoxColumn.ReadOnly = true;
+            this.학생DataGridViewTextBoxColumn.DataPropertyName = "학생";
+            this.학생DataGridViewTextBoxColumn.HeaderText = "학생";
+            this.학생DataGridViewTextBoxColumn.Name = "학생DataGridViewTextBoxColumn";
+            this.학생DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 성별DataGridViewTextBoxColumn
             // 
@@ -172,7 +172,6 @@
             this.성별DataGridViewTextBoxColumn.HeaderText = "성별";
             this.성별DataGridViewTextBoxColumn.Name = "성별DataGridViewTextBoxColumn";
             this.성별DataGridViewTextBoxColumn.ReadOnly = true;
-            this.성별DataGridViewTextBoxColumn.Width = 60;
             // 
             // 연락처DataGridViewTextBoxColumn
             // 
@@ -188,19 +187,19 @@
             this.주소DataGridViewTextBoxColumn.Name = "주소DataGridViewTextBoxColumn";
             this.주소DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 등록일DataGridViewTextBoxColumn
+            // 학원등록일DataGridViewTextBoxColumn
             // 
-            this.등록일DataGridViewTextBoxColumn.DataPropertyName = "등록일";
-            this.등록일DataGridViewTextBoxColumn.HeaderText = "등록일";
-            this.등록일DataGridViewTextBoxColumn.Name = "등록일DataGridViewTextBoxColumn";
-            this.등록일DataGridViewTextBoxColumn.ReadOnly = true;
+            this.학원등록일DataGridViewTextBoxColumn.DataPropertyName = "학원 등록일";
+            this.학원등록일DataGridViewTextBoxColumn.HeaderText = "학원 등록일";
+            this.학원등록일DataGridViewTextBoxColumn.Name = "학원등록일DataGridViewTextBoxColumn";
+            this.학원등록일DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 학급명DataGridViewTextBoxColumn
+            // 학급DataGridViewTextBoxColumn
             // 
-            this.학급명DataGridViewTextBoxColumn.DataPropertyName = "학급명";
-            this.학급명DataGridViewTextBoxColumn.HeaderText = "학급명";
-            this.학급명DataGridViewTextBoxColumn.Name = "학급명DataGridViewTextBoxColumn";
-            this.학급명DataGridViewTextBoxColumn.ReadOnly = true;
+            this.학급DataGridViewTextBoxColumn.DataPropertyName = "학급";
+            this.학급DataGridViewTextBoxColumn.HeaderText = "학급";
+            this.학급DataGridViewTextBoxColumn.Name = "학급DataGridViewTextBoxColumn";
+            this.학급DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 보호자연락처DataGridViewTextBoxColumn
             // 
@@ -216,7 +215,6 @@
             this.출석률DataGridViewTextBoxColumn.HeaderText = "출석률";
             this.출석률DataGridViewTextBoxColumn.Name = "출석률DataGridViewTextBoxColumn";
             this.출석률DataGridViewTextBoxColumn.ReadOnly = true;
-            this.출석률DataGridViewTextBoxColumn.Width = 80;
             // 
             // 평균성적DataGridViewTextBoxColumn
             // 
@@ -257,11 +255,11 @@
             // 
             // dataColumn1
             // 
-            this.dataColumn1.ColumnName = "아이디";
+            this.dataColumn1.ColumnName = "학생 아이디";
             // 
             // dataColumn2
             // 
-            this.dataColumn2.ColumnName = "학생명";
+            this.dataColumn2.ColumnName = "학생";
             // 
             // dataColumn3
             // 
@@ -281,12 +279,12 @@
             // 
             // dataColumn7
             // 
-            this.dataColumn7.ColumnName = "등록일";
+            this.dataColumn7.ColumnName = "학원 등록일";
             this.dataColumn7.DataType = typeof(System.DateTime);
             // 
             // dataColumn10
             // 
-            this.dataColumn10.ColumnName = "학급명";
+            this.dataColumn10.ColumnName = "학급";
             // 
             // dataColumn11
             // 
@@ -313,9 +311,9 @@
             this.panel2.Controls.Add(this.panel10);
             this.panel2.Controls.Add(this.panel9);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 571);
+            this.panel2.Location = new System.Drawing.Point(0, 542);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1249, 65);
+            this.panel2.Size = new System.Drawing.Size(949, 65);
             this.panel2.TabIndex = 7;
             // 
             // panel11
@@ -325,7 +323,7 @@
             this.panel11.Location = new System.Drawing.Point(300, 0);
             this.panel11.Name = "panel11";
             this.panel11.Padding = new System.Windows.Forms.Padding(8);
-            this.panel11.Size = new System.Drawing.Size(649, 65);
+            this.panel11.Size = new System.Drawing.Size(349, 65);
             this.panel11.TabIndex = 5;
             // 
             // btn_ToMainMenu
@@ -334,7 +332,7 @@
             this.btn_ToMainMenu.Font = new System.Drawing.Font("배달의민족 도현", 15F);
             this.btn_ToMainMenu.Location = new System.Drawing.Point(8, 8);
             this.btn_ToMainMenu.Name = "btn_ToMainMenu";
-            this.btn_ToMainMenu.Size = new System.Drawing.Size(633, 49);
+            this.btn_ToMainMenu.Size = new System.Drawing.Size(333, 49);
             this.btn_ToMainMenu.TabIndex = 0;
             this.btn_ToMainMenu.Text = "메인메뉴로 돌아가기";
             this.btn_ToMainMenu.UseVisualStyleBackColor = true;
@@ -343,7 +341,7 @@
             // panel10
             // 
             this.panel10.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel10.Location = new System.Drawing.Point(949, 0);
+            this.panel10.Location = new System.Drawing.Point(649, 0);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(300, 65);
             this.panel10.TabIndex = 4;
@@ -366,13 +364,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1249, 29);
+            this.panel1.Size = new System.Drawing.Size(949, 29);
             this.panel1.TabIndex = 6;
             // 
             // panel8
             // 
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(1024, 0);
+            this.panel8.Location = new System.Drawing.Point(724, 0);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(225, 29);
             this.panel8.TabIndex = 7;
@@ -429,12 +427,12 @@
             // cbox_Seed
             // 
             this.cbox_Seed.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbox_Seed.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_Seed.FormattingEnabled = true;
             this.cbox_Seed.Location = new System.Drawing.Point(3, 3);
             this.cbox_Seed.Name = "cbox_Seed";
             this.cbox_Seed.Size = new System.Drawing.Size(219, 20);
             this.cbox_Seed.TabIndex = 2;
-            this.cbox_Seed.Text = "세부범주";
             // 
             // panel5
             // 
@@ -449,18 +447,17 @@
             // cbox_SearchField
             // 
             this.cbox_SearchField.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbox_SearchField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_SearchField.FormattingEnabled = true;
             this.cbox_SearchField.Items.AddRange(new object[] {
             "아이디",
             "학생명",
             "학급명",
-            "담당교사명",
-            ""});
+            "담당교사명"});
             this.cbox_SearchField.Location = new System.Drawing.Point(3, 3);
             this.cbox_SearchField.Name = "cbox_SearchField";
             this.cbox_SearchField.Size = new System.Drawing.Size(219, 20);
             this.cbox_SearchField.TabIndex = 1;
-            this.cbox_SearchField.Text = "검색범주";
             // 
             // contextMenuStrip1
             // 
@@ -471,7 +468,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1249, 636);
+            this.ClientSize = new System.Drawing.Size(949, 607);
             this.Controls.Add(this.panel_Base);
             this.Name = "StudentView";
             this.Text = "StudentView";
@@ -528,17 +525,17 @@
         private System.Data.DataColumn dataColumn11;
         private System.Data.DataColumn dataColumn13;
         private System.Data.DataColumn dataColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 아이디DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 학생명DataGridViewTextBoxColumn;
+        private System.Data.DataColumn dataColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 학생아이디DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 학생DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 성별DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 연락처DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 주소DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 등록일DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 학급명DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 학원등록일DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 학급DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 보호자연락처DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 출석률DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 평균성적DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 총납부액DataGridViewTextBoxColumn;
-        private System.Data.DataColumn dataColumn8;
     }
 }

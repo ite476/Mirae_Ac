@@ -1,4 +1,4 @@
-﻿namespace MiraePro.Windows.Pop
+﻿namespace Mirae_admin.Windows.Pop
 {
     partial class CoursePop
     {
@@ -399,7 +399,7 @@
             this.ClientSize = new System.Drawing.Size(315, 331);
             this.Controls.Add(this.panel_Base);
             this.Name = "CoursePop";
-            this.Text = "CoursePop_Sample";
+            this.Text = "시간표 추가 / 수정";
             this.panel_Base.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

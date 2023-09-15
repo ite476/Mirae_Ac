@@ -34,8 +34,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv_Display_Waiting = new System.Windows.Forms.DataGridView();
             this.담당선생님DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.이름DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.상태DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.이름DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.입학점수DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.성별DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.연락처DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +53,8 @@
             this.dataColumn9 = new System.Data.DataColumn();
             this.dataColumn8 = new System.Data.DataColumn();
             this.dataColumn10 = new System.Data.DataColumn();
+            this.dataColumn11 = new System.Data.DataColumn();
+            this.dataColumn12 = new System.Data.DataColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.btn_ToMainMenu = new System.Windows.Forms.Button();
@@ -71,7 +73,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.상담배정ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.담당취소ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.정보수정ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_Base.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -119,7 +120,7 @@
             this.groupBox1.Size = new System.Drawing.Size(1249, 542);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "목록";
+            this.groupBox1.Text = "신청 학생 목록";
             // 
             // dgv_Display_Waiting
             // 
@@ -129,8 +130,8 @@
             this.dgv_Display_Waiting.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Display_Waiting.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.담당선생님DataGridViewTextBoxColumn,
-            this.이름DataGridViewTextBoxColumn,
             this.상태DataGridViewTextBoxColumn,
+            this.이름DataGridViewTextBoxColumn,
             this.입학점수DataGridViewTextBoxColumn,
             this.성별DataGridViewTextBoxColumn,
             this.연락처DataGridViewTextBoxColumn,
@@ -150,7 +151,6 @@
             this.dgv_Display_Waiting.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Display_Waiting_CellContentClick);
             this.dgv_Display_Waiting.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Display_Waiting_CellDoubleClick);
             this.dgv_Display_Waiting.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_Display_Waiting_CellMouseClick);
-            this.dgv_Display_Waiting.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgv_Display_Waiting_MouseDown);
             // 
             // 담당선생님DataGridViewTextBoxColumn
             // 
@@ -159,19 +159,20 @@
             this.담당선생님DataGridViewTextBoxColumn.Name = "담당선생님DataGridViewTextBoxColumn";
             this.담당선생님DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 이름DataGridViewTextBoxColumn
-            // 
-            this.이름DataGridViewTextBoxColumn.DataPropertyName = "이름";
-            this.이름DataGridViewTextBoxColumn.HeaderText = "이름";
-            this.이름DataGridViewTextBoxColumn.Name = "이름DataGridViewTextBoxColumn";
-            this.이름DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // 상태DataGridViewTextBoxColumn
             // 
             this.상태DataGridViewTextBoxColumn.DataPropertyName = "상태";
             this.상태DataGridViewTextBoxColumn.HeaderText = "상태";
             this.상태DataGridViewTextBoxColumn.Name = "상태DataGridViewTextBoxColumn";
             this.상태DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 이름DataGridViewTextBoxColumn
+            // 
+            this.이름DataGridViewTextBoxColumn.DataPropertyName = "이름";
+            this.이름DataGridViewTextBoxColumn.HeaderText = "이름";
+            this.이름DataGridViewTextBoxColumn.Name = "이름DataGridViewTextBoxColumn";
+            this.이름DataGridViewTextBoxColumn.ReadOnly = true;
+            this.이름DataGridViewTextBoxColumn.Width = 150;
             // 
             // 입학점수DataGridViewTextBoxColumn
             // 
@@ -194,6 +195,7 @@
             this.연락처DataGridViewTextBoxColumn.HeaderText = "연락처";
             this.연락처DataGridViewTextBoxColumn.Name = "연락처DataGridViewTextBoxColumn";
             this.연락처DataGridViewTextBoxColumn.ReadOnly = true;
+            this.연락처DataGridViewTextBoxColumn.Width = 120;
             // 
             // 보호자연락처DataGridViewTextBoxColumn
             // 
@@ -209,6 +211,7 @@
             this.주소DataGridViewTextBoxColumn.HeaderText = "주소";
             this.주소DataGridViewTextBoxColumn.Name = "주소DataGridViewTextBoxColumn";
             this.주소DataGridViewTextBoxColumn.ReadOnly = true;
+            this.주소DataGridViewTextBoxColumn.Width = 300;
             // 
             // dset_Waiting
             // 
@@ -228,7 +231,9 @@
             this.dataColumn7,
             this.dataColumn9,
             this.dataColumn8,
-            this.dataColumn10});
+            this.dataColumn10,
+            this.dataColumn11,
+            this.dataColumn12});
             this.dataTable1.TableName = "waiting";
             // 
             // dataColumn1
@@ -271,6 +276,14 @@
             // dataColumn10
             // 
             this.dataColumn10.ColumnName = "사진";
+            // 
+            // dataColumn11
+            // 
+            this.dataColumn11.ColumnName = "담당 선생님 아이디";
+            // 
+            // dataColumn12
+            // 
+            this.dataColumn12.ColumnName = "보호자 아이디";
             // 
             // panel2
             // 
@@ -394,6 +407,7 @@
             // cbox_Seed
             // 
             this.cbox_Seed.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbox_Seed.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_Seed.FormattingEnabled = true;
             this.cbox_Seed.Items.AddRange(new object[] {
             "상담",
@@ -403,7 +417,6 @@
             this.cbox_Seed.Name = "cbox_Seed";
             this.cbox_Seed.Size = new System.Drawing.Size(219, 20);
             this.cbox_Seed.TabIndex = 2;
-            this.cbox_Seed.Text = "세부범주";
             // 
             // panel12
             // 
@@ -418,6 +431,7 @@
             // cbox_SearchField
             // 
             this.cbox_SearchField.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbox_SearchField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_SearchField.FormattingEnabled = true;
             this.cbox_SearchField.Items.AddRange(new object[] {
             "이름",
@@ -427,7 +441,6 @@
             this.cbox_SearchField.Name = "cbox_SearchField";
             this.cbox_SearchField.Size = new System.Drawing.Size(219, 20);
             this.cbox_SearchField.TabIndex = 1;
-            this.cbox_SearchField.Text = "검색범주";
             this.cbox_SearchField.SelectedIndexChanged += new System.EventHandler(this.cbox_SearchField_SelectedIndexChanged);
             // 
             // contextMenuStrip1
@@ -435,35 +448,31 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.상담배정ToolStripMenuItem,
             this.담당취소ToolStripMenuItem,
-            this.toolStripMenuItem1,
             this.정보수정ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(179, 76);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(127, 70);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
-            this.contextMenuStrip1.Opened += new System.EventHandler(this.contextMenuStrip1_Opened);
             // 
             // 상담배정ToolStripMenuItem
             // 
             this.상담배정ToolStripMenuItem.Name = "상담배정ToolStripMenuItem";
-            this.상담배정ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.상담배정ToolStripMenuItem.Text = "선택 학생 담당하기";
+            this.상담배정ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.상담배정ToolStripMenuItem.Text = "상담 배정";
+            this.상담배정ToolStripMenuItem.Click += new System.EventHandler(this.상담배정ToolStripMenuItem_Click);
             // 
             // 담당취소ToolStripMenuItem
             // 
             this.담당취소ToolStripMenuItem.Name = "담당취소ToolStripMenuItem";
-            this.담당취소ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.담당취소ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.담당취소ToolStripMenuItem.Text = "담당 취소";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.담당취소ToolStripMenuItem.Click += new System.EventHandler(this.담당취소ToolStripMenuItem_Click);
             // 
             // 정보수정ToolStripMenuItem
             // 
             this.정보수정ToolStripMenuItem.Name = "정보수정ToolStripMenuItem";
-            this.정보수정ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.정보수정ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.정보수정ToolStripMenuItem.Text = "정보 수정";
+            this.정보수정ToolStripMenuItem.Click += new System.EventHandler(this.정보수정ToolStripMenuItem_Click);
             // 
             // View_상담
             // 
@@ -513,14 +522,6 @@
         private System.Windows.Forms.ComboBox cbox_Seed;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.ComboBox cbox_SearchField;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 담당선생님DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 이름DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 상태DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 입학점수DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 성별DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 연락처DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 보호자연락처DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 주소DataGridViewTextBoxColumn;
         private System.Data.DataSet dset_Waiting;
         private System.Data.DataTable dataTable1;
         private System.Data.DataColumn dataColumn1;
@@ -536,7 +537,16 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 상담배정ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 담당취소ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 정보수정ToolStripMenuItem;
+        private System.Data.DataColumn dataColumn11;
+        private System.Data.DataColumn dataColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 담당선생님DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 상태DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 이름DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 입학점수DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 성별DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 연락처DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 보호자연락처DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 주소DataGridViewTextBoxColumn;
     }
 }

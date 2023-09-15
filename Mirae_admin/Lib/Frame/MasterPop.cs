@@ -13,7 +13,7 @@ namespace Lib.Frame
     public enum ePopMode { None, Add, Modify, Delete }
     public partial class MasterPop : Form
     {
-        protected ePopMode m_PopMode;
+        protected ePopMode PopMode;
 
         public MasterPop()
         {
@@ -33,7 +33,7 @@ namespace Lib.Frame
 
         public virtual void InitializePop(ePopMode aPopMode = ePopMode.None, object aParam = null)
         {
-            m_PopMode = aPopMode;
+            PopMode = aPopMode;
         }
     }
 }

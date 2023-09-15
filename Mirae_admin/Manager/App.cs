@@ -7,8 +7,9 @@ using System.Windows.Forms;
 using System.Data.OracleClient;
 using System.Data.SqlClient;
 using System.Data;
+using Lib.Utility;
 
-namespace MiraePro.Manager
+namespace Mirae_admin.Manager
 {
 
     class App {
@@ -24,7 +25,7 @@ namespace MiraePro.Manager
             //다중 쓰레드 경우에는 동기화가 필요합니다. 
             if (_instance == null) {
                 _instance = new App();
-            } 
+            }
             return _instance;
         }
 
@@ -35,8 +36,8 @@ namespace MiraePro.Manager
             set { m_MainForm = value; }
         }
 
-        private DBManager m_DBManager;
-        public DBManager DBManager
+        private DBManager.DBManager m_DBManager;
+        public DBManager.DBManager DBManager
         {
             get { return m_DBManager; }
             set { m_DBManager = value; }
@@ -46,16 +47,42 @@ namespace MiraePro.Manager
         public ComponentManager ComponentManager { get; set; }
         public MouseHitManager MouseHitManager { get; set; }
         public Validator Validator { get; set; }
-        internal void InitializeManagers()
+
+        private void InitializeManagers()
         {
-            this.DBManager = new DBManager();
+            this.DBManager = new DBManager.DBManager();
             this.SessionManager = new SessionManager();
             this.FileManager = new FileManager();
             this.ComponentManager = new ComponentManager();
             this.MouseHitManager = new MouseHitManager();
             this.Validator = new Validator();
-            this.DBManager.SetConnectInfo("192.168.0.13", 1521, "MiraeDB", "kb603", "xe"); //TODO
+
+            INIT_DBConnection_Settings();
         }
+        private void INIT_DBConnection_Settings()
+        {
+            IniAssist vIniAssist = new IniAssist();
+            vIniAssist.Path = System.IO.Directory.GetCurrentDirectory() + "/SchemaSetup.ini";
+
+            if (!System.IO.File.Exists(vIniAssist.Path))
+            {
+                vIniAssist.WriteString("db", "IP", "192.168.0.13");
+                vIniAssist.WriteInteger("db", "Port", 1521);
+                vIniAssist.WriteString("db", "ID", "MiraeDB");
+                vIniAssist.WriteString("db", "Password", "kb603");
+                vIniAssist.WriteString("db", "Schema", "xe");
+            }
+
+            this.SetDBConfig(
+                vIniAssist.ReadString("db", "IP"),
+                vIniAssist.ReadInteger("db", "Port"),
+                vIniAssist.ReadString("db", "ID"),
+                vIniAssist.ReadString("db", "Password"),
+                vIniAssist.ReadString("db", "Schema"));
+
+            this.DBManager.SetConnectInfo(db_IP, db_Port, db_ID, db_Password, db_Schema);
+        }
+
 
         //public bool ShowMessage(string message) {
         //    bool _bresult = true;
@@ -71,27 +98,36 @@ namespace MiraePro.Manager
         private bool m_MessageVisible = false;
         public bool MessageVisible { get { return m_MessageVisible; } set { m_MessageVisible = value; } }
 
-        
+
 
         void fun()
         {
-            System.Data.OracleClient.OracleBFile test = null ;
-            SqlCommand cmd = null ;
-            DataRow dr = null ;
+            System.Data.OracleClient.OracleBFile test = null;
+            SqlCommand cmd = null;
+            DataRow dr = null;
         }
 
-        public string db_IP;
-        public int db_Port;
-        public string db_ID;
-        public string db_Password;
-        public string db_Schema;
+        public string db_IP { get; set; }
+        public int db_Port { get; set; }
+        public string db_ID { get; set; }
+        public string db_Password { get; set; }
+        public string db_Schema { get; set; }
         public void SetDBConfig(string aIP, int aPort, string aID, string aPassword, string aSchema)
         {
+            IniAssist IniAssist = new IniAssist();
+            IniAssist.WriteString("db", "IP", aIP);
+            IniAssist.WriteInteger("db", "Port", aPort);
+            IniAssist.WriteString("db", "ID", aID);
+            IniAssist.WriteString("db", "Password", aPassword);
+            IniAssist.WriteString("db", "Schema", aSchema);
+
             db_IP = aIP;
             db_Port = aPort;
             db_ID = aID;
             db_Password = aPassword;
             db_Schema = aSchema;
+
+            this.DBManager.SetConnectInfo(db_IP, db_Port, db_ID, db_Password, db_Schema);
         }
 
         

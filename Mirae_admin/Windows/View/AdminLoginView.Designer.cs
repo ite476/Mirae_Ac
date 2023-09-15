@@ -1,4 +1,4 @@
-﻿namespace MiraePro.Windows.View
+﻿namespace Mirae_admin.Windows.View
 {
     partial class AdminLoginView
     {
@@ -58,7 +58,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel_Top = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -80,7 +80,7 @@
             // 
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.panel_Top);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -176,8 +176,9 @@
             this.btn_ForDebug.Name = "btn_ForDebug";
             this.btn_ForDebug.Size = new System.Drawing.Size(287, 94);
             this.btn_ForDebug.TabIndex = 10;
-            this.btn_ForDebug.Text = "디버그용 로그인버튼";
+            this.btn_ForDebug.Text = "디버그용 로그인버튼\r\nadmin / 123";
             this.btn_ForDebug.UseVisualStyleBackColor = true;
+            this.btn_ForDebug.Visible = false;
             this.btn_ForDebug.Click += new System.EventHandler(this.btn_ForDebug_Click);
             // 
             // panel21
@@ -242,8 +243,10 @@
             this.tbox_Password.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbox_Password.Location = new System.Drawing.Point(0, 35);
             this.tbox_Password.Name = "tbox_Password";
+            this.tbox_Password.PasswordChar = '●';
             this.tbox_Password.Size = new System.Drawing.Size(212, 21);
             this.tbox_Password.TabIndex = 0;
+            this.tbox_Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbox_Password_KeyDown);
             // 
             // panel16
             // 
@@ -394,13 +397,13 @@
             this.panel5.Size = new System.Drawing.Size(187, 679);
             this.panel5.TabIndex = 7;
             // 
-            // panel2
+            // panel_Top
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1249, 40);
-            this.panel2.TabIndex = 6;
+            this.panel_Top.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_Top.Location = new System.Drawing.Point(0, 0);
+            this.panel_Top.Name = "panel_Top";
+            this.panel_Top.Size = new System.Drawing.Size(1249, 40);
+            this.panel_Top.TabIndex = 6;
             // 
             // AdminLoginView
             // 
@@ -462,7 +465,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel_Top;
         private System.Windows.Forms.Button btn_ForDebug;
     }
 }

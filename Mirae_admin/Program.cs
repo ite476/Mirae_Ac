@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MiraePro
+namespace Mirae_admin
 {
     internal static class Program
     {

@@ -43,9 +43,6 @@ namespace Lib.Frame
         public virtual void SetTitle(string aTitle) { }
         public virtual void InitializeView(string aKey, object aObject) { }
         #endregion
-        private void MasterView_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

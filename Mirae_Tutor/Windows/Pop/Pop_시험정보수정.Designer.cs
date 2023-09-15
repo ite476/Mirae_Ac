@@ -32,27 +32,27 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.tbox_Science = new System.Windows.Forms.TextBox();
             this.panel17 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tbox_Social = new System.Windows.Forms.TextBox();
             this.panel15 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbox_History = new System.Windows.Forms.TextBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tbox_English = new System.Windows.Forms.TextBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbox_Math = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbox_Korean = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -60,14 +60,14 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.tbox_name_test = new System.Windows.Forms.TextBox();
+            this.cbox_TestName = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label_name = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel20 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Apply = new System.Windows.Forms.Button();
             this.panel19 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Cancel = new System.Windows.Forms.Button();
             this.panel_Base.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -149,7 +149,7 @@
             // 
             // panel18
             // 
-            this.panel18.Controls.Add(this.textBox8);
+            this.panel18.Controls.Add(this.tbox_Science);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel18.Location = new System.Drawing.Point(153, 423);
             this.panel18.Name = "panel18";
@@ -157,13 +157,13 @@
             this.panel18.Size = new System.Drawing.Size(259, 55);
             this.panel18.TabIndex = 15;
             // 
-            // textBox8
+            // tbox_Science
             // 
-            this.textBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox8.Location = new System.Drawing.Point(15, 15);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(229, 21);
-            this.textBox8.TabIndex = 1;
+            this.tbox_Science.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbox_Science.Location = new System.Drawing.Point(15, 15);
+            this.tbox_Science.Name = "tbox_Science";
+            this.tbox_Science.Size = new System.Drawing.Size(229, 21);
+            this.tbox_Science.TabIndex = 1;
             // 
             // panel17
             // 
@@ -186,7 +186,7 @@
             // 
             // panel16
             // 
-            this.panel16.Controls.Add(this.textBox7);
+            this.panel16.Controls.Add(this.tbox_Social);
             this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel16.Location = new System.Drawing.Point(153, 363);
             this.panel16.Name = "panel16";
@@ -194,13 +194,13 @@
             this.panel16.Size = new System.Drawing.Size(259, 54);
             this.panel16.TabIndex = 13;
             // 
-            // textBox7
+            // tbox_Social
             // 
-            this.textBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox7.Location = new System.Drawing.Point(15, 15);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(229, 21);
-            this.textBox7.TabIndex = 1;
+            this.tbox_Social.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbox_Social.Location = new System.Drawing.Point(15, 15);
+            this.tbox_Social.Name = "tbox_Social";
+            this.tbox_Social.Size = new System.Drawing.Size(229, 21);
+            this.tbox_Social.TabIndex = 1;
             // 
             // panel15
             // 
@@ -223,7 +223,7 @@
             // 
             // panel14
             // 
-            this.panel14.Controls.Add(this.textBox6);
+            this.panel14.Controls.Add(this.tbox_History);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel14.Location = new System.Drawing.Point(153, 303);
             this.panel14.Name = "panel14";
@@ -231,13 +231,13 @@
             this.panel14.Size = new System.Drawing.Size(259, 54);
             this.panel14.TabIndex = 11;
             // 
-            // textBox6
+            // tbox_History
             // 
-            this.textBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox6.Location = new System.Drawing.Point(15, 15);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(229, 21);
-            this.textBox6.TabIndex = 1;
+            this.tbox_History.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbox_History.Location = new System.Drawing.Point(15, 15);
+            this.tbox_History.Name = "tbox_History";
+            this.tbox_History.Size = new System.Drawing.Size(229, 21);
+            this.tbox_History.TabIndex = 1;
             // 
             // panel13
             // 
@@ -260,7 +260,7 @@
             // 
             // panel12
             // 
-            this.panel12.Controls.Add(this.textBox5);
+            this.panel12.Controls.Add(this.tbox_English);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(153, 243);
             this.panel12.Name = "panel12";
@@ -268,13 +268,13 @@
             this.panel12.Size = new System.Drawing.Size(259, 54);
             this.panel12.TabIndex = 9;
             // 
-            // textBox5
+            // tbox_English
             // 
-            this.textBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox5.Location = new System.Drawing.Point(15, 15);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(229, 21);
-            this.textBox5.TabIndex = 1;
+            this.tbox_English.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbox_English.Location = new System.Drawing.Point(15, 15);
+            this.tbox_English.Name = "tbox_English";
+            this.tbox_English.Size = new System.Drawing.Size(229, 21);
+            this.tbox_English.TabIndex = 1;
             // 
             // panel11
             // 
@@ -297,7 +297,7 @@
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.textBox4);
+            this.panel10.Controls.Add(this.tbox_Math);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel10.Location = new System.Drawing.Point(153, 183);
             this.panel10.Name = "panel10";
@@ -305,13 +305,13 @@
             this.panel10.Size = new System.Drawing.Size(259, 54);
             this.panel10.TabIndex = 7;
             // 
-            // textBox4
+            // tbox_Math
             // 
-            this.textBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox4.Location = new System.Drawing.Point(15, 15);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(229, 21);
-            this.textBox4.TabIndex = 1;
+            this.tbox_Math.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbox_Math.Location = new System.Drawing.Point(15, 15);
+            this.tbox_Math.Name = "tbox_Math";
+            this.tbox_Math.Size = new System.Drawing.Size(229, 21);
+            this.tbox_Math.TabIndex = 1;
             // 
             // panel9
             // 
@@ -334,22 +334,21 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.textBox3);
+            this.panel8.Controls.Add(this.tbox_Korean);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(153, 123);
             this.panel8.Name = "panel8";
             this.panel8.Padding = new System.Windows.Forms.Padding(15);
             this.panel8.Size = new System.Drawing.Size(259, 54);
             this.panel8.TabIndex = 5;
-            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
             // 
-            // textBox3
+            // tbox_Korean
             // 
-            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox3.Location = new System.Drawing.Point(15, 15);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(229, 21);
-            this.textBox3.TabIndex = 1;
+            this.tbox_Korean.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbox_Korean.Location = new System.Drawing.Point(15, 15);
+            this.tbox_Korean.Name = "tbox_Korean";
+            this.tbox_Korean.Size = new System.Drawing.Size(229, 21);
+            this.tbox_Korean.TabIndex = 1;
             // 
             // panel7
             // 
@@ -409,7 +408,7 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.tbox_name_test);
+            this.panel4.Controls.Add(this.cbox_TestName);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(153, 3);
             this.panel4.Name = "panel4";
@@ -417,13 +416,17 @@
             this.panel4.Size = new System.Drawing.Size(259, 54);
             this.panel4.TabIndex = 1;
             // 
-            // tbox_name_test
+            // cbox_TestName
             // 
-            this.tbox_name_test.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbox_name_test.Location = new System.Drawing.Point(15, 15);
-            this.tbox_name_test.Name = "tbox_name_test";
-            this.tbox_name_test.Size = new System.Drawing.Size(229, 21);
-            this.tbox_name_test.TabIndex = 0;
+            this.cbox_TestName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbox_TestName.FormattingEnabled = true;
+            this.cbox_TestName.Items.AddRange(new object[] {
+            "평가원",
+            "사설"});
+            this.cbox_TestName.Location = new System.Drawing.Point(15, 18);
+            this.cbox_TestName.Name = "cbox_TestName";
+            this.cbox_TestName.Size = new System.Drawing.Size(229, 20);
+            this.cbox_TestName.TabIndex = 0;
             // 
             // panel3
             // 
@@ -456,7 +459,7 @@
             // 
             // panel20
             // 
-            this.panel20.Controls.Add(this.button1);
+            this.panel20.Controls.Add(this.btn_Apply);
             this.panel20.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel20.Location = new System.Drawing.Point(229, 0);
             this.panel20.Name = "panel20";
@@ -464,20 +467,20 @@
             this.panel20.Size = new System.Drawing.Size(93, 51);
             this.panel20.TabIndex = 1;
             // 
-            // button1
+            // btn_Apply
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 43);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "적용";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Apply.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_Apply.Location = new System.Drawing.Point(4, 4);
+            this.btn_Apply.Name = "btn_Apply";
+            this.btn_Apply.Size = new System.Drawing.Size(85, 43);
+            this.btn_Apply.TabIndex = 1;
+            this.btn_Apply.Text = "적용";
+            this.btn_Apply.UseVisualStyleBackColor = true;
+            this.btn_Apply.Click += new System.EventHandler(this.btn_Apply_Click);
             // 
             // panel19
             // 
-            this.panel19.Controls.Add(this.button2);
+            this.panel19.Controls.Add(this.btn_Cancel);
             this.panel19.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel19.Location = new System.Drawing.Point(322, 0);
             this.panel19.Name = "panel19";
@@ -485,16 +488,16 @@
             this.panel19.Size = new System.Drawing.Size(93, 51);
             this.panel19.TabIndex = 0;
             // 
-            // button2
+            // btn_Cancel
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Location = new System.Drawing.Point(4, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 43);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "취소";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_Cancel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_Cancel.Location = new System.Drawing.Point(4, 4);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(85, 43);
+            this.btn_Cancel.TabIndex = 1;
+            this.btn_Cancel.Text = "취소";
+            this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // Pop_시험정보수정
             // 
@@ -503,7 +506,7 @@
             this.ClientSize = new System.Drawing.Size(415, 532);
             this.Controls.Add(this.panel_Base);
             this.Name = "Pop_시험정보수정";
-            this.Text = "TestInfoPop";
+            this.Text = "성적 정보 수정";
             this.panel_Base.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -528,7 +531,6 @@
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
@@ -568,16 +570,16 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label_name;
         private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Apply;
         private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox tbox_name_test;
+        private System.Windows.Forms.Button btn_Cancel;
+        private System.Windows.Forms.TextBox tbox_Science;
+        private System.Windows.Forms.TextBox tbox_Social;
+        private System.Windows.Forms.TextBox tbox_History;
+        private System.Windows.Forms.TextBox tbox_English;
+        private System.Windows.Forms.TextBox tbox_Math;
+        private System.Windows.Forms.TextBox tbox_Korean;
         private System.Windows.Forms.DateTimePicker dtp_date_time;
+        private System.Windows.Forms.ComboBox cbox_TestName;
     }
 }

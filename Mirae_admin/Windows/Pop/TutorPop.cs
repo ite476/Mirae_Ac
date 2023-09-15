@@ -1,5 +1,5 @@
 ﻿using Lib.Frame;
-using MiraePro.Manager;
+using Mirae_admin.Manager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,10 +11,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
-namespace MiraePro.Windows.Pop
+namespace Mirae_admin.Windows.Pop
 {
     public partial class TutorPop : MasterPop
     {
+        Mirae_admin.Manager.DBManager.Tutor Data { get; set; }
+
         public TutorPop()
         {
             InitializeComponent();
@@ -25,11 +27,11 @@ namespace MiraePro.Windows.Pop
             return base.ShowPop(aPopMode, aParam);
         }
 
-        MiraePro.Manager.DBManager.Tutor Data { get; set; }
+        
         public override void InitializePop(ePopMode aPopMode = ePopMode.None, object aParam = null)
         {
-            m_PopMode = aPopMode;
-            Data = App.Instance().DBManager.ReadTutor_Specific(App.Instance().SessionManager.SessionID);
+            PopMode = aPopMode;
+            Data = App.Instance().DBManager.Tutor.Read_Specific(App.Instance().SessionManager.SessionID);
             if (Data == null)
             {
                 throw new Exception("DB에서 세션 사용자 정보가 발견되지 않습니다.");
@@ -85,6 +87,7 @@ namespace MiraePro.Windows.Pop
         private void label_Password_Click(object sender, EventArgs e)
         {
             tbox_Password.Visible = true;
+            label_Password.Tag = tbox_Password;
             label_Password.BorderStyle = BorderStyle.None;
         }
 
@@ -92,7 +95,7 @@ namespace MiraePro.Windows.Pop
         {
             if (CheckEverthingIsValid_Or_ShowError())
             {
-                int result = App.Instance().DBManager.ModifyTutor(Data);
+                int result = App.Instance().DBManager.Tutor.Modify(Data);
                 if (result > 0)
                 {
                     MessageBox.Show("정보를 수정하였습니다.");
@@ -107,43 +110,37 @@ namespace MiraePro.Windows.Pop
         private bool CheckEverthingIsValid_Or_ShowError()
         {
             UpdateDataAs_Input();
-
+            //필수조건 // 비밀번호(변경시) 이름
+            //길이제한 // 비밀번호(변경시) 이름 연락처 주소 과목
             int LengthLimit = 20;
-            Validator Validator = App.Instance().Validator;
-            if ((tbox_Password.Visible == true) && (Exist_String(Data.Name) == false))
+            Validator v_v = App.Instance().Validator;
+
+            bool isPasswordValid = true;
+            if (isChanging_Password())
             {
-                Validator.ShowErrorMessage_NecessaryNotExist("비밀번호");
-                return false;
+                TextBox tbox_Pwd = (TextBox)label_Password.Tag;
+                isPasswordValid = v_v.isValid_Necessary("비밀번호", tbox_Pwd.Text)
+                    && v_v.isValid_Below_LengthLimit("비밀번호", tbox_Pwd.Text, LengthLimit);
             }
 
-            if (isString_ExceedLength(tbox_Password.Text, LengthLimit))
+            if (isPasswordValid
+                && v_v.isValid_Necessary("이름", tbox_Name.Text)
+                && v_v.isValid_Below_LengthLimit("이름", tbox_Name.Text, LengthLimit)
+                && v_v.isValid_Below_LengthLimit("연락처", tbox_Contact.Text, LengthLimit)
+                && v_v.isValid_Below_LengthLimit("주소", tbox_Address.Text, LengthLimit)
+                && v_v.isValid_Below_LengthLimit("과목", tbox_Subject.Text, LengthLimit))
             {
-                Validator.ShowErrorMessage_Exceed("비밀번호", LengthLimit);
-                return false;
-            }
-            if (isString_ExceedLength(Data.Name, LengthLimit))
-            {
-                Validator.ShowErrorMessage_Exceed("이름", LengthLimit);
-                return false;
-            }
-            if (isString_ExceedLength(Data.Contact, LengthLimit))
-            {
-                Validator.ShowErrorMessage_Exceed("연락처", LengthLimit);
-                return false;
-            }
-            if (isString_ExceedLength(Data.Address, LengthLimit))
-            {
-                Validator.ShowErrorMessage_Exceed("주소", LengthLimit);
-                return false;
-            }
-            if (isString_ExceedLength(Data.Subject, LengthLimit))
-            {
-                Validator.ShowErrorMessage_Exceed("담당 업무", LengthLimit);
-                return false;
+                return true;
             }
 
-            return true;
+            return false;            
         }
+
+        private bool isChanging_Password()
+        {
+            return (tbox_Password.Visible == true);
+        }
+
         private void UpdateDataAs_Input()
         {
             Data.Name = tbox_Name.Text;
@@ -173,6 +170,11 @@ namespace MiraePro.Windows.Pop
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

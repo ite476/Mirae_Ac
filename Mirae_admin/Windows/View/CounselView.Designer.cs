@@ -1,4 +1,4 @@
-﻿namespace MiraePro.Windows.View
+﻿namespace Mirae_admin.Windows.View
 {
     partial class CounselView
     {
@@ -180,7 +180,7 @@
             this.panel_Base.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Base.Location = new System.Drawing.Point(0, 0);
             this.panel_Base.Name = "panel_Base";
-            this.panel_Base.Size = new System.Drawing.Size(1249, 636);
+            this.panel_Base.Size = new System.Drawing.Size(0, 0);
             this.panel_Base.TabIndex = 5;
             // 
             // panel3
@@ -189,7 +189,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 29);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1249, 542);
+            this.panel3.Size = new System.Drawing.Size(0, 0);
             this.panel3.TabIndex = 9;
             // 
             // groupBox1
@@ -199,10 +199,10 @@
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox1.Size = new System.Drawing.Size(1249, 542);
+            this.groupBox1.Size = new System.Drawing.Size(0, 0);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "목록";
+            this.groupBox1.Text = "신청 학생 목록";
             // 
             // dgv_Display_Waiting
             // 
@@ -229,12 +229,12 @@
             this.dgv_Display_Waiting.ReadOnly = true;
             this.dgv_Display_Waiting.RowTemplate.Height = 23;
             this.dgv_Display_Waiting.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Display_Waiting.Size = new System.Drawing.Size(1229, 508);
+            this.dgv_Display_Waiting.Size = new System.Drawing.Size(0, 0);
             this.dgv_Display_Waiting.TabIndex = 2;
             this.dgv_Display_Waiting.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Display_Waiting_CellContentClick);
             this.dgv_Display_Waiting.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Display_Waiting_CellDoubleClick);
             this.dgv_Display_Waiting.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_Display_Waiting_CellMouseClick);
-            this.dgv_Display_Waiting.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgv_Display_Waiting_MouseDown);
+            this.dgv_Display_Waiting.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_Display_Waiting_CellMouseDown);
             // 
             // 상태DataGridViewTextBoxColumn
             // 
@@ -263,6 +263,7 @@
             this.이름DataGridViewTextBoxColumn.HeaderText = "이름";
             this.이름DataGridViewTextBoxColumn.Name = "이름DataGridViewTextBoxColumn";
             this.이름DataGridViewTextBoxColumn.ReadOnly = true;
+            this.이름DataGridViewTextBoxColumn.Width = 150;
             // 
             // 입학점수DataGridViewTextBoxColumn
             // 
@@ -299,7 +300,7 @@
             this.주소DataGridViewTextBoxColumn.HeaderText = "주소";
             this.주소DataGridViewTextBoxColumn.Name = "주소DataGridViewTextBoxColumn";
             this.주소DataGridViewTextBoxColumn.ReadOnly = true;
-            this.주소DataGridViewTextBoxColumn.Width = 350;
+            this.주소DataGridViewTextBoxColumn.Width = 300;
             // 
             // panel2
             // 
@@ -307,9 +308,9 @@
             this.panel2.Controls.Add(this.panel10);
             this.panel2.Controls.Add(this.panel9);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 571);
+            this.panel2.Location = new System.Drawing.Point(0, -65);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1249, 65);
+            this.panel2.Size = new System.Drawing.Size(0, 65);
             this.panel2.TabIndex = 7;
             // 
             // panel11
@@ -319,7 +320,7 @@
             this.panel11.Location = new System.Drawing.Point(300, 0);
             this.panel11.Name = "panel11";
             this.panel11.Padding = new System.Windows.Forms.Padding(8);
-            this.panel11.Size = new System.Drawing.Size(649, 65);
+            this.panel11.Size = new System.Drawing.Size(0, 65);
             this.panel11.TabIndex = 5;
             // 
             // btn_ToMainMenu
@@ -328,7 +329,7 @@
             this.btn_ToMainMenu.Font = new System.Drawing.Font("배달의민족 도현", 15F);
             this.btn_ToMainMenu.Location = new System.Drawing.Point(8, 8);
             this.btn_ToMainMenu.Name = "btn_ToMainMenu";
-            this.btn_ToMainMenu.Size = new System.Drawing.Size(633, 49);
+            this.btn_ToMainMenu.Size = new System.Drawing.Size(0, 49);
             this.btn_ToMainMenu.TabIndex = 0;
             this.btn_ToMainMenu.Text = "메인메뉴로 돌아가기";
             this.btn_ToMainMenu.UseVisualStyleBackColor = true;
@@ -337,7 +338,7 @@
             // panel10
             // 
             this.panel10.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel10.Location = new System.Drawing.Point(949, 0);
+            this.panel10.Location = new System.Drawing.Point(-300, 0);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(300, 65);
             this.panel10.TabIndex = 4;
@@ -360,13 +361,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1249, 29);
+            this.panel1.Size = new System.Drawing.Size(0, 29);
             this.panel1.TabIndex = 6;
             // 
             // panel8
             // 
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(1024, 0);
+            this.panel8.Location = new System.Drawing.Point(-225, 0);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(225, 29);
             this.panel8.TabIndex = 7;
@@ -423,6 +424,7 @@
             // cbox_Seed
             // 
             this.cbox_Seed.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbox_Seed.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_Seed.FormattingEnabled = true;
             this.cbox_Seed.Items.AddRange(new object[] {
             "상담",
@@ -432,7 +434,6 @@
             this.cbox_Seed.Name = "cbox_Seed";
             this.cbox_Seed.Size = new System.Drawing.Size(219, 20);
             this.cbox_Seed.TabIndex = 2;
-            this.cbox_Seed.Text = "세부범주";
             this.cbox_Seed.SelectedIndexChanged += new System.EventHandler(this.cbox_Seed_SelectedIndexChanged);
             // 
             // panel5
@@ -448,6 +449,7 @@
             // cbox_SearchField
             // 
             this.cbox_SearchField.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbox_SearchField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_SearchField.FormattingEnabled = true;
             this.cbox_SearchField.Items.AddRange(new object[] {
             "이름",
@@ -458,14 +460,13 @@
             this.cbox_SearchField.Name = "cbox_SearchField";
             this.cbox_SearchField.Size = new System.Drawing.Size(219, 20);
             this.cbox_SearchField.TabIndex = 1;
-            this.cbox_SearchField.Text = "검색범주";
             this.cbox_SearchField.SelectedIndexChanged += new System.EventHandler(this.cbox_SearchField_SelectedIndexChanged);
             // 
             // CounselView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1249, 636);
+            this.ClientSize = new System.Drawing.Size(0, 0);
             this.Controls.Add(this.panel_Base);
             this.Name = "CounselView";
             this.Text = "CourseView";
@@ -522,6 +523,7 @@
         private System.Data.DataColumn dataColumn10;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem cmbtn_Modify;
+        private System.Windows.Forms.ToolStripMenuItem cmbtn_AssignToHakGeup;
         private System.Windows.Forms.DataGridViewTextBoxColumn 상태DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 담당선생님DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 아이디DataGridViewTextBoxColumn;
@@ -531,6 +533,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 연락처DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 보호자연락처DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 주소DataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStripMenuItem cmbtn_AssignToHakGeup;
     }
 }

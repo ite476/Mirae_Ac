@@ -1,4 +1,4 @@
-﻿namespace MiraePro.Windows.Pop
+﻿namespace Mirae_admin.Windows.Pop
 {
     partial class TutorListPop
     {
@@ -329,7 +329,7 @@
             this.ClientSize = new System.Drawing.Size(949, 433);
             this.Controls.Add(this.panel_Base);
             this.Name = "TutorListPop";
-            this.Text = "TutorListPop";
+            this.Text = "선생님 목록";
             this.panel_Base.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Display_Tutor)).EndInit();

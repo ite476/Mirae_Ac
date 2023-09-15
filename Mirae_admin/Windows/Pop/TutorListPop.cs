@@ -1,6 +1,6 @@
 ﻿using Lib.Frame;
 using Lib.Utility;
-using MiraePro.Manager;
+using Mirae_admin.Manager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MiraePro.Windows.Pop
+namespace Mirae_admin.Windows.Pop
 {
     public partial class TutorListPop : MasterPop
     {
@@ -30,7 +30,7 @@ namespace MiraePro.Windows.Pop
         public TutorListPop()
         {
             InitializeComponent();
-            DataTable dt = App.Instance().DBManager.ReadTutor();
+            DataTable dt = App.Instance().DBManager.Tutor.Read();
             GridAssist.SetAuto_GridView_FromSourceTable(dgv_Display_Tutor,dt);
         }
         

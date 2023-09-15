@@ -1,4 +1,4 @@
-﻿namespace MiraePro.Windows.View
+﻿namespace Mirae_admin.Windows.View
 {
     partial class ScheduleView
     {
@@ -296,7 +296,7 @@
             this.panel_Base.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Base.Location = new System.Drawing.Point(0, 0);
             this.panel_Base.Name = "panel_Base";
-            this.panel_Base.Size = new System.Drawing.Size(1249, 636);
+            this.panel_Base.Size = new System.Drawing.Size(1274, 636);
             this.panel_Base.TabIndex = 6;
             // 
             // panel3
@@ -305,7 +305,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 29);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1249, 542);
+            this.panel3.Size = new System.Drawing.Size(1274, 542);
             this.panel3.TabIndex = 9;
             // 
             // groupBox1
@@ -315,7 +315,7 @@
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox1.Size = new System.Drawing.Size(1249, 542);
+            this.groupBox1.Size = new System.Drawing.Size(1274, 542);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "목록";
@@ -326,7 +326,7 @@
             this.panel_calendar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_calendar.Location = new System.Drawing.Point(10, 24);
             this.panel_calendar.Name = "panel_calendar";
-            this.panel_calendar.Size = new System.Drawing.Size(1229, 508);
+            this.panel_calendar.Size = new System.Drawing.Size(1254, 508);
             this.panel_calendar.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -426,7 +426,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1229, 508);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1254, 508);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel58
@@ -435,7 +435,7 @@
             this.panel58.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel58.Location = new System.Drawing.Point(3, 339);
             this.panel58.Name = "panel58";
-            this.panel58.Size = new System.Drawing.Size(147, 50);
+            this.panel58.Size = new System.Drawing.Size(150, 50);
             this.panel58.TabIndex = 71;
             // 
             // label13
@@ -443,7 +443,7 @@
             this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label13.Location = new System.Drawing.Point(0, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(147, 50);
+            this.label13.Size = new System.Drawing.Size(150, 50);
             this.label13.TabIndex = 75;
             this.label13.Text = "6교시";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -452,9 +452,9 @@
             // 
             this.panel59.Controls.Add(this.label_Sun6);
             this.panel59.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel59.Location = new System.Drawing.Point(156, 339);
+            this.panel59.Location = new System.Drawing.Point(159, 339);
             this.panel59.Name = "panel59";
-            this.panel59.Size = new System.Drawing.Size(147, 50);
+            this.panel59.Size = new System.Drawing.Size(150, 50);
             this.panel59.TabIndex = 70;
             // 
             // label_Sun6
@@ -463,7 +463,7 @@
             this.label_Sun6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Sun6.Location = new System.Drawing.Point(0, 0);
             this.label_Sun6.Name = "label_Sun6";
-            this.label_Sun6.Size = new System.Drawing.Size(147, 50);
+            this.label_Sun6.Size = new System.Drawing.Size(150, 50);
             this.label_Sun6.TabIndex = 79;
             this.label_Sun6.Text = "수학\r\n\r\n정약용";
             this.label_Sun6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -472,9 +472,9 @@
             // 
             this.panel60.Controls.Add(this.label_Mon6);
             this.panel60.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel60.Location = new System.Drawing.Point(309, 339);
+            this.panel60.Location = new System.Drawing.Point(315, 339);
             this.panel60.Name = "panel60";
-            this.panel60.Size = new System.Drawing.Size(147, 50);
+            this.panel60.Size = new System.Drawing.Size(150, 50);
             this.panel60.TabIndex = 69;
             // 
             // label_Mon6
@@ -483,7 +483,7 @@
             this.label_Mon6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Mon6.Location = new System.Drawing.Point(0, 0);
             this.label_Mon6.Name = "label_Mon6";
-            this.label_Mon6.Size = new System.Drawing.Size(147, 50);
+            this.label_Mon6.Size = new System.Drawing.Size(150, 50);
             this.label_Mon6.TabIndex = 78;
             this.label_Mon6.Text = "수학\r\n\r\n정약용";
             this.label_Mon6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -492,9 +492,9 @@
             // 
             this.panel61.Controls.Add(this.label_Tue6);
             this.panel61.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel61.Location = new System.Drawing.Point(462, 339);
+            this.panel61.Location = new System.Drawing.Point(471, 339);
             this.panel61.Name = "panel61";
-            this.panel61.Size = new System.Drawing.Size(147, 50);
+            this.panel61.Size = new System.Drawing.Size(150, 50);
             this.panel61.TabIndex = 68;
             // 
             // label_Tue6
@@ -503,7 +503,7 @@
             this.label_Tue6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Tue6.Location = new System.Drawing.Point(0, 0);
             this.label_Tue6.Name = "label_Tue6";
-            this.label_Tue6.Size = new System.Drawing.Size(147, 50);
+            this.label_Tue6.Size = new System.Drawing.Size(150, 50);
             this.label_Tue6.TabIndex = 78;
             this.label_Tue6.Text = "수학\r\n\r\n정약용";
             this.label_Tue6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -512,9 +512,9 @@
             // 
             this.panel62.Controls.Add(this.label_Wed6);
             this.panel62.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel62.Location = new System.Drawing.Point(615, 339);
+            this.panel62.Location = new System.Drawing.Point(627, 339);
             this.panel62.Name = "panel62";
-            this.panel62.Size = new System.Drawing.Size(147, 50);
+            this.panel62.Size = new System.Drawing.Size(150, 50);
             this.panel62.TabIndex = 67;
             // 
             // label_Wed6
@@ -523,7 +523,7 @@
             this.label_Wed6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Wed6.Location = new System.Drawing.Point(0, 0);
             this.label_Wed6.Name = "label_Wed6";
-            this.label_Wed6.Size = new System.Drawing.Size(147, 50);
+            this.label_Wed6.Size = new System.Drawing.Size(150, 50);
             this.label_Wed6.TabIndex = 78;
             this.label_Wed6.Text = "수학\r\n\r\n정약용";
             this.label_Wed6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -532,9 +532,9 @@
             // 
             this.panel63.Controls.Add(this.label_Thu6);
             this.panel63.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel63.Location = new System.Drawing.Point(768, 339);
+            this.panel63.Location = new System.Drawing.Point(783, 339);
             this.panel63.Name = "panel63";
-            this.panel63.Size = new System.Drawing.Size(147, 50);
+            this.panel63.Size = new System.Drawing.Size(150, 50);
             this.panel63.TabIndex = 66;
             // 
             // label_Thu6
@@ -543,7 +543,7 @@
             this.label_Thu6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Thu6.Location = new System.Drawing.Point(0, 0);
             this.label_Thu6.Name = "label_Thu6";
-            this.label_Thu6.Size = new System.Drawing.Size(147, 50);
+            this.label_Thu6.Size = new System.Drawing.Size(150, 50);
             this.label_Thu6.TabIndex = 78;
             this.label_Thu6.Text = "수학\r\n\r\n정약용";
             this.label_Thu6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -552,9 +552,9 @@
             // 
             this.panel64.Controls.Add(this.label_Fri6);
             this.panel64.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel64.Location = new System.Drawing.Point(921, 339);
+            this.panel64.Location = new System.Drawing.Point(939, 339);
             this.panel64.Name = "panel64";
-            this.panel64.Size = new System.Drawing.Size(147, 50);
+            this.panel64.Size = new System.Drawing.Size(150, 50);
             this.panel64.TabIndex = 65;
             // 
             // label_Fri6
@@ -563,7 +563,7 @@
             this.label_Fri6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Fri6.Location = new System.Drawing.Point(0, 0);
             this.label_Fri6.Name = "label_Fri6";
-            this.label_Fri6.Size = new System.Drawing.Size(147, 50);
+            this.label_Fri6.Size = new System.Drawing.Size(150, 50);
             this.label_Fri6.TabIndex = 78;
             this.label_Fri6.Text = "수학\r\n\r\n정약용";
             this.label_Fri6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -572,9 +572,9 @@
             // 
             this.panel65.Controls.Add(this.label_Sat6);
             this.panel65.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel65.Location = new System.Drawing.Point(1074, 339);
+            this.panel65.Location = new System.Drawing.Point(1095, 339);
             this.panel65.Name = "panel65";
-            this.panel65.Size = new System.Drawing.Size(152, 50);
+            this.panel65.Size = new System.Drawing.Size(156, 50);
             this.panel65.TabIndex = 64;
             // 
             // label_Sat6
@@ -583,7 +583,7 @@
             this.label_Sat6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Sat6.Location = new System.Drawing.Point(0, 0);
             this.label_Sat6.Name = "label_Sat6";
-            this.label_Sat6.Size = new System.Drawing.Size(152, 50);
+            this.label_Sat6.Size = new System.Drawing.Size(156, 50);
             this.label_Sat6.TabIndex = 78;
             this.label_Sat6.Text = " ";
             this.label_Sat6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -594,7 +594,7 @@
             this.panel66.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel66.Location = new System.Drawing.Point(3, 395);
             this.panel66.Name = "panel66";
-            this.panel66.Size = new System.Drawing.Size(147, 50);
+            this.panel66.Size = new System.Drawing.Size(150, 50);
             this.panel66.TabIndex = 63;
             // 
             // label14
@@ -602,7 +602,7 @@
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label14.Location = new System.Drawing.Point(0, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(147, 50);
+            this.label14.Size = new System.Drawing.Size(150, 50);
             this.label14.TabIndex = 75;
             this.label14.Text = "7교시";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -611,9 +611,9 @@
             // 
             this.panel67.Controls.Add(this.label_Sun7);
             this.panel67.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel67.Location = new System.Drawing.Point(156, 395);
+            this.panel67.Location = new System.Drawing.Point(159, 395);
             this.panel67.Name = "panel67";
-            this.panel67.Size = new System.Drawing.Size(147, 50);
+            this.panel67.Size = new System.Drawing.Size(150, 50);
             this.panel67.TabIndex = 62;
             // 
             // label_Sun7
@@ -622,7 +622,7 @@
             this.label_Sun7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Sun7.Location = new System.Drawing.Point(0, 0);
             this.label_Sun7.Name = "label_Sun7";
-            this.label_Sun7.Size = new System.Drawing.Size(147, 50);
+            this.label_Sun7.Size = new System.Drawing.Size(150, 50);
             this.label_Sun7.TabIndex = 79;
             this.label_Sun7.Text = "수학\r\n\r\n정약용";
             this.label_Sun7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -631,9 +631,9 @@
             // 
             this.panel68.Controls.Add(this.label_Mon7);
             this.panel68.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel68.Location = new System.Drawing.Point(309, 395);
+            this.panel68.Location = new System.Drawing.Point(315, 395);
             this.panel68.Name = "panel68";
-            this.panel68.Size = new System.Drawing.Size(147, 50);
+            this.panel68.Size = new System.Drawing.Size(150, 50);
             this.panel68.TabIndex = 61;
             // 
             // label_Mon7
@@ -642,7 +642,7 @@
             this.label_Mon7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Mon7.Location = new System.Drawing.Point(0, 0);
             this.label_Mon7.Name = "label_Mon7";
-            this.label_Mon7.Size = new System.Drawing.Size(147, 50);
+            this.label_Mon7.Size = new System.Drawing.Size(150, 50);
             this.label_Mon7.TabIndex = 78;
             this.label_Mon7.Text = "수학\r\n\r\n정약용";
             this.label_Mon7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -651,9 +651,9 @@
             // 
             this.panel69.Controls.Add(this.label_Tue7);
             this.panel69.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel69.Location = new System.Drawing.Point(462, 395);
+            this.panel69.Location = new System.Drawing.Point(471, 395);
             this.panel69.Name = "panel69";
-            this.panel69.Size = new System.Drawing.Size(147, 50);
+            this.panel69.Size = new System.Drawing.Size(150, 50);
             this.panel69.TabIndex = 60;
             // 
             // label_Tue7
@@ -662,7 +662,7 @@
             this.label_Tue7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Tue7.Location = new System.Drawing.Point(0, 0);
             this.label_Tue7.Name = "label_Tue7";
-            this.label_Tue7.Size = new System.Drawing.Size(147, 50);
+            this.label_Tue7.Size = new System.Drawing.Size(150, 50);
             this.label_Tue7.TabIndex = 78;
             this.label_Tue7.Text = "수학\r\n\r\n정약용";
             this.label_Tue7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -671,9 +671,9 @@
             // 
             this.panel70.Controls.Add(this.label_Wed7);
             this.panel70.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel70.Location = new System.Drawing.Point(615, 395);
+            this.panel70.Location = new System.Drawing.Point(627, 395);
             this.panel70.Name = "panel70";
-            this.panel70.Size = new System.Drawing.Size(147, 50);
+            this.panel70.Size = new System.Drawing.Size(150, 50);
             this.panel70.TabIndex = 59;
             // 
             // label_Wed7
@@ -682,7 +682,7 @@
             this.label_Wed7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Wed7.Location = new System.Drawing.Point(0, 0);
             this.label_Wed7.Name = "label_Wed7";
-            this.label_Wed7.Size = new System.Drawing.Size(147, 50);
+            this.label_Wed7.Size = new System.Drawing.Size(150, 50);
             this.label_Wed7.TabIndex = 78;
             this.label_Wed7.Text = "수학\r\n\r\n정약용";
             this.label_Wed7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -691,9 +691,9 @@
             // 
             this.panel71.Controls.Add(this.label_Thu7);
             this.panel71.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel71.Location = new System.Drawing.Point(768, 395);
+            this.panel71.Location = new System.Drawing.Point(783, 395);
             this.panel71.Name = "panel71";
-            this.panel71.Size = new System.Drawing.Size(147, 50);
+            this.panel71.Size = new System.Drawing.Size(150, 50);
             this.panel71.TabIndex = 58;
             // 
             // label_Thu7
@@ -702,7 +702,7 @@
             this.label_Thu7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Thu7.Location = new System.Drawing.Point(0, 0);
             this.label_Thu7.Name = "label_Thu7";
-            this.label_Thu7.Size = new System.Drawing.Size(147, 50);
+            this.label_Thu7.Size = new System.Drawing.Size(150, 50);
             this.label_Thu7.TabIndex = 78;
             this.label_Thu7.Text = "수학\r\n\r\n정약용";
             this.label_Thu7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -711,9 +711,9 @@
             // 
             this.panel72.Controls.Add(this.label_Fri7);
             this.panel72.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel72.Location = new System.Drawing.Point(921, 395);
+            this.panel72.Location = new System.Drawing.Point(939, 395);
             this.panel72.Name = "panel72";
-            this.panel72.Size = new System.Drawing.Size(147, 50);
+            this.panel72.Size = new System.Drawing.Size(150, 50);
             this.panel72.TabIndex = 57;
             // 
             // label_Fri7
@@ -722,7 +722,7 @@
             this.label_Fri7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Fri7.Location = new System.Drawing.Point(0, 0);
             this.label_Fri7.Name = "label_Fri7";
-            this.label_Fri7.Size = new System.Drawing.Size(147, 50);
+            this.label_Fri7.Size = new System.Drawing.Size(150, 50);
             this.label_Fri7.TabIndex = 78;
             this.label_Fri7.Text = "수학\r\n\r\n정약용";
             this.label_Fri7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -731,9 +731,9 @@
             // 
             this.panel73.Controls.Add(this.label_Sat7);
             this.panel73.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel73.Location = new System.Drawing.Point(1074, 395);
+            this.panel73.Location = new System.Drawing.Point(1095, 395);
             this.panel73.Name = "panel73";
-            this.panel73.Size = new System.Drawing.Size(152, 50);
+            this.panel73.Size = new System.Drawing.Size(156, 50);
             this.panel73.TabIndex = 56;
             // 
             // label_Sat7
@@ -742,7 +742,7 @@
             this.label_Sat7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Sat7.Location = new System.Drawing.Point(0, 0);
             this.label_Sat7.Name = "label_Sat7";
-            this.label_Sat7.Size = new System.Drawing.Size(152, 50);
+            this.label_Sat7.Size = new System.Drawing.Size(156, 50);
             this.label_Sat7.TabIndex = 78;
             this.label_Sat7.Text = " ";
             this.label_Sat7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -753,7 +753,7 @@
             this.panel74.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel74.Location = new System.Drawing.Point(3, 451);
             this.panel74.Name = "panel74";
-            this.panel74.Size = new System.Drawing.Size(147, 54);
+            this.panel74.Size = new System.Drawing.Size(150, 54);
             this.panel74.TabIndex = 55;
             // 
             // label15
@@ -761,7 +761,7 @@
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label15.Location = new System.Drawing.Point(0, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(147, 54);
+            this.label15.Size = new System.Drawing.Size(150, 54);
             this.label15.TabIndex = 75;
             this.label15.Text = "8교시";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -770,9 +770,9 @@
             // 
             this.panel75.Controls.Add(this.label_Sun8);
             this.panel75.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel75.Location = new System.Drawing.Point(156, 451);
+            this.panel75.Location = new System.Drawing.Point(159, 451);
             this.panel75.Name = "panel75";
-            this.panel75.Size = new System.Drawing.Size(147, 54);
+            this.panel75.Size = new System.Drawing.Size(150, 54);
             this.panel75.TabIndex = 54;
             // 
             // label_Sun8
@@ -781,7 +781,7 @@
             this.label_Sun8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Sun8.Location = new System.Drawing.Point(0, 0);
             this.label_Sun8.Name = "label_Sun8";
-            this.label_Sun8.Size = new System.Drawing.Size(147, 54);
+            this.label_Sun8.Size = new System.Drawing.Size(150, 54);
             this.label_Sun8.TabIndex = 79;
             this.label_Sun8.Text = "수학\r\n\r\n정약용";
             this.label_Sun8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -790,9 +790,9 @@
             // 
             this.panel76.Controls.Add(this.label_Mon8);
             this.panel76.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel76.Location = new System.Drawing.Point(309, 451);
+            this.panel76.Location = new System.Drawing.Point(315, 451);
             this.panel76.Name = "panel76";
-            this.panel76.Size = new System.Drawing.Size(147, 54);
+            this.panel76.Size = new System.Drawing.Size(150, 54);
             this.panel76.TabIndex = 53;
             // 
             // label_Mon8
@@ -801,7 +801,7 @@
             this.label_Mon8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Mon8.Location = new System.Drawing.Point(0, 0);
             this.label_Mon8.Name = "label_Mon8";
-            this.label_Mon8.Size = new System.Drawing.Size(147, 54);
+            this.label_Mon8.Size = new System.Drawing.Size(150, 54);
             this.label_Mon8.TabIndex = 78;
             this.label_Mon8.Text = "수학\r\n\r\n정약용";
             this.label_Mon8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -810,9 +810,9 @@
             // 
             this.panel77.Controls.Add(this.label_Tue8);
             this.panel77.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel77.Location = new System.Drawing.Point(462, 451);
+            this.panel77.Location = new System.Drawing.Point(471, 451);
             this.panel77.Name = "panel77";
-            this.panel77.Size = new System.Drawing.Size(147, 54);
+            this.panel77.Size = new System.Drawing.Size(150, 54);
             this.panel77.TabIndex = 52;
             // 
             // label_Tue8
@@ -821,7 +821,7 @@
             this.label_Tue8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Tue8.Location = new System.Drawing.Point(0, 0);
             this.label_Tue8.Name = "label_Tue8";
-            this.label_Tue8.Size = new System.Drawing.Size(147, 54);
+            this.label_Tue8.Size = new System.Drawing.Size(150, 54);
             this.label_Tue8.TabIndex = 78;
             this.label_Tue8.Text = "수학\r\n\r\n정약용";
             this.label_Tue8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -830,9 +830,9 @@
             // 
             this.panel78.Controls.Add(this.label_Wed8);
             this.panel78.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel78.Location = new System.Drawing.Point(615, 451);
+            this.panel78.Location = new System.Drawing.Point(627, 451);
             this.panel78.Name = "panel78";
-            this.panel78.Size = new System.Drawing.Size(147, 54);
+            this.panel78.Size = new System.Drawing.Size(150, 54);
             this.panel78.TabIndex = 51;
             // 
             // label_Wed8
@@ -841,7 +841,7 @@
             this.label_Wed8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Wed8.Location = new System.Drawing.Point(0, 0);
             this.label_Wed8.Name = "label_Wed8";
-            this.label_Wed8.Size = new System.Drawing.Size(147, 54);
+            this.label_Wed8.Size = new System.Drawing.Size(150, 54);
             this.label_Wed8.TabIndex = 78;
             this.label_Wed8.Text = "수학\r\n\r\n정약용";
             this.label_Wed8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -850,9 +850,9 @@
             // 
             this.panel79.Controls.Add(this.label_Thu8);
             this.panel79.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel79.Location = new System.Drawing.Point(768, 451);
+            this.panel79.Location = new System.Drawing.Point(783, 451);
             this.panel79.Name = "panel79";
-            this.panel79.Size = new System.Drawing.Size(147, 54);
+            this.panel79.Size = new System.Drawing.Size(150, 54);
             this.panel79.TabIndex = 50;
             // 
             // label_Thu8
@@ -861,7 +861,7 @@
             this.label_Thu8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Thu8.Location = new System.Drawing.Point(0, 0);
             this.label_Thu8.Name = "label_Thu8";
-            this.label_Thu8.Size = new System.Drawing.Size(147, 54);
+            this.label_Thu8.Size = new System.Drawing.Size(150, 54);
             this.label_Thu8.TabIndex = 78;
             this.label_Thu8.Text = "수학\r\n\r\n정약용";
             this.label_Thu8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -870,9 +870,9 @@
             // 
             this.panel80.Controls.Add(this.label_Fri8);
             this.panel80.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel80.Location = new System.Drawing.Point(921, 451);
+            this.panel80.Location = new System.Drawing.Point(939, 451);
             this.panel80.Name = "panel80";
-            this.panel80.Size = new System.Drawing.Size(147, 54);
+            this.panel80.Size = new System.Drawing.Size(150, 54);
             this.panel80.TabIndex = 49;
             // 
             // label_Fri8
@@ -881,7 +881,7 @@
             this.label_Fri8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Fri8.Location = new System.Drawing.Point(0, 0);
             this.label_Fri8.Name = "label_Fri8";
-            this.label_Fri8.Size = new System.Drawing.Size(147, 54);
+            this.label_Fri8.Size = new System.Drawing.Size(150, 54);
             this.label_Fri8.TabIndex = 78;
             this.label_Fri8.Text = "수학\r\n\r\n정약용";
             this.label_Fri8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -890,9 +890,9 @@
             // 
             this.panel81.Controls.Add(this.label_Sat8);
             this.panel81.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel81.Location = new System.Drawing.Point(1074, 451);
+            this.panel81.Location = new System.Drawing.Point(1095, 451);
             this.panel81.Name = "panel81";
-            this.panel81.Size = new System.Drawing.Size(152, 54);
+            this.panel81.Size = new System.Drawing.Size(156, 54);
             this.panel81.TabIndex = 48;
             // 
             // label_Sat8
@@ -901,7 +901,7 @@
             this.label_Sat8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Sat8.Location = new System.Drawing.Point(0, 0);
             this.label_Sat8.Name = "label_Sat8";
-            this.label_Sat8.Size = new System.Drawing.Size(152, 54);
+            this.label_Sat8.Size = new System.Drawing.Size(156, 54);
             this.label_Sat8.TabIndex = 78;
             this.label_Sat8.Text = " ";
             this.label_Sat8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -912,7 +912,7 @@
             this.panel34.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel34.Location = new System.Drawing.Point(3, 171);
             this.panel34.Name = "panel34";
-            this.panel34.Size = new System.Drawing.Size(147, 50);
+            this.panel34.Size = new System.Drawing.Size(150, 50);
             this.panel34.TabIndex = 47;
             // 
             // label10
@@ -920,7 +920,7 @@
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label10.Location = new System.Drawing.Point(0, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(147, 50);
+            this.label10.Size = new System.Drawing.Size(150, 50);
             this.label10.TabIndex = 75;
             this.label10.Text = "3교시";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -929,9 +929,9 @@
             // 
             this.panel35.Controls.Add(this.label_Sun3);
             this.panel35.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel35.Location = new System.Drawing.Point(156, 171);
+            this.panel35.Location = new System.Drawing.Point(159, 171);
             this.panel35.Name = "panel35";
-            this.panel35.Size = new System.Drawing.Size(147, 50);
+            this.panel35.Size = new System.Drawing.Size(150, 50);
             this.panel35.TabIndex = 46;
             // 
             // label_Sun3
@@ -940,7 +940,7 @@
             this.label_Sun3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Sun3.Location = new System.Drawing.Point(0, 0);
             this.label_Sun3.Name = "label_Sun3";
-            this.label_Sun3.Size = new System.Drawing.Size(147, 50);
+            this.label_Sun3.Size = new System.Drawing.Size(150, 50);
             this.label_Sun3.TabIndex = 79;
             this.label_Sun3.Text = "수학\r\n\r\n정약용";
             this.label_Sun3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -949,9 +949,9 @@
             // 
             this.panel36.Controls.Add(this.label_Mon3);
             this.panel36.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel36.Location = new System.Drawing.Point(309, 171);
+            this.panel36.Location = new System.Drawing.Point(315, 171);
             this.panel36.Name = "panel36";
-            this.panel36.Size = new System.Drawing.Size(147, 50);
+            this.panel36.Size = new System.Drawing.Size(150, 50);
             this.panel36.TabIndex = 45;
             // 
             // label_Mon3
@@ -960,7 +960,7 @@
             this.label_Mon3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Mon3.Location = new System.Drawing.Point(0, 0);
             this.label_Mon3.Name = "label_Mon3";
-            this.label_Mon3.Size = new System.Drawing.Size(147, 50);
+            this.label_Mon3.Size = new System.Drawing.Size(150, 50);
             this.label_Mon3.TabIndex = 78;
             this.label_Mon3.Text = "수학\r\n\r\n정약용";
             this.label_Mon3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -969,9 +969,9 @@
             // 
             this.panel37.Controls.Add(this.label_Tue3);
             this.panel37.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel37.Location = new System.Drawing.Point(462, 171);
+            this.panel37.Location = new System.Drawing.Point(471, 171);
             this.panel37.Name = "panel37";
-            this.panel37.Size = new System.Drawing.Size(147, 50);
+            this.panel37.Size = new System.Drawing.Size(150, 50);
             this.panel37.TabIndex = 44;
             // 
             // label_Tue3
@@ -980,7 +980,7 @@
             this.label_Tue3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Tue3.Location = new System.Drawing.Point(0, 0);
             this.label_Tue3.Name = "label_Tue3";
-            this.label_Tue3.Size = new System.Drawing.Size(147, 50);
+            this.label_Tue3.Size = new System.Drawing.Size(150, 50);
             this.label_Tue3.TabIndex = 78;
             this.label_Tue3.Text = "수학\r\n\r\n정약용";
             this.label_Tue3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -989,9 +989,9 @@
             // 
             this.panel38.Controls.Add(this.label_Wed3);
             this.panel38.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel38.Location = new System.Drawing.Point(615, 171);
+            this.panel38.Location = new System.Drawing.Point(627, 171);
             this.panel38.Name = "panel38";
-            this.panel38.Size = new System.Drawing.Size(147, 50);
+            this.panel38.Size = new System.Drawing.Size(150, 50);
             this.panel38.TabIndex = 43;
             // 
             // label_Wed3
@@ -1000,7 +1000,7 @@
             this.label_Wed3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Wed3.Location = new System.Drawing.Point(0, 0);
             this.label_Wed3.Name = "label_Wed3";
-            this.label_Wed3.Size = new System.Drawing.Size(147, 50);
+            this.label_Wed3.Size = new System.Drawing.Size(150, 50);
             this.label_Wed3.TabIndex = 78;
             this.label_Wed3.Text = "수학\r\n\r\n정약용";
             this.label_Wed3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1009,9 +1009,9 @@
             // 
             this.panel39.Controls.Add(this.label_Thu3);
             this.panel39.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel39.Location = new System.Drawing.Point(768, 171);
+            this.panel39.Location = new System.Drawing.Point(783, 171);
             this.panel39.Name = "panel39";
-            this.panel39.Size = new System.Drawing.Size(147, 50);
+            this.panel39.Size = new System.Drawing.Size(150, 50);
             this.panel39.TabIndex = 42;
             // 
             // label_Thu3
@@ -1020,7 +1020,7 @@
             this.label_Thu3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Thu3.Location = new System.Drawing.Point(0, 0);
             this.label_Thu3.Name = "label_Thu3";
-            this.label_Thu3.Size = new System.Drawing.Size(147, 50);
+            this.label_Thu3.Size = new System.Drawing.Size(150, 50);
             this.label_Thu3.TabIndex = 78;
             this.label_Thu3.Text = "수학\r\n\r\n정약용";
             this.label_Thu3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1029,9 +1029,9 @@
             // 
             this.panel40.Controls.Add(this.label_Fri3);
             this.panel40.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel40.Location = new System.Drawing.Point(921, 171);
+            this.panel40.Location = new System.Drawing.Point(939, 171);
             this.panel40.Name = "panel40";
-            this.panel40.Size = new System.Drawing.Size(147, 50);
+            this.panel40.Size = new System.Drawing.Size(150, 50);
             this.panel40.TabIndex = 41;
             // 
             // label_Fri3
@@ -1040,7 +1040,7 @@
             this.label_Fri3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Fri3.Location = new System.Drawing.Point(0, 0);
             this.label_Fri3.Name = "label_Fri3";
-            this.label_Fri3.Size = new System.Drawing.Size(147, 50);
+            this.label_Fri3.Size = new System.Drawing.Size(150, 50);
             this.label_Fri3.TabIndex = 78;
             this.label_Fri3.Text = "수학\r\n\r\n정약용";
             this.label_Fri3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1049,9 +1049,9 @@
             // 
             this.panel41.Controls.Add(this.label_Sat3);
             this.panel41.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel41.Location = new System.Drawing.Point(1074, 171);
+            this.panel41.Location = new System.Drawing.Point(1095, 171);
             this.panel41.Name = "panel41";
-            this.panel41.Size = new System.Drawing.Size(152, 50);
+            this.panel41.Size = new System.Drawing.Size(156, 50);
             this.panel41.TabIndex = 40;
             // 
             // label_Sat3
@@ -1060,7 +1060,7 @@
             this.label_Sat3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Sat3.Location = new System.Drawing.Point(0, 0);
             this.label_Sat3.Name = "label_Sat3";
-            this.label_Sat3.Size = new System.Drawing.Size(152, 50);
+            this.label_Sat3.Size = new System.Drawing.Size(156, 50);
             this.label_Sat3.TabIndex = 78;
             this.label_Sat3.Text = " ";
             this.label_Sat3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1071,7 +1071,7 @@
             this.panel42.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel42.Location = new System.Drawing.Point(3, 227);
             this.panel42.Name = "panel42";
-            this.panel42.Size = new System.Drawing.Size(147, 50);
+            this.panel42.Size = new System.Drawing.Size(150, 50);
             this.panel42.TabIndex = 39;
             // 
             // label11
@@ -1079,7 +1079,7 @@
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label11.Location = new System.Drawing.Point(0, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(147, 50);
+            this.label11.Size = new System.Drawing.Size(150, 50);
             this.label11.TabIndex = 75;
             this.label11.Text = "4교시";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1088,9 +1088,9 @@
             // 
             this.panel43.Controls.Add(this.label_Sun4);
             this.panel43.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel43.Location = new System.Drawing.Point(156, 227);
+            this.panel43.Location = new System.Drawing.Point(159, 227);
             this.panel43.Name = "panel43";
-            this.panel43.Size = new System.Drawing.Size(147, 50);
+            this.panel43.Size = new System.Drawing.Size(150, 50);
             this.panel43.TabIndex = 38;
             // 
             // label_Sun4
@@ -1099,7 +1099,7 @@
             this.label_Sun4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Sun4.Location = new System.Drawing.Point(0, 0);
             this.label_Sun4.Name = "label_Sun4";
-            this.label_Sun4.Size = new System.Drawing.Size(147, 50);
+            this.label_Sun4.Size = new System.Drawing.Size(150, 50);
             this.label_Sun4.TabIndex = 79;
             this.label_Sun4.Text = "수학\r\n\r\n정약용";
             this.label_Sun4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1108,9 +1108,9 @@
             // 
             this.panel44.Controls.Add(this.label_Mon4);
             this.panel44.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel44.Location = new System.Drawing.Point(309, 227);
+            this.panel44.Location = new System.Drawing.Point(315, 227);
             this.panel44.Name = "panel44";
-            this.panel44.Size = new System.Drawing.Size(147, 50);
+            this.panel44.Size = new System.Drawing.Size(150, 50);
             this.panel44.TabIndex = 37;
             // 
             // label_Mon4
@@ -1119,7 +1119,7 @@
             this.label_Mon4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Mon4.Location = new System.Drawing.Point(0, 0);
             this.label_Mon4.Name = "label_Mon4";
-            this.label_Mon4.Size = new System.Drawing.Size(147, 50);
+            this.label_Mon4.Size = new System.Drawing.Size(150, 50);
             this.label_Mon4.TabIndex = 78;
             this.label_Mon4.Text = "수학\r\n\r\n정약용";
             this.label_Mon4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1128,9 +1128,9 @@
             // 
             this.panel45.Controls.Add(this.label_Tue4);
             this.panel45.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel45.Location = new System.Drawing.Point(462, 227);
+            this.panel45.Location = new System.Drawing.Point(471, 227);
             this.panel45.Name = "panel45";
-            this.panel45.Size = new System.Drawing.Size(147, 50);
+            this.panel45.Size = new System.Drawing.Size(150, 50);
             this.panel45.TabIndex = 36;
             // 
             // label_Tue4
@@ -1139,7 +1139,7 @@
             this.label_Tue4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Tue4.Location = new System.Drawing.Point(0, 0);
             this.label_Tue4.Name = "label_Tue4";
-            this.label_Tue4.Size = new System.Drawing.Size(147, 50);
+            this.label_Tue4.Size = new System.Drawing.Size(150, 50);
             this.label_Tue4.TabIndex = 78;
             this.label_Tue4.Text = "수학\r\n\r\n정약용";
             this.label_Tue4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1148,9 +1148,9 @@
             // 
             this.panel46.Controls.Add(this.label_Wed4);
             this.panel46.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel46.Location = new System.Drawing.Point(615, 227);
+            this.panel46.Location = new System.Drawing.Point(627, 227);
             this.panel46.Name = "panel46";
-            this.panel46.Size = new System.Drawing.Size(147, 50);
+            this.panel46.Size = new System.Drawing.Size(150, 50);
             this.panel46.TabIndex = 35;
             // 
             // label_Wed4
@@ -1159,7 +1159,7 @@
             this.label_Wed4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Wed4.Location = new System.Drawing.Point(0, 0);
             this.label_Wed4.Name = "label_Wed4";
-            this.label_Wed4.Size = new System.Drawing.Size(147, 50);
+            this.label_Wed4.Size = new System.Drawing.Size(150, 50);
             this.label_Wed4.TabIndex = 78;
             this.label_Wed4.Text = "수학\r\n\r\n정약용";
             this.label_Wed4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1168,9 +1168,9 @@
             // 
             this.panel47.Controls.Add(this.label_Thu4);
             this.panel47.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel47.Location = new System.Drawing.Point(768, 227);
+            this.panel47.Location = new System.Drawing.Point(783, 227);
             this.panel47.Name = "panel47";
-            this.panel47.Size = new System.Drawing.Size(147, 50);
+            this.panel47.Size = new System.Drawing.Size(150, 50);
             this.panel47.TabIndex = 34;
             // 
             // label_Thu4
@@ -1179,7 +1179,7 @@
             this.label_Thu4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Thu4.Location = new System.Drawing.Point(0, 0);
             this.label_Thu4.Name = "label_Thu4";
-            this.label_Thu4.Size = new System.Drawing.Size(147, 50);
+            this.label_Thu4.Size = new System.Drawing.Size(150, 50);
             this.label_Thu4.TabIndex = 78;
             this.label_Thu4.Text = "수학\r\n\r\n정약용";
             this.label_Thu4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1188,9 +1188,9 @@
             // 
             this.panel48.Controls.Add(this.label_Fri4);
             this.panel48.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel48.Location = new System.Drawing.Point(921, 227);
+            this.panel48.Location = new System.Drawing.Point(939, 227);
             this.panel48.Name = "panel48";
-            this.panel48.Size = new System.Drawing.Size(147, 50);
+            this.panel48.Size = new System.Drawing.Size(150, 50);
             this.panel48.TabIndex = 33;
             // 
             // label_Fri4
@@ -1199,7 +1199,7 @@
             this.label_Fri4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Fri4.Location = new System.Drawing.Point(0, 0);
             this.label_Fri4.Name = "label_Fri4";
-            this.label_Fri4.Size = new System.Drawing.Size(147, 50);
+            this.label_Fri4.Size = new System.Drawing.Size(150, 50);
             this.label_Fri4.TabIndex = 78;
             this.label_Fri4.Text = "수학\r\n\r\n정약용";
             this.label_Fri4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1208,9 +1208,9 @@
             // 
             this.panel49.Controls.Add(this.label_Sat4);
             this.panel49.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel49.Location = new System.Drawing.Point(1074, 227);
+            this.panel49.Location = new System.Drawing.Point(1095, 227);
             this.panel49.Name = "panel49";
-            this.panel49.Size = new System.Drawing.Size(152, 50);
+            this.panel49.Size = new System.Drawing.Size(156, 50);
             this.panel49.TabIndex = 32;
             // 
             // label_Sat4
@@ -1219,7 +1219,7 @@
             this.label_Sat4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Sat4.Location = new System.Drawing.Point(0, 0);
             this.label_Sat4.Name = "label_Sat4";
-            this.label_Sat4.Size = new System.Drawing.Size(152, 50);
+            this.label_Sat4.Size = new System.Drawing.Size(156, 50);
             this.label_Sat4.TabIndex = 78;
             this.label_Sat4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1229,7 +1229,7 @@
             this.panel50.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel50.Location = new System.Drawing.Point(3, 283);
             this.panel50.Name = "panel50";
-            this.panel50.Size = new System.Drawing.Size(147, 50);
+            this.panel50.Size = new System.Drawing.Size(150, 50);
             this.panel50.TabIndex = 31;
             // 
             // label12
@@ -1237,7 +1237,7 @@
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label12.Location = new System.Drawing.Point(0, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(147, 50);
+            this.label12.Size = new System.Drawing.Size(150, 50);
             this.label12.TabIndex = 75;
             this.label12.Text = "5교시";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1246,9 +1246,9 @@
             // 
             this.panel51.Controls.Add(this.label_Sun5);
             this.panel51.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel51.Location = new System.Drawing.Point(156, 283);
+            this.panel51.Location = new System.Drawing.Point(159, 283);
             this.panel51.Name = "panel51";
-            this.panel51.Size = new System.Drawing.Size(147, 50);
+            this.panel51.Size = new System.Drawing.Size(150, 50);
             this.panel51.TabIndex = 30;
             // 
             // label_Sun5
@@ -1257,7 +1257,7 @@
             this.label_Sun5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Sun5.Location = new System.Drawing.Point(0, 0);
             this.label_Sun5.Name = "label_Sun5";
-            this.label_Sun5.Size = new System.Drawing.Size(147, 50);
+            this.label_Sun5.Size = new System.Drawing.Size(150, 50);
             this.label_Sun5.TabIndex = 79;
             this.label_Sun5.Text = "수학\r\n\r\n정약용";
             this.label_Sun5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1266,9 +1266,9 @@
             // 
             this.panel52.Controls.Add(this.label_Mon5);
             this.panel52.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel52.Location = new System.Drawing.Point(309, 283);
+            this.panel52.Location = new System.Drawing.Point(315, 283);
             this.panel52.Name = "panel52";
-            this.panel52.Size = new System.Drawing.Size(147, 50);
+            this.panel52.Size = new System.Drawing.Size(150, 50);
             this.panel52.TabIndex = 29;
             // 
             // label_Mon5
@@ -1277,7 +1277,7 @@
             this.label_Mon5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Mon5.Location = new System.Drawing.Point(0, 0);
             this.label_Mon5.Name = "label_Mon5";
-            this.label_Mon5.Size = new System.Drawing.Size(147, 50);
+            this.label_Mon5.Size = new System.Drawing.Size(150, 50);
             this.label_Mon5.TabIndex = 78;
             this.label_Mon5.Text = "수학\r\n\r\n정약용";
             this.label_Mon5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1286,9 +1286,9 @@
             // 
             this.panel53.Controls.Add(this.label_Tue5);
             this.panel53.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel53.Location = new System.Drawing.Point(462, 283);
+            this.panel53.Location = new System.Drawing.Point(471, 283);
             this.panel53.Name = "panel53";
-            this.panel53.Size = new System.Drawing.Size(147, 50);
+            this.panel53.Size = new System.Drawing.Size(150, 50);
             this.panel53.TabIndex = 28;
             // 
             // label_Tue5
@@ -1297,7 +1297,7 @@
             this.label_Tue5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Tue5.Location = new System.Drawing.Point(0, 0);
             this.label_Tue5.Name = "label_Tue5";
-            this.label_Tue5.Size = new System.Drawing.Size(147, 50);
+            this.label_Tue5.Size = new System.Drawing.Size(150, 50);
             this.label_Tue5.TabIndex = 78;
             this.label_Tue5.Text = "수학\r\n\r\n정약용";
             this.label_Tue5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1306,9 +1306,9 @@
             // 
             this.panel54.Controls.Add(this.label_Wed5);
             this.panel54.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel54.Location = new System.Drawing.Point(615, 283);
+            this.panel54.Location = new System.Drawing.Point(627, 283);
             this.panel54.Name = "panel54";
-            this.panel54.Size = new System.Drawing.Size(147, 50);
+            this.panel54.Size = new System.Drawing.Size(150, 50);
             this.panel54.TabIndex = 27;
             // 
             // label_Wed5
@@ -1317,7 +1317,7 @@
             this.label_Wed5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Wed5.Location = new System.Drawing.Point(0, 0);
             this.label_Wed5.Name = "label_Wed5";
-            this.label_Wed5.Size = new System.Drawing.Size(147, 50);
+            this.label_Wed5.Size = new System.Drawing.Size(150, 50);
             this.label_Wed5.TabIndex = 78;
             this.label_Wed5.Text = "수학\r\n\r\n정약용";
             this.label_Wed5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1326,9 +1326,9 @@
             // 
             this.panel55.Controls.Add(this.label_Thu5);
             this.panel55.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel55.Location = new System.Drawing.Point(768, 283);
+            this.panel55.Location = new System.Drawing.Point(783, 283);
             this.panel55.Name = "panel55";
-            this.panel55.Size = new System.Drawing.Size(147, 50);
+            this.panel55.Size = new System.Drawing.Size(150, 50);
             this.panel55.TabIndex = 26;
             // 
             // label_Thu5
@@ -1337,7 +1337,7 @@
             this.label_Thu5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Thu5.Location = new System.Drawing.Point(0, 0);
             this.label_Thu5.Name = "label_Thu5";
-            this.label_Thu5.Size = new System.Drawing.Size(147, 50);
+            this.label_Thu5.Size = new System.Drawing.Size(150, 50);
             this.label_Thu5.TabIndex = 78;
             this.label_Thu5.Text = "수학\r\n\r\n정약용";
             this.label_Thu5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1346,9 +1346,9 @@
             // 
             this.panel56.Controls.Add(this.label_Fri5);
             this.panel56.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel56.Location = new System.Drawing.Point(921, 283);
+            this.panel56.Location = new System.Drawing.Point(939, 283);
             this.panel56.Name = "panel56";
-            this.panel56.Size = new System.Drawing.Size(147, 50);
+            this.panel56.Size = new System.Drawing.Size(150, 50);
             this.panel56.TabIndex = 25;
             // 
             // label_Fri5
@@ -1357,7 +1357,7 @@
             this.label_Fri5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Fri5.Location = new System.Drawing.Point(0, 0);
             this.label_Fri5.Name = "label_Fri5";
-            this.label_Fri5.Size = new System.Drawing.Size(147, 50);
+            this.label_Fri5.Size = new System.Drawing.Size(150, 50);
             this.label_Fri5.TabIndex = 78;
             this.label_Fri5.Text = "수학\r\n\r\n정약용";
             this.label_Fri5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1366,9 +1366,9 @@
             // 
             this.panel57.Controls.Add(this.label_Sat5);
             this.panel57.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel57.Location = new System.Drawing.Point(1074, 283);
+            this.panel57.Location = new System.Drawing.Point(1095, 283);
             this.panel57.Name = "panel57";
-            this.panel57.Size = new System.Drawing.Size(152, 50);
+            this.panel57.Size = new System.Drawing.Size(156, 50);
             this.panel57.TabIndex = 24;
             // 
             // label_Sat5
@@ -1377,7 +1377,7 @@
             this.label_Sat5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Sat5.Location = new System.Drawing.Point(0, 0);
             this.label_Sat5.Name = "label_Sat5";
-            this.label_Sat5.Size = new System.Drawing.Size(152, 50);
+            this.label_Sat5.Size = new System.Drawing.Size(156, 50);
             this.label_Sat5.TabIndex = 78;
             this.label_Sat5.Text = " ";
             this.label_Sat5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1386,9 +1386,9 @@
             // 
             this.panel33.Controls.Add(this.label_Sat2);
             this.panel33.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel33.Location = new System.Drawing.Point(1074, 115);
+            this.panel33.Location = new System.Drawing.Point(1095, 115);
             this.panel33.Name = "panel33";
-            this.panel33.Size = new System.Drawing.Size(152, 50);
+            this.panel33.Size = new System.Drawing.Size(156, 50);
             this.panel33.TabIndex = 23;
             // 
             // label_Sat2
@@ -1397,7 +1397,7 @@
             this.label_Sat2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Sat2.Location = new System.Drawing.Point(0, 0);
             this.label_Sat2.Name = "label_Sat2";
-            this.label_Sat2.Size = new System.Drawing.Size(152, 50);
+            this.label_Sat2.Size = new System.Drawing.Size(156, 50);
             this.label_Sat2.TabIndex = 78;
             this.label_Sat2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1405,9 +1405,9 @@
             // 
             this.panel32.Controls.Add(this.label_Fri2);
             this.panel32.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel32.Location = new System.Drawing.Point(921, 115);
+            this.panel32.Location = new System.Drawing.Point(939, 115);
             this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(147, 50);
+            this.panel32.Size = new System.Drawing.Size(150, 50);
             this.panel32.TabIndex = 22;
             // 
             // label_Fri2
@@ -1416,7 +1416,7 @@
             this.label_Fri2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Fri2.Location = new System.Drawing.Point(0, 0);
             this.label_Fri2.Name = "label_Fri2";
-            this.label_Fri2.Size = new System.Drawing.Size(147, 50);
+            this.label_Fri2.Size = new System.Drawing.Size(150, 50);
             this.label_Fri2.TabIndex = 78;
             this.label_Fri2.Text = "수학\r\n\r\n정약용";
             this.label_Fri2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1425,9 +1425,9 @@
             // 
             this.panel31.Controls.Add(this.label_Thu2);
             this.panel31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel31.Location = new System.Drawing.Point(768, 115);
+            this.panel31.Location = new System.Drawing.Point(783, 115);
             this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(147, 50);
+            this.panel31.Size = new System.Drawing.Size(150, 50);
             this.panel31.TabIndex = 21;
             // 
             // label_Thu2
@@ -1436,7 +1436,7 @@
             this.label_Thu2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Thu2.Location = new System.Drawing.Point(0, 0);
             this.label_Thu2.Name = "label_Thu2";
-            this.label_Thu2.Size = new System.Drawing.Size(147, 50);
+            this.label_Thu2.Size = new System.Drawing.Size(150, 50);
             this.label_Thu2.TabIndex = 78;
             this.label_Thu2.Text = "수학\r\n\r\n정약용";
             this.label_Thu2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1445,9 +1445,9 @@
             // 
             this.panel30.Controls.Add(this.label_Wed2);
             this.panel30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel30.Location = new System.Drawing.Point(615, 115);
+            this.panel30.Location = new System.Drawing.Point(627, 115);
             this.panel30.Name = "panel30";
-            this.panel30.Size = new System.Drawing.Size(147, 50);
+            this.panel30.Size = new System.Drawing.Size(150, 50);
             this.panel30.TabIndex = 20;
             // 
             // label_Wed2
@@ -1456,7 +1456,7 @@
             this.label_Wed2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Wed2.Location = new System.Drawing.Point(0, 0);
             this.label_Wed2.Name = "label_Wed2";
-            this.label_Wed2.Size = new System.Drawing.Size(147, 50);
+            this.label_Wed2.Size = new System.Drawing.Size(150, 50);
             this.label_Wed2.TabIndex = 78;
             this.label_Wed2.Text = "수학\r\n\r\n정약용";
             this.label_Wed2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1465,9 +1465,9 @@
             // 
             this.panel29.Controls.Add(this.label_Tue2);
             this.panel29.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel29.Location = new System.Drawing.Point(462, 115);
+            this.panel29.Location = new System.Drawing.Point(471, 115);
             this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(147, 50);
+            this.panel29.Size = new System.Drawing.Size(150, 50);
             this.panel29.TabIndex = 19;
             // 
             // label_Tue2
@@ -1476,7 +1476,7 @@
             this.label_Tue2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Tue2.Location = new System.Drawing.Point(0, 0);
             this.label_Tue2.Name = "label_Tue2";
-            this.label_Tue2.Size = new System.Drawing.Size(147, 50);
+            this.label_Tue2.Size = new System.Drawing.Size(150, 50);
             this.label_Tue2.TabIndex = 78;
             this.label_Tue2.Text = "수학\r\n\r\n정약용";
             this.label_Tue2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1485,9 +1485,9 @@
             // 
             this.panel28.Controls.Add(this.label_Mon2);
             this.panel28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel28.Location = new System.Drawing.Point(309, 115);
+            this.panel28.Location = new System.Drawing.Point(315, 115);
             this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(147, 50);
+            this.panel28.Size = new System.Drawing.Size(150, 50);
             this.panel28.TabIndex = 18;
             // 
             // label_Mon2
@@ -1496,7 +1496,7 @@
             this.label_Mon2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Mon2.Location = new System.Drawing.Point(0, 0);
             this.label_Mon2.Name = "label_Mon2";
-            this.label_Mon2.Size = new System.Drawing.Size(147, 50);
+            this.label_Mon2.Size = new System.Drawing.Size(150, 50);
             this.label_Mon2.TabIndex = 78;
             this.label_Mon2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1504,9 +1504,9 @@
             // 
             this.panel27.Controls.Add(this.label_Sun2);
             this.panel27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel27.Location = new System.Drawing.Point(156, 115);
+            this.panel27.Location = new System.Drawing.Point(159, 115);
             this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(147, 50);
+            this.panel27.Size = new System.Drawing.Size(150, 50);
             this.panel27.TabIndex = 17;
             // 
             // label_Sun2
@@ -1515,7 +1515,7 @@
             this.label_Sun2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Sun2.Location = new System.Drawing.Point(0, 0);
             this.label_Sun2.Name = "label_Sun2";
-            this.label_Sun2.Size = new System.Drawing.Size(147, 50);
+            this.label_Sun2.Size = new System.Drawing.Size(150, 50);
             this.label_Sun2.TabIndex = 78;
             this.label_Sun2.Text = "수학\r\n\r\n정약용";
             this.label_Sun2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1526,7 +1526,7 @@
             this.panel26.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel26.Location = new System.Drawing.Point(3, 115);
             this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(147, 50);
+            this.panel26.Size = new System.Drawing.Size(150, 50);
             this.panel26.TabIndex = 16;
             // 
             // label9
@@ -1534,7 +1534,7 @@
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label9.Location = new System.Drawing.Point(0, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(147, 50);
+            this.label9.Size = new System.Drawing.Size(150, 50);
             this.label9.TabIndex = 75;
             this.label9.Text = "2교시";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1543,9 +1543,9 @@
             // 
             this.panel25.Controls.Add(this.label_Sat1);
             this.panel25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel25.Location = new System.Drawing.Point(1074, 59);
+            this.panel25.Location = new System.Drawing.Point(1095, 59);
             this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(152, 50);
+            this.panel25.Size = new System.Drawing.Size(156, 50);
             this.panel25.TabIndex = 15;
             // 
             // label_Sat1
@@ -1554,7 +1554,7 @@
             this.label_Sat1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Sat1.Location = new System.Drawing.Point(0, 0);
             this.label_Sat1.Name = "label_Sat1";
-            this.label_Sat1.Size = new System.Drawing.Size(152, 50);
+            this.label_Sat1.Size = new System.Drawing.Size(156, 50);
             this.label_Sat1.TabIndex = 78;
             this.label_Sat1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1562,9 +1562,9 @@
             // 
             this.panel24.Controls.Add(this.label_Fri1);
             this.panel24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel24.Location = new System.Drawing.Point(921, 59);
+            this.panel24.Location = new System.Drawing.Point(939, 59);
             this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(147, 50);
+            this.panel24.Size = new System.Drawing.Size(150, 50);
             this.panel24.TabIndex = 14;
             // 
             // label_Fri1
@@ -1573,7 +1573,7 @@
             this.label_Fri1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Fri1.Location = new System.Drawing.Point(0, 0);
             this.label_Fri1.Name = "label_Fri1";
-            this.label_Fri1.Size = new System.Drawing.Size(147, 50);
+            this.label_Fri1.Size = new System.Drawing.Size(150, 50);
             this.label_Fri1.TabIndex = 78;
             this.label_Fri1.Text = "수학\r\n\r\n정약용";
             this.label_Fri1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1582,9 +1582,9 @@
             // 
             this.panel23.Controls.Add(this.label_Thu1);
             this.panel23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel23.Location = new System.Drawing.Point(768, 59);
+            this.panel23.Location = new System.Drawing.Point(783, 59);
             this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(147, 50);
+            this.panel23.Size = new System.Drawing.Size(150, 50);
             this.panel23.TabIndex = 13;
             // 
             // label_Thu1
@@ -1593,7 +1593,7 @@
             this.label_Thu1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Thu1.Location = new System.Drawing.Point(0, 0);
             this.label_Thu1.Name = "label_Thu1";
-            this.label_Thu1.Size = new System.Drawing.Size(147, 50);
+            this.label_Thu1.Size = new System.Drawing.Size(150, 50);
             this.label_Thu1.TabIndex = 78;
             this.label_Thu1.Text = "수학\r\n\r\n정약용";
             this.label_Thu1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1602,9 +1602,9 @@
             // 
             this.panel22.Controls.Add(this.label_Wed1);
             this.panel22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel22.Location = new System.Drawing.Point(615, 59);
+            this.panel22.Location = new System.Drawing.Point(627, 59);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(147, 50);
+            this.panel22.Size = new System.Drawing.Size(150, 50);
             this.panel22.TabIndex = 12;
             // 
             // label_Wed1
@@ -1613,7 +1613,7 @@
             this.label_Wed1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Wed1.Location = new System.Drawing.Point(0, 0);
             this.label_Wed1.Name = "label_Wed1";
-            this.label_Wed1.Size = new System.Drawing.Size(147, 50);
+            this.label_Wed1.Size = new System.Drawing.Size(150, 50);
             this.label_Wed1.TabIndex = 78;
             this.label_Wed1.Text = "수학\r\n\r\n정약용";
             this.label_Wed1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1622,9 +1622,9 @@
             // 
             this.panel21.Controls.Add(this.label_Tue1);
             this.panel21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel21.Location = new System.Drawing.Point(462, 59);
+            this.panel21.Location = new System.Drawing.Point(471, 59);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(147, 50);
+            this.panel21.Size = new System.Drawing.Size(150, 50);
             this.panel21.TabIndex = 11;
             // 
             // label_Tue1
@@ -1633,7 +1633,7 @@
             this.label_Tue1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Tue1.Location = new System.Drawing.Point(0, 0);
             this.label_Tue1.Name = "label_Tue1";
-            this.label_Tue1.Size = new System.Drawing.Size(147, 50);
+            this.label_Tue1.Size = new System.Drawing.Size(150, 50);
             this.label_Tue1.TabIndex = 78;
             this.label_Tue1.Text = "수학\r\n\r\n정약용";
             this.label_Tue1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1642,9 +1642,9 @@
             // 
             this.panel20.Controls.Add(this.label_Mon1);
             this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel20.Location = new System.Drawing.Point(309, 59);
+            this.panel20.Location = new System.Drawing.Point(315, 59);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(147, 50);
+            this.panel20.Size = new System.Drawing.Size(150, 50);
             this.panel20.TabIndex = 10;
             // 
             // label_Mon1
@@ -1653,7 +1653,7 @@
             this.label_Mon1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Mon1.Location = new System.Drawing.Point(0, 0);
             this.label_Mon1.Name = "label_Mon1";
-            this.label_Mon1.Size = new System.Drawing.Size(147, 50);
+            this.label_Mon1.Size = new System.Drawing.Size(150, 50);
             this.label_Mon1.TabIndex = 78;
             this.label_Mon1.Text = "국어\r\n\r\n세종대왕";
             this.label_Mon1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1662,9 +1662,9 @@
             // 
             this.panel19.Controls.Add(this.label_Sun1);
             this.panel19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel19.Location = new System.Drawing.Point(156, 59);
+            this.panel19.Location = new System.Drawing.Point(159, 59);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(147, 50);
+            this.panel19.Size = new System.Drawing.Size(150, 50);
             this.panel19.TabIndex = 9;
             // 
             // label_Sun1
@@ -1673,7 +1673,7 @@
             this.label_Sun1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Sun1.Location = new System.Drawing.Point(0, 0);
             this.label_Sun1.Name = "label_Sun1";
-            this.label_Sun1.Size = new System.Drawing.Size(147, 50);
+            this.label_Sun1.Size = new System.Drawing.Size(150, 50);
             this.label_Sun1.TabIndex = 77;
             this.label_Sun1.Text = "수학\r\n\r\n정약용";
             this.label_Sun1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1685,7 +1685,7 @@
             this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel18.Location = new System.Drawing.Point(3, 59);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(147, 50);
+            this.panel18.Size = new System.Drawing.Size(150, 50);
             this.panel18.TabIndex = 8;
             // 
             // label16
@@ -1693,7 +1693,7 @@
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label16.Location = new System.Drawing.Point(0, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(147, 50);
+            this.label16.Size = new System.Drawing.Size(150, 50);
             this.label16.TabIndex = 75;
             this.label16.Text = "1교시";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1703,7 +1703,7 @@
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Location = new System.Drawing.Point(0, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(147, 50);
+            this.label8.Size = new System.Drawing.Size(150, 50);
             this.label8.TabIndex = 74;
             this.label8.Text = "1교시";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1712,9 +1712,9 @@
             // 
             this.panel17.Controls.Add(this.label6);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel17.Location = new System.Drawing.Point(1074, 3);
+            this.panel17.Location = new System.Drawing.Point(1095, 3);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(152, 50);
+            this.panel17.Size = new System.Drawing.Size(156, 50);
             this.panel17.TabIndex = 7;
             // 
             // label6
@@ -1722,7 +1722,7 @@
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(152, 50);
+            this.label6.Size = new System.Drawing.Size(156, 50);
             this.label6.TabIndex = 75;
             this.label6.Text = "토";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1731,9 +1731,9 @@
             // 
             this.panel16.Controls.Add(this.label5);
             this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel16.Location = new System.Drawing.Point(921, 3);
+            this.panel16.Location = new System.Drawing.Point(939, 3);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(147, 50);
+            this.panel16.Size = new System.Drawing.Size(150, 50);
             this.panel16.TabIndex = 6;
             // 
             // label5
@@ -1741,7 +1741,7 @@
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(147, 50);
+            this.label5.Size = new System.Drawing.Size(150, 50);
             this.label5.TabIndex = 75;
             this.label5.Text = "금";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1750,9 +1750,9 @@
             // 
             this.panel15.Controls.Add(this.label4);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel15.Location = new System.Drawing.Point(768, 3);
+            this.panel15.Location = new System.Drawing.Point(783, 3);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(147, 50);
+            this.panel15.Size = new System.Drawing.Size(150, 50);
             this.panel15.TabIndex = 5;
             // 
             // label4
@@ -1760,7 +1760,7 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(147, 50);
+            this.label4.Size = new System.Drawing.Size(150, 50);
             this.label4.TabIndex = 75;
             this.label4.Text = "목";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1769,9 +1769,9 @@
             // 
             this.panel14.Controls.Add(this.label3);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel14.Location = new System.Drawing.Point(615, 3);
+            this.panel14.Location = new System.Drawing.Point(627, 3);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(147, 50);
+            this.panel14.Size = new System.Drawing.Size(150, 50);
             this.panel14.TabIndex = 4;
             // 
             // label3
@@ -1779,7 +1779,7 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 50);
+            this.label3.Size = new System.Drawing.Size(150, 50);
             this.label3.TabIndex = 75;
             this.label3.Text = "수";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1788,9 +1788,9 @@
             // 
             this.panel13.Controls.Add(this.label2);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel13.Location = new System.Drawing.Point(462, 3);
+            this.panel13.Location = new System.Drawing.Point(471, 3);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(147, 50);
+            this.panel13.Size = new System.Drawing.Size(150, 50);
             this.panel13.TabIndex = 3;
             // 
             // label2
@@ -1798,7 +1798,7 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 50);
+            this.label2.Size = new System.Drawing.Size(150, 50);
             this.label2.TabIndex = 75;
             this.label2.Text = "화";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1807,9 +1807,9 @@
             // 
             this.panel12.Controls.Add(this.label1);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel12.Location = new System.Drawing.Point(309, 3);
+            this.panel12.Location = new System.Drawing.Point(315, 3);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(147, 50);
+            this.panel12.Size = new System.Drawing.Size(150, 50);
             this.panel12.TabIndex = 2;
             // 
             // label1
@@ -1817,7 +1817,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 50);
+            this.label1.Size = new System.Drawing.Size(150, 50);
             this.label1.TabIndex = 75;
             this.label1.Text = "월";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1826,9 +1826,9 @@
             // 
             this.panel6.Controls.Add(this.label7);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(156, 3);
+            this.panel6.Location = new System.Drawing.Point(159, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(147, 50);
+            this.panel6.Size = new System.Drawing.Size(150, 50);
             this.panel6.TabIndex = 1;
             // 
             // label7
@@ -1836,7 +1836,7 @@
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Location = new System.Drawing.Point(0, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(147, 50);
+            this.label7.Size = new System.Drawing.Size(150, 50);
             this.label7.TabIndex = 76;
             this.label7.Text = "일";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1847,7 +1847,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(147, 50);
+            this.panel4.Size = new System.Drawing.Size(150, 50);
             this.panel4.TabIndex = 0;
             // 
             // label17
@@ -1856,7 +1856,7 @@
             this.label17.Font = new System.Drawing.Font("D2Coding", 9F);
             this.label17.Location = new System.Drawing.Point(0, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(147, 50);
+            this.label17.Size = new System.Drawing.Size(150, 50);
             this.label17.TabIndex = 76;
             this.label17.Text = "교시 \\ 요일";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1869,7 +1869,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 571);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1249, 65);
+            this.panel2.Size = new System.Drawing.Size(1274, 65);
             this.panel2.TabIndex = 7;
             // 
             // panel11
@@ -1879,7 +1879,7 @@
             this.panel11.Location = new System.Drawing.Point(300, 0);
             this.panel11.Name = "panel11";
             this.panel11.Padding = new System.Windows.Forms.Padding(8);
-            this.panel11.Size = new System.Drawing.Size(649, 65);
+            this.panel11.Size = new System.Drawing.Size(674, 65);
             this.panel11.TabIndex = 5;
             // 
             // btn_ToMainMenu
@@ -1888,7 +1888,7 @@
             this.btn_ToMainMenu.Font = new System.Drawing.Font("배달의민족 도현", 15F);
             this.btn_ToMainMenu.Location = new System.Drawing.Point(8, 8);
             this.btn_ToMainMenu.Name = "btn_ToMainMenu";
-            this.btn_ToMainMenu.Size = new System.Drawing.Size(633, 49);
+            this.btn_ToMainMenu.Size = new System.Drawing.Size(658, 49);
             this.btn_ToMainMenu.TabIndex = 0;
             this.btn_ToMainMenu.Text = "메인메뉴로 돌아가기";
             this.btn_ToMainMenu.UseVisualStyleBackColor = true;
@@ -1897,7 +1897,7 @@
             // panel10
             // 
             this.panel10.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel10.Location = new System.Drawing.Point(949, 0);
+            this.panel10.Location = new System.Drawing.Point(974, 0);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(300, 65);
             this.panel10.TabIndex = 4;
@@ -1920,13 +1920,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1249, 29);
+            this.panel1.Size = new System.Drawing.Size(1274, 29);
             this.panel1.TabIndex = 6;
             // 
             // panel8
             // 
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(1024, 0);
+            this.panel8.Location = new System.Drawing.Point(1049, 0);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(225, 29);
             this.panel8.TabIndex = 7;
@@ -1983,12 +1983,12 @@
             // cbox_Seed
             // 
             this.cbox_Seed.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbox_Seed.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_Seed.FormattingEnabled = true;
             this.cbox_Seed.Location = new System.Drawing.Point(3, 3);
             this.cbox_Seed.Name = "cbox_Seed";
             this.cbox_Seed.Size = new System.Drawing.Size(219, 20);
             this.cbox_Seed.TabIndex = 2;
-            this.cbox_Seed.Text = "세부범주";
             // 
             // panel5
             // 
@@ -2003,6 +2003,7 @@
             // cbox_SearchField
             // 
             this.cbox_SearchField.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbox_SearchField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_SearchField.FormattingEnabled = true;
             this.cbox_SearchField.Items.AddRange(new object[] {
             "학급 선택",
@@ -2012,7 +2013,6 @@
             this.cbox_SearchField.Name = "cbox_SearchField";
             this.cbox_SearchField.Size = new System.Drawing.Size(219, 20);
             this.cbox_SearchField.TabIndex = 1;
-            this.cbox_SearchField.Text = "검색범주";
             this.cbox_SearchField.SelectedIndexChanged += new System.EventHandler(this.cbox_SearchField_SelectedIndexChanged);
             // 
             // dset_course
@@ -2055,7 +2055,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1249, 636);
+            this.ClientSize = new System.Drawing.Size(1274, 636);
             this.Controls.Add(this.panel_Base);
             this.Name = "ScheduleView";
             this.Text = "ScheduleView";
