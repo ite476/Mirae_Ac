@@ -14,20 +14,24 @@ namespace MiraePro.Windows.View
 {
     public partial class MainMenuView : MasterView
     {
-        int NumberOfWaiting;
-        private int NOW 
+        
+        public void Update_Waiting_Info()
         {
-            get { return NumberOfWaiting; }
-            set { 
-                NumberOfWaiting = value;
-                btn_ToCounsel.Text = $"입학 신청 명단 ({NumberOfWaiting}명 배정 대기중)";
-            } 
-        }
-        public void Update_Info()
-        {
-            NOW = App.Instance().DBManager.ReadWaiting_NumberOf_Unassigned();
+            Waiting_NOW = App.Instance().DBManager.ReadWaiting_NumberOf_Unassigned();
         }
 
+        int NumberOfWaiting;
+        private int Waiting_NOW
+        {
+            get { return NumberOfWaiting; }
+            set
+            {
+                NumberOfWaiting = value;
+                btn_ToCounsel.Text = $"입학 신청 명단 ({NumberOfWaiting}명 배정 대기중)";
+            }
+        }
+
+        #region <<< 생성자 / 초기화 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         public MainMenuView()
         {
             InitializeComponent();
@@ -39,30 +43,31 @@ namespace MiraePro.Windows.View
            
         }
 
+        #endregion
+
+        #region <<< 메뉴 버튼 이벤트 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         private void btn_ToTutor_Click(object sender, EventArgs e)
         {
             App.Instance().MainForm.ShowView<TutorView>();
         }
-
         private void btn_ToStudent_Click(object sender, EventArgs e)
         {
             App.Instance().MainForm.ShowView<StudentView>();
         }
-
         private void btn_ToCounsel_Click(object sender, EventArgs e)
         {
             App.Instance().MainForm.ShowView<CounselView>();
         }
-
         private void btn_ToSchedule_Click(object sender, EventArgs e)
         {
             App.Instance().MainForm.ShowView<ScheduleView>();
         }
-
         private void btn_ExitProgram_Click(object sender, EventArgs e)
         {
             App.Instance().MainForm.ExitProgram();
         }
+
+        #endregion
 
         private void MainMenuView_ClientSizeChanged(object sender, EventArgs e)
         {

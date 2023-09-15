@@ -13,27 +13,26 @@ using System.Windows.Forms;
 
 namespace MiraePro.Windows.Pop
 {
-    public partial class TutorListPop : MasterPop
+    public partial class HakGeupListPop : MasterPop
     {
-        public string Tutor_ID { get; set; }
-        public string Tutor_Name { get; set; }
+        public int HakGeup_Code { get; set; }
 
         private DataRow SelectedRowOf_DGV { get; set; }
 
-        private bool isNotNull(object selectedRowOf_DGV)
+        private bool isNotNull(object aObject)
         {
-            return (selectedRowOf_DGV != null);
+            return (aObject != null);
         }
 
         #region <<< 생성자 / 초기화 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-        public TutorListPop()
+        public HakGeupListPop()
         {
             InitializeComponent();
-            DataTable dt = App.Instance().DBManager.ReadTutor();
-            GridAssist.SetAuto_GridView_FromSourceTable(dgv_Display_Tutor,dt);
+            DataTable dt = App.Instance().DBManager.ReadHakGeup_All();
+            GridAssist.SetAuto_GridView_FromSourceTable(dgv_Display_HakGeup, dt);
         }
-        
+
         public override void InitializePop(ePopMode aPopMode = ePopMode.None, object aParam = null)
         {
             base.InitializePop(aPopMode, aParam);
@@ -47,45 +46,33 @@ namespace MiraePro.Windows.Pop
         #endregion
 
         #region <<< 클릭 이벤트 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-
-        private void dgv_Display_Tutor_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
-        private void dgv_Display_Tutor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        
+        private void dgv_Display_HakGeup_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
+        private void dgv_Display_HakGeup_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            AssignSelectedTutor();
+            AssignSelectedHakGeup();
         }
 
         private void btn_OK_Click(object sender, EventArgs e)
         {
-            AssignSelectedTutor();
-        }        
-        void AssignSelectedTutor()
+            AssignSelectedHakGeup();
+        }
+        void AssignSelectedHakGeup()
         {
-            SelectedRowOf_DGV = GridAssist.SelectedRow(dgv_Display_Tutor);
+            SelectedRowOf_DGV = GridAssist.SelectedRow(dgv_Display_HakGeup);
 
             if (isNotNull(SelectedRowOf_DGV))
             {
-                Tutor_ID = Convert.ToString(SelectedRowOf_DGV["아이디"]);
-                Tutor_Name = Convert.ToString(SelectedRowOf_DGV["이름"]);
+                HakGeup_Code = Convert.ToInt32(SelectedRowOf_DGV["학급코드"]);
                 DialogResult = DialogResult.OK;
             }
-        }
-
-        private void btn_Deselect_Click(object sender, EventArgs e)
-        {
-            AssignNoTutor();
-        }
-        private void AssignNoTutor()
-        {
-            Tutor_Name = string.Empty;
-            Tutor_ID = string.Empty;
-            DialogResult = DialogResult.OK;
         }
 
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
         }
+
 
         #endregion
 

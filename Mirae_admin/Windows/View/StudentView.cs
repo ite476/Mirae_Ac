@@ -43,12 +43,12 @@ namespace MiraePro.Windows.View
         {
             SearchStudent();
         }
-
-        DataTable DTable_SearchResult;
+        DataTable DTable_SearchResult { get; set; }
         void SearchStudent()
         {
             string _Field = cbox_SearchField.SelectedItem as string;
-            DTable_SearchResult = App.Instance().DBManager.ReadStudent(_Field, tbox_Seed.Text);
+            string _Seed = tbox_Seed.Text;
+            DTable_SearchResult = App.Instance().DBManager.ReadStudent(_Field, _Seed);
             GridAssist.SetAuto_GridView_FromSourceTable(dgv_Display_Student, DTable_SearchResult);
         }
     }

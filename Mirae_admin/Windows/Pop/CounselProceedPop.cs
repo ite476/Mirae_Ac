@@ -1,4 +1,5 @@
-﻿using Lib.Frame;
+﻿using Lib.DB;
+using Lib.Frame;
 using MiraePro.Manager;
 using System;
 using System.Collections.Generic;
@@ -62,9 +63,7 @@ namespace MiraePro.Windows.Pop
             }
 
             Data = App.Instance().DBManager.ReadWaiting_Specific(RecievedMemberID);
-
-            
-
+                        
             UpdateIndicator_AsData();
 
         }
@@ -113,7 +112,7 @@ namespace MiraePro.Windows.Pop
         }
         void ShowTextBox_OnLabel(Label aLabel, TextBox aTbox)
         {            
-            aTbox.Text = label_name.Text;
+            aTbox.Text = aLabel.Text;
             aLabel.BorderStyle = BorderStyle.None;
             aTbox.Visible = true;
             aTbox.Tag = aLabel;
@@ -125,6 +124,7 @@ namespace MiraePro.Windows.Pop
         void tbox_TextChanged(object sender, EventArgs e)
         {
             tbox_TextChanged(sender, e, "");
+            UpdateDataBy_Input();
         }
         void tbox_TextChanged(object sender, EventArgs e, string strDefault)
         {
@@ -157,6 +157,7 @@ namespace MiraePro.Windows.Pop
             {
                 Data.Tutor_ID = tutorListPop.Tutor_ID;
                 Data.Tutor_Name = tutorListPop.Tutor_Name;
+                UpdateIndicator_AsData();
             }
         }
 
@@ -255,7 +256,7 @@ namespace MiraePro.Windows.Pop
             string _Gender = cbox_gender.SelectedItem.ToString();
             string _Contact = label_contact.Text;
             string _Address = label_address.Text;
-            string _Picture = pbox_picture.Tag.ToString();
+            string _Picture = GetString_OrNullValue(pbox_picture.Tag, null);
             Data = new DBManager.Waiting(
                             Data.Member_ID, _Step, _Score, _Name, _Gender, _Contact, _Address, _Picture,
                             Data.Parent_ID, Data.Tutor_ID, Data.Parent_Contact, Data.Tutor_Name);
@@ -265,9 +266,28 @@ namespace MiraePro.Windows.Pop
             //MessageBox.Show("적법성 검사 미구현, 일단 쿼리 실행함"); //TODO
             return true;
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_AssignToHakGeup_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("미구현"); //TODO
+            HakGeupListPop hakGeupListPop = new HakGeupListPop();
+            if (hakGeupListPop.ShowDialog() == DialogResult.OK)
+            {
+                int HakGeup_Code = hakGeupListPop.HakGeup_Code;
+                // Transaction Waiting -> Student
+                int _Result = App.Instance().DBManager.AddStudent_FromWaiting(RecievedMemberID, HakGeup_Code);
+                if (_Result > 0)
+                {
+                    string HG_Name = App.Instance().DBManager.ReadHakGeupName(HakGeup_Code);
+                    MessageBox.Show($"{Data.Name}학생을 {HG_Name} 학급에 입학 처리 완료하였습니다.");
+                    DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    MessageBox.Show("입학처리에 실패하였습니다.");
+                }
+
+                
+            }
+
         }
 
 

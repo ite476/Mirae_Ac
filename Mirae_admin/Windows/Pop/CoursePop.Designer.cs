@@ -348,6 +348,7 @@
             this.btn_Delete.TabIndex = 1;
             this.btn_Delete.Text = "정보 삭제";
             this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // panel14
             // 

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel_Base = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv_Display_Tutor = new System.Windows.Forms.DataGridView();
             this.아이디DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,32 +53,32 @@
             this.dataColumn9 = new System.Data.DataColumn();
             this.dataColumn10 = new System.Data.DataColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btn_Cancel = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btn_Deselect = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btn_OK = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btn_Deselect = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_Cancel = new System.Windows.Forms.Button();
+            this.panel_Base.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Display_Tutor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dset_Tutor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panel_Base
             // 
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(949, 433);
-            this.panel1.TabIndex = 0;
+            this.panel_Base.Controls.Add(this.groupBox1);
+            this.panel_Base.Controls.Add(this.panel2);
+            this.panel_Base.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Base.Location = new System.Drawing.Point(0, 0);
+            this.panel_Base.Name = "panel_Base";
+            this.panel_Base.Size = new System.Drawing.Size(949, 433);
+            this.panel_Base.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -89,7 +89,7 @@
             this.groupBox1.Size = new System.Drawing.Size(949, 394);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "목록";
             // 
             // dgv_Display_Tutor
             // 
@@ -259,26 +259,26 @@
             this.panel2.Size = new System.Drawing.Size(949, 39);
             this.panel2.TabIndex = 0;
             // 
-            // panel3
+            // panel5
             // 
-            this.panel3.Controls.Add(this.btn_Cancel);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(818, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(5);
-            this.panel3.Size = new System.Drawing.Size(131, 39);
-            this.panel3.TabIndex = 0;
+            this.panel5.Controls.Add(this.btn_OK);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(556, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Padding = new System.Windows.Forms.Padding(5);
+            this.panel5.Size = new System.Drawing.Size(131, 39);
+            this.panel5.TabIndex = 2;
             // 
-            // btn_Cancel
+            // btn_OK
             // 
-            this.btn_Cancel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Cancel.Location = new System.Drawing.Point(5, 5);
-            this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(121, 29);
-            this.btn_Cancel.TabIndex = 1;
-            this.btn_Cancel.Text = "취소";
-            this.btn_Cancel.UseVisualStyleBackColor = true;
-            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
+            this.btn_OK.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_OK.Location = new System.Drawing.Point(5, 5);
+            this.btn_OK.Name = "btn_OK";
+            this.btn_OK.Size = new System.Drawing.Size(121, 29);
+            this.btn_OK.TabIndex = 1;
+            this.btn_OK.Text = "선택";
+            this.btn_OK.UseVisualStyleBackColor = true;
+            this.btn_OK.Click += new System.EventHandler(this.btn_OK_Click);
             // 
             // panel4
             // 
@@ -301,51 +301,51 @@
             this.btn_Deselect.UseVisualStyleBackColor = true;
             this.btn_Deselect.Click += new System.EventHandler(this.btn_Deselect_Click);
             // 
-            // panel5
+            // panel3
             // 
-            this.panel5.Controls.Add(this.btn_OK);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(556, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Padding = new System.Windows.Forms.Padding(5);
-            this.panel5.Size = new System.Drawing.Size(131, 39);
-            this.panel5.TabIndex = 2;
+            this.panel3.Controls.Add(this.btn_Cancel);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(818, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(5);
+            this.panel3.Size = new System.Drawing.Size(131, 39);
+            this.panel3.TabIndex = 0;
             // 
-            // btn_OK
+            // btn_Cancel
             // 
-            this.btn_OK.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_OK.Location = new System.Drawing.Point(5, 5);
-            this.btn_OK.Name = "btn_OK";
-            this.btn_OK.Size = new System.Drawing.Size(121, 29);
-            this.btn_OK.TabIndex = 1;
-            this.btn_OK.Text = "선택";
-            this.btn_OK.UseVisualStyleBackColor = true;
-            this.btn_OK.Click += new System.EventHandler(this.btn_OK_Click);
+            this.btn_Cancel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_Cancel.Location = new System.Drawing.Point(5, 5);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(121, 29);
+            this.btn_Cancel.TabIndex = 1;
+            this.btn_Cancel.Text = "취소";
+            this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // TutorListPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 433);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel_Base);
             this.Name = "TutorListPop";
             this.Text = "TutorListPop";
-            this.panel1.ResumeLayout(false);
+            this.panel_Base.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Display_Tutor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dset_Tutor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel_Base;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Data.DataSet dset_Tutor;

@@ -43,6 +43,7 @@
             this.보호자연락처DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.출석률DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.평균성적DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.총납부액DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dset_student = new System.Data.DataSet();
             this.dataTable1 = new System.Data.DataTable();
             this.dataColumn1 = new System.Data.DataColumn();
@@ -56,6 +57,7 @@
             this.dataColumn11 = new System.Data.DataColumn();
             this.dataColumn13 = new System.Data.DataColumn();
             this.dataColumn12 = new System.Data.DataColumn();
+            this.dataColumn8 = new System.Data.DataColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.btn_ToMainMenu = new System.Windows.Forms.Button();
@@ -95,7 +97,7 @@
             this.panel_Base.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Base.Location = new System.Drawing.Point(0, 0);
             this.panel_Base.Name = "panel_Base";
-            this.panel_Base.Size = new System.Drawing.Size(1274, 636);
+            this.panel_Base.Size = new System.Drawing.Size(1249, 583);
             this.panel_Base.TabIndex = 7;
             // 
             // panel3
@@ -104,7 +106,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 29);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1274, 542);
+            this.panel3.Size = new System.Drawing.Size(1249, 489);
             this.panel3.TabIndex = 9;
             // 
             // groupBox1
@@ -114,7 +116,7 @@
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox1.Size = new System.Drawing.Size(1274, 542);
+            this.groupBox1.Size = new System.Drawing.Size(1249, 489);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "목록";
@@ -135,7 +137,8 @@
             this.학급명DataGridViewTextBoxColumn,
             this.보호자연락처DataGridViewTextBoxColumn,
             this.출석률DataGridViewTextBoxColumn,
-            this.평균성적DataGridViewTextBoxColumn});
+            this.평균성적DataGridViewTextBoxColumn,
+            this.총납부액DataGridViewTextBoxColumn});
             this.dgv_Display_Student.DataMember = "student";
             this.dgv_Display_Student.DataSource = this.dset_student;
             this.dgv_Display_Student.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -145,7 +148,7 @@
             this.dgv_Display_Student.ReadOnly = true;
             this.dgv_Display_Student.RowTemplate.Height = 23;
             this.dgv_Display_Student.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Display_Student.Size = new System.Drawing.Size(1254, 508);
+            this.dgv_Display_Student.Size = new System.Drawing.Size(1229, 455);
             this.dgv_Display_Student.TabIndex = 0;
             this.dgv_Display_Student.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -169,6 +172,7 @@
             this.성별DataGridViewTextBoxColumn.HeaderText = "성별";
             this.성별DataGridViewTextBoxColumn.Name = "성별DataGridViewTextBoxColumn";
             this.성별DataGridViewTextBoxColumn.ReadOnly = true;
+            this.성별DataGridViewTextBoxColumn.Width = 60;
             // 
             // 연락처DataGridViewTextBoxColumn
             // 
@@ -212,6 +216,7 @@
             this.출석률DataGridViewTextBoxColumn.HeaderText = "출석률";
             this.출석률DataGridViewTextBoxColumn.Name = "출석률DataGridViewTextBoxColumn";
             this.출석률DataGridViewTextBoxColumn.ReadOnly = true;
+            this.출석률DataGridViewTextBoxColumn.Width = 80;
             // 
             // 평균성적DataGridViewTextBoxColumn
             // 
@@ -219,6 +224,13 @@
             this.평균성적DataGridViewTextBoxColumn.HeaderText = "평균 성적";
             this.평균성적DataGridViewTextBoxColumn.Name = "평균성적DataGridViewTextBoxColumn";
             this.평균성적DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 총납부액DataGridViewTextBoxColumn
+            // 
+            this.총납부액DataGridViewTextBoxColumn.DataPropertyName = "총 납부액";
+            this.총납부액DataGridViewTextBoxColumn.HeaderText = "총 납부액";
+            this.총납부액DataGridViewTextBoxColumn.Name = "총납부액DataGridViewTextBoxColumn";
+            this.총납부액DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dset_student
             // 
@@ -239,7 +251,8 @@
             this.dataColumn10,
             this.dataColumn11,
             this.dataColumn13,
-            this.dataColumn12});
+            this.dataColumn12,
+            this.dataColumn8});
             this.dataTable1.TableName = "student";
             // 
             // dataColumn1
@@ -289,15 +302,20 @@
             this.dataColumn12.ColumnName = "평균 성적";
             this.dataColumn12.DataType = typeof(double);
             // 
+            // dataColumn8
+            // 
+            this.dataColumn8.ColumnName = "총 납부액";
+            this.dataColumn8.DataType = typeof(int);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel11);
             this.panel2.Controls.Add(this.panel10);
             this.panel2.Controls.Add(this.panel9);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 571);
+            this.panel2.Location = new System.Drawing.Point(0, 518);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1274, 65);
+            this.panel2.Size = new System.Drawing.Size(1249, 65);
             this.panel2.TabIndex = 7;
             // 
             // panel11
@@ -307,7 +325,7 @@
             this.panel11.Location = new System.Drawing.Point(300, 0);
             this.panel11.Name = "panel11";
             this.panel11.Padding = new System.Windows.Forms.Padding(8);
-            this.panel11.Size = new System.Drawing.Size(674, 65);
+            this.panel11.Size = new System.Drawing.Size(649, 65);
             this.panel11.TabIndex = 5;
             // 
             // btn_ToMainMenu
@@ -316,7 +334,7 @@
             this.btn_ToMainMenu.Font = new System.Drawing.Font("배달의민족 도현", 15F);
             this.btn_ToMainMenu.Location = new System.Drawing.Point(8, 8);
             this.btn_ToMainMenu.Name = "btn_ToMainMenu";
-            this.btn_ToMainMenu.Size = new System.Drawing.Size(658, 49);
+            this.btn_ToMainMenu.Size = new System.Drawing.Size(633, 49);
             this.btn_ToMainMenu.TabIndex = 0;
             this.btn_ToMainMenu.Text = "메인메뉴로 돌아가기";
             this.btn_ToMainMenu.UseVisualStyleBackColor = true;
@@ -325,7 +343,7 @@
             // panel10
             // 
             this.panel10.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel10.Location = new System.Drawing.Point(974, 0);
+            this.panel10.Location = new System.Drawing.Point(949, 0);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(300, 65);
             this.panel10.TabIndex = 4;
@@ -348,13 +366,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1274, 29);
+            this.panel1.Size = new System.Drawing.Size(1249, 29);
             this.panel1.TabIndex = 6;
             // 
             // panel8
             // 
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(1049, 0);
+            this.panel8.Location = new System.Drawing.Point(1024, 0);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(225, 29);
             this.panel8.TabIndex = 7;
@@ -453,7 +471,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1274, 636);
+            this.ClientSize = new System.Drawing.Size(1249, 583);
             this.Controls.Add(this.panel_Base);
             this.Name = "StudentView";
             this.Text = "StudentView";
@@ -520,5 +538,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 보호자연락처DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 출석률DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 평균성적DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 총납부액DataGridViewTextBoxColumn;
+        private System.Data.DataColumn dataColumn8;
     }
 }

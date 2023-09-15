@@ -20,12 +20,12 @@ namespace MiraePro.Windows.Pop
         {
              "일", "월", "화", "수", "목", "금", "토"
         };
-        string GetWeekday(int OracleWeekday)
+        string GetString_OfWeekday(int OracleWeekday)
         {
             return WeekDays[OracleWeekday - 1];
         }
         DataRow Recieved_DataRow { get; set; } = null;
-        MiraePro.Manager.DBManager.Course Data { get; set; } = null;
+        MiraePro.Manager.DBManager.Course CourseData { get; set; } = null;
 
         private bool Exist_String(string aStr)
         {
@@ -46,14 +46,13 @@ namespace MiraePro.Windows.Pop
         public override void InitializePop(ePopMode aPopMode = ePopMode.None, object aParam = null)
         {
             m_PopMode = aPopMode;
-            
+            Recieved_DataRow = (aParam as DataRow);
+            if (Recieved_DataRow == null)
+            {
+                throw new Exception("Recieved DataRow was Null");
+            }
 
-            List<object> ListParam = aParam as List<object>;
-
-            
-            Recieved_DataRow = null;            
-
-            INIT_Data(ListParam);
+            INIT_Data(Recieved_DataRow);
             Update_ComponentAs_Data();
 
             switch (aPopMode)
@@ -69,41 +68,20 @@ namespace MiraePro.Windows.Pop
                     break;
             }
         }
-        private void INIT_Data(List<object> listParam)
+        private void INIT_Data(DataRow aDataRow)
         {
-            if (isValidParamList(listParam))
-            {
-                int HakGeupCode = Convert.ToInt32(listParam[0]);
-                int WeekDayOracleIndex = Convert.ToInt32(listParam[1]);
-                int GyoSi = Convert.ToInt32(listParam[2]);
-                string HakGeupName = App.Instance().DBManager.ReadHakgeupName(HakGeupCode);
-
-                string SubjectName = null;
-                string Tutor_ID = null;
-                string Tutor_Name = null;
-
-                if (isDataRow_Valid(listParam[3]))
-                {
-                    Recieved_DataRow = (listParam[3] as DataRow);
-                    SubjectName = Convert.ToString(Recieved_DataRow["과목"]);
-                    Tutor_ID = Convert.ToString(Recieved_DataRow["담당 선생님 아이디"]);
-                    Tutor_Name = Convert.ToString(Recieved_DataRow["담당 선생님"]);
-                }
-
-                Data = new DBManager.Course(HakGeupCode, WeekDayOracleIndex, GyoSi, SubjectName, Tutor_ID, Tutor_Name, HakGeupName);
+            if (Exist_Data(aDataRow))
+            {                
+                CourseData = new DBManager.Course(aDataRow);
             }
         }
-        private bool isValidParamList(List<object> listParam)
+        private bool Exist_Data(DataRow aDataRow)
         {
-            return listParam != null && listParam.Count == 4;
-        }
-        private bool isDataRow_Valid(object Object)
-        {
-            return Object != null && Object.GetType() == typeof(DataRow) && (Object as DataRow).ItemArray.Length > 0;
-        }
+            return aDataRow != null && aDataRow.ItemArray.Count() > 0;
+        }                
         private void Update_ComponentAs_Data()
         {
-            label_HakGeupName.Text = Data.HakGeup_Name;
+            label_HakGeupName.Text = CourseData.HakGeup_Name;
             label_WeekDay.Text = GetString_Weekday();
             label_GyoSi.Text = GetString_GyoSi();
             tbox_SubjectName.Text = GetString_SubjectName();
@@ -111,24 +89,19 @@ namespace MiraePro.Windows.Pop
         }
         private string GetString_Weekday()
         {
-            string WeekDay = GetWeekday_ByData();
-            return $"{WeekDay}요일";
-        }
-        private string GetWeekday_ByData()
-        {
-            return GetWeekday(Data.Weekday);
-        }
+            return $"{GetString_OfWeekday(CourseData.Weekday)}요일";
+        }        
         private string GetString_GyoSi()
         {
-            return $"{Data.Gyosi} 교시";
+            return $"{CourseData.Gyosi} 교시";
         }
         private string GetString_SubjectName()
         {
-            return Exist_String(Data.Name) ? Data.Name : "";
+            return Exist_String(CourseData.Subject_Name) ? CourseData.Subject_Name : "";
         }
         private string GetString_TutorName()
         {
-            return Exist_String(Data.Tutor_Name) ? Data.Tutor_Name : "";
+            return Exist_String(CourseData.Tutor_Name) ? CourseData.Tutor_Name : "";
         }
 
         #endregion
@@ -145,20 +118,20 @@ namespace MiraePro.Windows.Pop
             TutorListPop tutorListPop = new TutorListPop();
             if (tutorListPop.ShowDialog() == DialogResult.OK)
             {
-                Data.Tutor_id = tutorListPop.Tutor_ID;
+                CourseData.Tutor_id = tutorListPop.Tutor_ID;
                 label_TutorName.Text = tutorListPop.Tutor_Name;
             }
         }
-
         private void tbox_SubjectName_TextChanged(object sender, EventArgs e)
         {
-            if (Data != null)
-            { Data.Name = (sender as TextBox).Text; }
+            if (CourseData != null)
+            { CourseData.Subject_Name = (sender as TextBox).Text; }
         }
 
         #endregion
 
         #region <<< 버튼 이벤트 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
         private void btn_Confirm_Click(object sender, EventArgs e)
         {
             if (CheckEverthingIsValid_Or_ShowError() == true)
@@ -166,10 +139,10 @@ namespace MiraePro.Windows.Pop
                 switch (m_PopMode)
                 {
                     case ePopMode.Add:
-                        Try_RunAndCommit_Add();
+                        RunAndCommit_Add_ShowResult();
                         break;
                     case ePopMode.Modify:
-                        Try_RunAndCommit_Modify();
+                        RunAndCommit_Modify_ShowResult();
                         break;
                     default:
                         break;
@@ -183,12 +156,12 @@ namespace MiraePro.Windows.Pop
             int LengthLimit = 20;
             Validator Validator = App.Instance().Validator;
 
-            if (Exist_String(Data.Name) == false)
+            if (Exist_String(CourseData.Subject_Name) == false)
             {
                 Validator.ShowErrorMessage_NecessaryNotExist("과목명");
                 return false;
             }
-            if (Exist_String(Data.Tutor_id) == false)
+            if (Exist_String(CourseData.Tutor_id) == false)
             {
                 Validator.ShowErrorMessage_NecessaryNotExist("담당 선생님");
                 return false;
@@ -198,11 +171,11 @@ namespace MiraePro.Windows.Pop
         }
         private void UpdateDataAs_Input()
         {
-            Data.Name = tbox_SubjectName.Text;
+            CourseData.Subject_Name = tbox_SubjectName.Text;
         }
-        private void Try_RunAndCommit_Add()
+        private void RunAndCommit_Add_ShowResult()
         {
-            if (App.Instance().DBManager.AddCourse(Data) > 0)
+            if (App.Instance().DBManager.AddCourse(CourseData) > 0)
             {
                 MessageBox.Show("데이터 기록이 성공적으로 완료되었습니다.");
                 DialogResult = DialogResult.OK;
@@ -212,9 +185,9 @@ namespace MiraePro.Windows.Pop
                 MessageBox.Show("데이터 기록에 실패했습니다.", "오류");
             }
         }
-        private void Try_RunAndCommit_Modify()
+        private void RunAndCommit_Modify_ShowResult()
         {
-            if (App.Instance().DBManager.ModifyCourse(Data) > 0)
+            if (App.Instance().DBManager.ModifyCourse(CourseData) > 0)
             {
                 MessageBox.Show("데이터 수정이 성공적으로 완료되었습니다.");
                 DialogResult = DialogResult.OK;
@@ -223,9 +196,23 @@ namespace MiraePro.Windows.Pop
             {
                 MessageBox.Show("데이터 수정에 실패했습니다.", "오류");
             }
-        }        
-
-        
+        }
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("정말로 삭제하시겠습니까?", "경고", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                int _result = App.Instance().DBManager.DeleteCourse(CourseData);
+                if (_result > 0)
+                {
+                    MessageBox.Show("성공적으로 삭제되었습니다.");
+                    DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    MessageBox.Show("삭제에 실패하였습니다.");
+                }
+            }
+        }
 
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
@@ -234,5 +221,6 @@ namespace MiraePro.Windows.Pop
 
         #endregion
 
+        
     }
 }

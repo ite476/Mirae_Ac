@@ -45,12 +45,14 @@ namespace MiraePro.Windows.View
             DTable_SearchResult = ReadWaiting_BySearchOption();
             GridAssist.SetAuto_GridView_FromSourceTable(dgv_Display_Waiting, DTable_SearchResult);
         }
+        string Field_Latest { get; set; }
+        string Seed_Latest { get; set; }
         private DataTable ReadWaiting_BySearchOption()
         {
-            string _Field = cbox_SearchField.SelectedItem as string;
-            string _Seed = GetSeed_AsVisibleOption();            
+            Field_Latest = cbox_SearchField.SelectedItem as string;
+            Seed_Latest = GetSeed_AsVisibleOption();            
 
-            return App.Instance().DBManager.ReadWaiting(_Field, _Seed);
+            return App.Instance().DBManager.ReadWaiting(Field_Latest, Seed_Latest);
         }
         private string GetSeed_AsVisibleOption()
         {
@@ -102,9 +104,6 @@ namespace MiraePro.Windows.View
         private void cbox_Seed_SelectedIndexChanged(object sender, EventArgs e) { }
 
         private void dgv_Display_Waiting_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
-
-        
-        
         private void dgv_Display_Waiting_MouseClick(object sender, MouseEventArgs e)
         {
             RMB_ShowContextMenu_OnDataGrid(e);            
@@ -131,9 +130,27 @@ namespace MiraePro.Windows.View
             SelectedRowOf_DGV = GridAssist.SelectedRow(dgv_Display_Waiting);
             if (isNotNull(SelectedRowOf_DGV))
             {
-                App.Instance().MainForm.ShowPop<CounselProceedPop>(ePopMode.Modify, SelectedRowOf_DGV["아이디"].ToString());
+                DialogResult _Result = App.Instance().MainForm.ShowPop<CounselProceedPop>(ePopMode.Modify, SelectedRowOf_DGV["아이디"].ToString());
+                if(_Result == DialogResult.OK )
+                {
+                    Refresh_DataGridView_AsLatestSearchOption();
+                }
             }
         }
+        private void Refresh_DataGridView_AsLatestSearchOption()
+        {
+            if (Exist_String(Field_Latest) && Seed_Latest != null)
+            {
+                DTable_SearchResult = App.Instance().DBManager.ReadWaiting(Field_Latest, Seed_Latest);
+                GridAssist.SetAuto_GridView_FromSourceTable(dgv_Display_Waiting, DTable_SearchResult);
+            }            
+        }
+
+        private bool Exist_String(string aString)
+        {
+            return aString != null && aString.Length > 0;
+        }
+
         private bool isNotNull(object aObject)
         {
             return aObject != null;

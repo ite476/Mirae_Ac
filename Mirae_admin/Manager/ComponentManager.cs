@@ -15,7 +15,7 @@ namespace MiraePro.Manager
     {
         internal void SetCategoryCbox_WithHakgeup(ComboBox aComboBox, bool includeALLCategory = false)
         {
-            DataTable _dt = App.Instance().DBManager.ReadHakgeup_All();
+            DataTable _dt = App.Instance().DBManager.ReadHakGeup_All();
 
             aComboBox.Items.Clear();
             if (includeALLCategory) 

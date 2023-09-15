@@ -63,7 +63,7 @@ namespace MiraePro
                 { view.Visible = false; }
 
                 if (view.GetType() == typeof(MainMenuView)) {
-                    (view as MainMenuView).Update_Info();
+                    (view as MainMenuView).Update_Waiting_Info();
                 }
 
             }

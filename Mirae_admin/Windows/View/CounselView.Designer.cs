@@ -180,7 +180,7 @@
             this.panel_Base.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Base.Location = new System.Drawing.Point(0, 0);
             this.panel_Base.Name = "panel_Base";
-            this.panel_Base.Size = new System.Drawing.Size(1249, 636);
+            this.panel_Base.Size = new System.Drawing.Size(1249, 583);
             this.panel_Base.TabIndex = 5;
             // 
             // panel3
@@ -189,7 +189,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 29);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1249, 542);
+            this.panel3.Size = new System.Drawing.Size(1249, 489);
             this.panel3.TabIndex = 9;
             // 
             // groupBox1
@@ -199,7 +199,7 @@
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox1.Size = new System.Drawing.Size(1249, 542);
+            this.groupBox1.Size = new System.Drawing.Size(1249, 489);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "목록";
@@ -229,7 +229,7 @@
             this.dgv_Display_Waiting.ReadOnly = true;
             this.dgv_Display_Waiting.RowTemplate.Height = 23;
             this.dgv_Display_Waiting.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Display_Waiting.Size = new System.Drawing.Size(1229, 508);
+            this.dgv_Display_Waiting.Size = new System.Drawing.Size(1229, 455);
             this.dgv_Display_Waiting.TabIndex = 2;
             this.dgv_Display_Waiting.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Display_Waiting_CellContentClick);
             this.dgv_Display_Waiting.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Display_Waiting_CellDoubleClick);
@@ -306,7 +306,7 @@
             this.panel2.Controls.Add(this.panel10);
             this.panel2.Controls.Add(this.panel9);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 571);
+            this.panel2.Location = new System.Drawing.Point(0, 518);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1249, 65);
             this.panel2.TabIndex = 7;
@@ -464,7 +464,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1249, 636);
+            this.ClientSize = new System.Drawing.Size(1249, 583);
             this.Controls.Add(this.panel_Base);
             this.Name = "CounselView";
             this.Text = "CourseView";

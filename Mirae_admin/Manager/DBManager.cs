@@ -3,6 +3,7 @@ using Lib.DB;
 using MiraePro.Windows.Pop;
 using MiraePro.Windows.View;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
@@ -109,6 +110,19 @@ namespace MiraePro.Manager
                 return m_OracleAssist.ExcuteQuery(aQuery);
             }
         }
+        private int ExecuteAndCommit_MultipleQueries(ArrayList Queries)
+        {
+            int _result = 0;
+
+            DbConnection _Connection = m_OracleAssist.NewConnection();
+
+            if (_Connection == null) { return -999; }
+            else
+            {
+                return m_OracleAssist.ExcuteArrayQuery(Queries);
+            }
+            
+        }
         
         private string Get_DBGender(string gender)
         {
@@ -209,17 +223,23 @@ namespace MiraePro.Manager
                     "FROM Student " +
                     "JOIN Score ON member_id = student_id " +
                     "GROUP BY member_id ) " +
+                ", Student_Total_Payment As ( " +
+                    "SELECT member_id, sum(pay_amount) total_pay " +
+                    "FROM pay JOIN student ON member_id = student_id " +
+                    "GROUP BY member_id ) " +
                 "SELECT S.member_id 아이디, S.name 학생명, " +
                     "CASE WHEN S.gender = 'M' THEN '남성' " +
                     "WHEN S.gender = 'W' or S.gender = 'F' THEN '여성' " +
                     "ELSE NULL END 성별, " +
                     "S.contact 연락처, S.address 주소, S.picture 사진, S.date_register 등록일, H.name 학급명, " +
-                    "nvl(P.contact,'-') \"보호자 연락처\", nvl(attend_rate,0) 출석률, nvl(avg_score,0) \"평균 성적\" " +
+                    "nvl(P.contact,'-') \"보호자 연락처\", nvl(attend_rate,0) 출석률, " +
+                    "nvl(avg_score,0) \"평균 성적\", nvl(total_pay,0) \"총 납부액\" " +
                 "FROM student S " +
                 "JOIN HakGeup H ON HakGeup_code = H.code " +
                 "LEFT JOIN Parent P ON parent_id = P.member_id " +
                 "LEFT JOIN Student_Avg_Score SAS ON S.member_id = SAS.member_id " +
-                "LEFT JOIN Student_Attend_Rate SAR ON S.member_id = SAR.member_id ";
+                "LEFT JOIN Student_Attend_Rate SAR ON S.member_id = SAR.member_id " +
+                "LEFT JOIN Student_Total_Payment STP ON S.member_id = STP.member_id ";
             #endregion
 
             if (Exist_String(aSeed))
@@ -246,6 +266,80 @@ namespace MiraePro.Manager
                 default:
                     throw new FieldNotFoundException();
             }
+        }
+
+        public int AddStudent_FromWaiting(string aMemberID, int aHakGeupCode)
+        {
+            Waiting thePersonnel = ReadWaiting_Specific(aMemberID);
+            return AddStudent_FromWaiting(thePersonnel, aHakGeupCode);
+        }
+        public int AddStudent_FromWaiting(Waiting aPersonnel, int aHakGeupCode)
+        {
+            string _strUpdateMemberQuery =
+                "UPDATE Member SET " +
+                "membergroup_code = 4 " +
+                $"WHERE id = '{aPersonnel.Member_ID}' ";
+            string _strInsertStudentQuery =
+                "INSERT INTO Student (" +
+                GetStrigQuery_StudentFieldNames_AsWaiting(aPersonnel) +
+                ") VALUES ( " +
+                GetStringQuery_StudentFieldValues_AsWaiting(aPersonnel, aHakGeupCode) +
+                ") ";
+            string _strDeleteWaitingQuery = 
+                "DELETE FROM Waiting " +
+                $"WHERE member_id = '{aPersonnel.Member_ID}' ";
+
+            ArrayList _Transaction_Queries = new ArrayList
+            {
+                _strUpdateMemberQuery,
+                _strInsertStudentQuery,
+                _strDeleteWaitingQuery
+            };
+            int result = ExecuteAndCommit_MultipleQueries(_Transaction_Queries);
+            MessageBox.Show(result.ToString());
+            if (result >= 3)
+            {
+                return 1;
+            }
+            else if (result < 0)
+            {
+                return result;
+            }
+            return 0;
+        }
+        private string GetStrigQuery_StudentFieldNames_AsWaiting(Waiting aPersonnel)
+        {
+
+            return
+                "member_id, " +
+                "date_register, " +
+                "hakgeup_code " +
+                (Exist_String(aPersonnel.Name) ? ", name " : "") +
+                (Exist_String(aPersonnel.Gender) ? ", gender " : "") +
+                (Exist_String(aPersonnel.Contact) ? ", contact " : "") +
+                (Exist_String(aPersonnel.Address) ? ", address " : "") +
+                (Exist_String(aPersonnel.Picture) ? ", picture " : "") +
+                (Exist_String(aPersonnel.Parent_ID) ? ", parent_id " : "");
+        }
+        private string GetStringQuery_StudentFieldValues_AsWaiting(Waiting aPersonnel, int aHakGeupCode)
+        {
+            return
+                $"'{aPersonnel.Member_ID}', " +
+                $"SYSDATE, " +
+                $"{aHakGeupCode} " +
+                (Exist_String(aPersonnel.Name) ? $", '{aPersonnel.Name}' " : "") +
+                (Exist_String(aPersonnel.Gender) ? $", {Get_DBGender(aPersonnel.Gender)} " : "") +
+                (Exist_String(aPersonnel.Contact) ? $", '{aPersonnel.Contact}' " : "") +
+                (Exist_String(aPersonnel.Address) ? $", '{aPersonnel.Address}' " : "") +
+                (Exist_String(aPersonnel.Picture) ? $", {MakeToClobQuery(aPersonnel.Picture)} " : "") +
+                (Exist_String(aPersonnel.Parent_ID) ? $", '{aPersonnel.Parent_ID}' " : "");
+        }
+
+        
+
+        private bool isNotNull(object aObject)
+        {
+            return aObject != null;
         }
 
         #endregion
@@ -488,36 +582,56 @@ namespace MiraePro.Manager
                 Parent_Contact = parent_contact;
                 Tutor_Name = tutor_name;
             }
+            public Waiting(DataRow aDataRow)
+            {
+                
+                Member_ID = GetString_FromNullableDBValue(aDataRow["아이디"]);
+                Step = GetString_FromNullableDBValue(aDataRow["상태"]);
+                Score = GetInt_FromNullableDBValue(aDataRow["입학 점수"]);
+                Name = GetString_FromNullableDBValue(aDataRow["이름"]);
+                Gender = GetString_FromNullableDBValue(aDataRow["성별"]);
+                Contact = GetString_FromNullableDBValue(aDataRow["연락처"]);
+                Address = GetString_FromNullableDBValue(aDataRow["주소"]);
+                Picture = GetString_FromNullableDBValue(aDataRow["사진"]);
+                Parent_ID = GetString_FromNullableDBValue(aDataRow["보호자 아이디"]);
+                Tutor_ID = GetString_FromNullableDBValue(aDataRow["담당 선생님 아이디"]);
+                Parent_Contact = GetString_FromNullableDBValue(aDataRow["보호자 연락처"]);
+                Tutor_Name = GetString_FromNullableDBValue(aDataRow["담당 선생님"]);
+
+
+            }
+
+            private int? GetInt_FromNullableDBValue(object DBValue)
+            {
+                if (DBValue == DBNull.Value || DBValue == null)
+                {
+                    return null;
+                }
+                return Convert.ToInt32(DBValue);
+            }
+
+            private string GetString_FromNullableDBValue(object DBValue)
+            {
+                if (DBValue == DBNull.Value || DBValue == null)
+                {
+                    return null;
+                }
+                return Convert.ToString(DBValue);
+            }
         }
 
         public Waiting ReadWaiting_Specific(string aMember_ID)
         {
-            string _strQuery = GetQuery_DefaultFor_Waiting();
+            string _strQuery = GetQuery_DefaultFor_Waiting() +
+                $"WHERE W.member_id = '{aMember_ID}' ";
 
             DataTable dt = ReadTable(_strQuery, "Waiting");
 
             if (Exist_DataTable_Rows(dt))
-            { return GetWaitingBy_DataRow(dt.Rows[0]); }
+            { return new Waiting(dt.Rows[0]); }
             else
             { return null; }
-        }
-        private Waiting GetWaitingBy_DataRow(DataRow dr)
-        {
-            return new Waiting(
-                GetString_FromDBValue(dr["아이디"]),
-                GetString_FromDBValue(dr["상태"]),
-                GetInt_FromDBValue(dr["입학 점수"]),
-                GetString_FromDBValue(dr["이름"]),
-                GetString_FromDBValue(dr["성별"]),
-                GetString_FromDBValue(dr["연락처"]),
-                GetString_FromDBValue(dr["주소"]),
-                GetString_FromDBValue(dr["사진"]),
-                GetString_FromDBValue(dr["보호자 아이디"]),
-                GetString_FromDBValue(dr["담당 선생님 아이디"]),
-                GetString_FromDBValue(dr["보호자 연락처"]),
-                GetString_FromDBValue(dr["담당 선생님"])
-                );
-        }
+        }        
                 
         internal int ModifyWaiting(Waiting thePersonnel)
         {
@@ -546,7 +660,41 @@ namespace MiraePro.Manager
 
         #region <<< 학급 관련 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // HakGeup ///////////////////////////////////////////////////////////////////////////////////////////////////
-        public DataTable ReadHakgeup_All()
+        public class HakGeup
+        {
+            int HakGeup_Code;
+            string HakGeup_Name;
+            string Tutor_ID;
+            string Tutor_Name;
+            public HakGeup(int hakGeup_Code, string hakGeup_Name, string tutor_ID, string tutor_Name)
+            {
+                HakGeup_Code = hakGeup_Code;
+                HakGeup_Name = hakGeup_Name;
+                Tutor_ID = tutor_ID;
+                Tutor_Name = tutor_Name;
+            } 
+            public HakGeup(DataRow aDataRow)
+            {
+                HakGeup_Code = Convert.ToInt32(aDataRow["학급코드"]);
+                HakGeup_Name = Convert.ToString(aDataRow["학급"]);
+                Tutor_ID = GetString_FromNullableDBValue(aDataRow["담당 선생님 아이디"]);
+                Tutor_Name = GetString_FromNullableDBValue(aDataRow["담당 선생님"]);
+            }
+            private string GetString_FromNullableDBValue(object DBValue)
+            {
+                if (DBValue == DBNull.Value || DBValue == null)
+                {
+                    return null;
+                }
+                return Convert.ToString(DBValue);
+            }
+        }
+
+        /// <summary>
+        /// {학급코드 | 학급 | 담당 선생님 아이디 | 담당 선생님 }
+        /// </summary>
+        /// <returns></returns>
+        public DataTable ReadHakGeup_All()
         {
             string _strQuery = 
                 "SELECT H.code 학급코드, H.name 학급, " +
@@ -557,7 +705,7 @@ namespace MiraePro.Manager
 
             return ReadTable(_strQuery, "Hakgeup");
         }
-        internal string ReadHakgeupName(int hakGeupCode)
+        internal string ReadHakGeupName(int hakGeupCode)
         {
             string _strQuery =
                 "SELECT H.name " +
@@ -566,25 +714,41 @@ namespace MiraePro.Manager
 
         }
 
+        public DataTable ReadHakGeup_Distinct(string aField, string aSeed)
+        {
+            string _strQuery =
+                "SELECT H.code 학급코드 " +
+                "FROM HakGeup H ";
+
+            if (Exist_String(aSeed))
+            {
+                _strQuery += string.Format(GetStringFormat_Of_QueryCondition_HakGeup(aField), aSeed);
+            }
+            return ReadTable(_strQuery, "HakGeup");
+        }
+
+        private string GetStringFormat_Of_QueryCondition_HakGeup(string aField)
+        {
+            return "WHERE H.code LIKE '%{0}%' ";
+        }
+
         #endregion
 
         #region <<< 수업 관련 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // Course ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+        /// <summary>
+        /// { 학급코드 | 학급 | 요일 | 교시 | 담당 선생님 아이디 | 담당 선생님 | 과목 }
+        /// </summary>
+        /// <param name="aField"></param>
+        /// <param name="aSeed"></param>
+        /// <returns></returns>
         public DataTable ReadCourse(string aField, string aSeed)
         {
             string _strQuery =
             #region ...
-                "SELECT H.code 학급코드, H.name 학급, " +
-                    "CASE " +
-                        "WHEN C.weekday = 1 THEN 'Sun' " +
-                        "WHEN C.weekday = 2 THEN 'Mon' " +
-                        "WHEN C.weekday = 3 THEN 'Tue' " +
-                        "WHEN C.weekday = 4 THEN 'Wed' " +
-                        "WHEN C.weekday = 5 THEN 'Thu' " +
-                        "WHEN C.weekday = 6 THEN 'Fri' " +
-                        "WHEN C.weekday = 7 or C.weekday = 0 THEN 'Sat' " +
-                    "ELSE NULL END 요일, " +
-                    "C.gyosi 교시, T.member_id \"담당 선생님 아이디\", T.name \"담당 선생님\", C.name 과목 " +
+                "SELECT H.code 학급코드, H.name 학급, C.weekday 요일, " +
+                "C.gyosi 교시, T.member_id \"담당 선생님 아이디\", T.name \"담당 선생님\", C.name 과목 " +
                 "FROM Course C " +
                 "JOIN Hakgeup H ON H.code = C.hakgeup_code " +
                 "LEFT JOIN Tutor T ON T.member_id = C.tutor_id ";
@@ -601,7 +765,8 @@ namespace MiraePro.Manager
             switch (aField)
             {
                 case "학급 선택":
-                    return "WHERE H.code = '{0}' ";
+                case "학급코드":
+                    return "WHERE H.code = {0} ";
                 case "학급명":
                     return "WHERE H.name LIKE '%{0}%' ";
                 case "담당 선생님":
@@ -624,28 +789,30 @@ namespace MiraePro.Manager
             return ReadTable(_strQuery, "Course");
         }
         
-        internal DataTable ReadCourse_Specific(int? current_HakGeupCode, int aWeekday, int aGyosi)
+        internal DataRow ReadCourse_Specific(int? current_HakGeupCode, int aWeekday, int aGyosi)
         {
             string _strQuery =
             #region ...
-                "SELECT H.code 학급코드, H.name 학급, " +
-                    "CASE " +
-                        "WHEN C.weekday = 1 THEN 'Sun' " +
-                        "WHEN C.weekday = 2 THEN 'Mon' " +
-                        "WHEN C.weekday = 3 THEN 'Tue' " +
-                        "WHEN C.weekday = 4 THEN 'Wed' " +
-                        "WHEN C.weekday = 5 THEN 'Thu' " +
-                        "WHEN C.weekday = 6 THEN 'Fri' " +
-                        "WHEN C.weekday = 7 or C.weekday = 0 THEN 'Sat' " +
-                    "ELSE NULL END 요일, " +
-                    "C.gyosi 교시, T.member_id \"담당 선생님 아이디\", T.name \"담당 선생님\", C.name 과목 " +
+                "SELECT H.code 학급코드, H.name 학급, C.weekday 요일, " +
+                "C.gyosi 교시, T.member_id \"담당 선생님 아이디\", T.name \"담당 선생님\", C.name 과목 " +
                 "FROM Course C " +
                 "JOIN Hakgeup H ON H.code = C.hakgeup_code " +
                 "LEFT JOIN Tutor T ON T.member_id = C.tutor_id " +
                 $"WHERE H.code = {current_HakGeupCode} and C.weekday = {aWeekday} and C.gyosi = {aGyosi} ";
             #endregion
 
-            return ReadTable(_strQuery, "Course");
+            DataTable _Result = ReadTable(_strQuery, "Course");
+
+            if (_Result != null && _Result.Rows.Count == 1)
+            {
+                return _Result.Rows[0];
+            }
+            else if (_Result != null && _Result.Rows.Count > 1)
+            {
+                throw new Exception("Too many Rows Found On DataBase");
+            }            
+
+            return null;
         }
 
         public class Course
@@ -656,16 +823,34 @@ namespace MiraePro.Manager
             public int Gyosi { get; set; }
             public string Tutor_id { get; set; }
             public string Tutor_Name { get; set; }
-            public string Name { get; set; }
+            public string Subject_Name { get; set; }
             public Course(int Code, int Weekday, int Gyosi, string name, string tutor_id, string tutor_name = null, string hakgeup_name = null)
             {
                 this.HakGeup_Code = Code;
                 this.Weekday = Weekday;
                 this.Gyosi = Gyosi;
-                this.Name = name;
+                this.Subject_Name = name;
                 this.Tutor_id = tutor_id;
                 this.Tutor_Name = tutor_name;
                 this.HakGeup_Name = hakgeup_name;
+            }
+            public Course(DataRow aDataRow)
+            {
+                this.HakGeup_Code = Convert.ToInt32(aDataRow[0]);
+                this.HakGeup_Name = Convert.ToString(aDataRow[1]);
+                this.Weekday = Convert.ToInt32(aDataRow[2]);
+                this.Gyosi = Convert.ToInt32(aDataRow[3]);                
+                this.Subject_Name = GetString_FromNullableDBValue(aDataRow["과목"]);
+                this.Tutor_id = GetString_FromNullableDBValue(aDataRow["담당 선생님 아이디"]);
+                this.Tutor_Name = GetString_FromNullableDBValue(aDataRow["담당 선생님"]);
+            }
+            private string GetString_FromNullableDBValue(object DBValue)
+            {
+                if (DBValue == DBNull.Value || DBValue == null)
+                {
+                    return null;
+                }
+                return Convert.ToString(DBValue);
             }
         }
         public int AddCourse(Course data)
@@ -676,11 +861,11 @@ namespace MiraePro.Manager
                 "INSERT INTO course ( " +
                 "hakgeup_code, weekday, gyosi " +
                 (Exist_String(data.Tutor_id)? ", tutor_id " : "") +
-                (Exist_String(data.Name)? ", name ": "" ) +
+                (Exist_String(data.Subject_Name)? ", name ": "" ) +
                 ") VALUES ( " +
                 $"{data.HakGeup_Code}, {data.Weekday}, {data.Gyosi} " +
                 (Exist_String(data.Tutor_id) ? $", '{data.Tutor_id}' " : "")+
-                (Exist_String(data.Name) ? $", {data.Name} " : "") +
+                (Exist_String(data.Subject_Name) ? $", '{data.Subject_Name}' " : "") +
                 ") ";
             #endregion
 
@@ -693,11 +878,21 @@ namespace MiraePro.Manager
                 "UPDATE Course "
                 + "SET "
                 + $"tutor_id = {Get_DBString_OrNull(data.Tutor_id)}, "
-                + $"name = {Get_DBString_OrNull(data.Name)} "
+                + $"name = {Get_DBString_OrNull(data.Subject_Name)} "
                 + $"WHERE hakgeup_code = {data.HakGeup_Code} and weekday = {data.Weekday} and gyosi = {data.Gyosi} " ;
             #endregion
 
             return ExecuteAndCommit(_strQuery) ;
+        }
+        internal int DeleteCourse(Course data)
+        {
+            string _strQuery = 
+                "DELETE FROM course " +
+                $"WHERE hakgeup_code = '{data.HakGeup_Code}' " +
+                $"AND weekday = '{data.Weekday}' " +
+                $"AND gyosi = '{data.Gyosi}' ";
+
+            return ExecuteAndCommit (_strQuery) ;
         }
 
         #endregion

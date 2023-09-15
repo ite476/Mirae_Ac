@@ -85,12 +85,12 @@
             this.pbox_picture = new System.Windows.Forms.PictureBox();
             this.panel21 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.btn_AssignToHakGeup = new System.Windows.Forms.Button();
             this.panel32 = new System.Windows.Forms.Panel();
             this.btn_OK = new System.Windows.Forms.Button();
             this.panel31 = new System.Windows.Forms.Panel();
             this.btn_Cancel = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel_Base.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -117,9 +117,9 @@
             this.panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_picture)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel32.SuspendLayout();
             this.panel31.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Base
@@ -733,6 +733,27 @@
             this.panel1.Size = new System.Drawing.Size(440, 47);
             this.panel1.TabIndex = 0;
             // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.btn_AssignToHakGeup);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Padding = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.panel8.Size = new System.Drawing.Size(90, 47);
+            this.panel8.TabIndex = 38;
+            // 
+            // btn_AssignToHakGeup
+            // 
+            this.btn_AssignToHakGeup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_AssignToHakGeup.Location = new System.Drawing.Point(5, 3);
+            this.btn_AssignToHakGeup.Name = "btn_AssignToHakGeup";
+            this.btn_AssignToHakGeup.Size = new System.Drawing.Size(80, 41);
+            this.btn_AssignToHakGeup.TabIndex = 14;
+            this.btn_AssignToHakGeup.Text = "즉시 반배정";
+            this.btn_AssignToHakGeup.UseVisualStyleBackColor = true;
+            this.btn_AssignToHakGeup.Click += new System.EventHandler(this.btn_AssignToHakGeup_Click);
+            // 
             // panel32
             // 
             this.panel32.Controls.Add(this.btn_OK);
@@ -775,27 +796,6 @@
             this.btn_Cancel.UseVisualStyleBackColor = true;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.button1);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Padding = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.panel8.Size = new System.Drawing.Size(90, 47);
-            this.panel8.TabIndex = 38;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(5, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 41);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "즉시 반배정";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // CounselProceedPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -834,9 +834,9 @@
             this.panel20.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbox_picture)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             this.panel32.ResumeLayout(false);
             this.panel31.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -905,6 +905,6 @@
         private System.Windows.Forms.TextBox tbox_score;
         private System.Windows.Forms.ComboBox cbox_gender;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_AssignToHakGeup;
     }
 }
