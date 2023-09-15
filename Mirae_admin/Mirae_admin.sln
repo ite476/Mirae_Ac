@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiraePro", "MiraePro.csproj", "{B5B8C7BA-1FE8-4D93-AE88-8DDA77B4BE9F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5B8C7BA-1FE8-4D93-AE88-8DDA77B4BE9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5B8C7BA-1FE8-4D93-AE88-8DDA77B4BE9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5B8C7BA-1FE8-4D93-AE88-8DDA77B4BE9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5B8C7BA-1FE8-4D93-AE88-8DDA77B4BE9F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7BF251C6-58E0-492C-B0C2-2E5F600420DD}
+	EndGlobalSection
+EndGlobal

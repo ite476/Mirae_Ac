@@ -1,0 +1,15 @@
+사용 에셋 출처 목록 
+
+메인 메뉴 아이콘 : 
+ a href=httpswww.flaticon.comkrfree-icons title=메뉴 아이콘메뉴 아이콘  제작자 Ayub Irawan - Flaticona
+학생 아이콘 :
+<a href="https://www.flaticon.com/kr/free-icons/" title="학생 아이콘">학생 아이콘  제작자: Freepik - Flaticon</a>
+선생님 아이콘 :
+<a href="https://www.flaticon.com/kr/free-icons/" title="선생님 아이콘">선생님 아이콘  제작자: Freepik - Flaticon</a>
+교과 아이콘 :
+<a href="https://www.flaticon.com/kr/free-icons/-" title="스토리 하이라이트 아이콘 아이콘">스토리 하이라이트 아이콘 아이콘  제작자: Freepik - Flaticon</a>
+스케줄 아이콘 :
+<a href="https://www.flaticon.com/kr/free-icons/" title="행사 아이콘">행사 아이콘  제작자: Maxim Basinski Premium - Flaticon</a>
+
+
+

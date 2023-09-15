@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B5B8C7BA-1FE8-4D93-AE88-8DDA77B4BE9F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MiraePro</RootNamespace>
+    <AssemblyName>MiraePro</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Lib\Control\ComboItem.cs" />
+    <Compile Include="Lib\Control\SearchCondition.cs" />
+    <Compile Include="Lib\DB\OracleAssist.cs" />
+    <Compile Include="Lib\Frame\MasterPop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lib\Frame\MasterPop.designer.cs">
+      <DependentUpon>MasterPop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\Frame\MasterView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lib\Frame\MasterView.designer.cs">
+      <DependentUpon>MasterView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\Utility\GridAssist.cs" />
+    <Compile Include="Lib\Utility\IniAssist.cs" />
+    <Compile Include="Manager\App.cs" />
+    <Compile Include="Manager\ComponentManager.cs" />
+    <Compile Include="Manager\DBManager.cs" />
+    <Compile Include="Manager\FileManager.cs" />
+    <Compile Include="Manager\SessionManager.cs" />
+    <Compile Include="Windows\Main\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Main\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Windows\View\AdminLoginView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\View\AdminLoginView.Designer.cs">
+      <DependentUpon>AdminLoginView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\View\CounselView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\View\CounselView.Designer.cs">
+      <DependentUpon>CounselView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\View\MainMenuView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\View\MainMenuView.Designer.cs">
+      <DependentUpon>MainMenuView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\View\ScheduleView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\View\ScheduleView.Designer.cs">
+      <DependentUpon>ScheduleView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\View\TutorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\View\TutorView.Designer.cs">
+      <DependentUpon>TutorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\View\StudentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\View\StudentView.Designer.cs">
+      <DependentUpon>StudentView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Lib\Frame\MasterPop.resx">
+      <DependentUpon>MasterPop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lib\Frame\MasterView.resx">
+      <DependentUpon>MasterView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Main\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Windows\View\AdminLoginView.resx">
+      <DependentUpon>AdminLoginView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\View\CounselView.resx">
+      <DependentUpon>CounselView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\View\MainMenuView.resx">
+      <DependentUpon>MainMenuView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\View\ScheduleView.resx">
+      <DependentUpon>ScheduleView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\View\TutorView.resx">
+      <DependentUpon>TutorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\View\StudentView.resx">
+      <DependentUpon>StudentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Windows\Pop\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
