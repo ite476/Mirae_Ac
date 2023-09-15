@@ -33,6 +33,15 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv_Display_Waiting = new System.Windows.Forms.DataGridView();
+            this.상태DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.담당선생님DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.아이디DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.이름DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.입학점수DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.성별DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.연락처DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.보호자연락처DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.주소DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dset_Waiting = new System.Data.DataSet();
             this.dataTable1 = new System.Data.DataTable();
             this.dataColumn1 = new System.Data.DataColumn();
@@ -62,15 +71,6 @@
             this.cbox_SearchField = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmbtn_Modify = new System.Windows.Forms.ToolStripMenuItem();
-            this.상태DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.담당선생님DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.아이디DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.이름DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.입학점수DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.성별DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.연락처DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.보호자연락처DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.주소DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_Base.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -150,6 +150,71 @@
             this.dgv_Display_Waiting.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Display_Waiting_CellContentDoubleClick);
             this.dgv_Display_Waiting.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Display_Waiting_CellDoubleClick);
             this.dgv_Display_Waiting.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgv_Display_Waiting_MouseClick);
+            // 
+            // 상태DataGridViewTextBoxColumn
+            // 
+            this.상태DataGridViewTextBoxColumn.DataPropertyName = "상태";
+            this.상태DataGridViewTextBoxColumn.HeaderText = "상태";
+            this.상태DataGridViewTextBoxColumn.Name = "상태DataGridViewTextBoxColumn";
+            this.상태DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 담당선생님DataGridViewTextBoxColumn
+            // 
+            this.담당선생님DataGridViewTextBoxColumn.DataPropertyName = "담당 선생님";
+            this.담당선생님DataGridViewTextBoxColumn.HeaderText = "담당 선생님";
+            this.담당선생님DataGridViewTextBoxColumn.Name = "담당선생님DataGridViewTextBoxColumn";
+            this.담당선생님DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 아이디DataGridViewTextBoxColumn
+            // 
+            this.아이디DataGridViewTextBoxColumn.DataPropertyName = "아이디";
+            this.아이디DataGridViewTextBoxColumn.HeaderText = "아이디";
+            this.아이디DataGridViewTextBoxColumn.Name = "아이디DataGridViewTextBoxColumn";
+            this.아이디DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 이름DataGridViewTextBoxColumn
+            // 
+            this.이름DataGridViewTextBoxColumn.DataPropertyName = "이름";
+            this.이름DataGridViewTextBoxColumn.HeaderText = "이름";
+            this.이름DataGridViewTextBoxColumn.Name = "이름DataGridViewTextBoxColumn";
+            this.이름DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 입학점수DataGridViewTextBoxColumn
+            // 
+            this.입학점수DataGridViewTextBoxColumn.DataPropertyName = "입학 점수";
+            this.입학점수DataGridViewTextBoxColumn.HeaderText = "입학 점수";
+            this.입학점수DataGridViewTextBoxColumn.Name = "입학점수DataGridViewTextBoxColumn";
+            this.입학점수DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 성별DataGridViewTextBoxColumn
+            // 
+            this.성별DataGridViewTextBoxColumn.DataPropertyName = "성별";
+            this.성별DataGridViewTextBoxColumn.HeaderText = "성별";
+            this.성별DataGridViewTextBoxColumn.Name = "성별DataGridViewTextBoxColumn";
+            this.성별DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 연락처DataGridViewTextBoxColumn
+            // 
+            this.연락처DataGridViewTextBoxColumn.DataPropertyName = "연락처";
+            this.연락처DataGridViewTextBoxColumn.HeaderText = "연락처";
+            this.연락처DataGridViewTextBoxColumn.Name = "연락처DataGridViewTextBoxColumn";
+            this.연락처DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 보호자연락처DataGridViewTextBoxColumn
+            // 
+            this.보호자연락처DataGridViewTextBoxColumn.DataPropertyName = "보호자 연락처";
+            this.보호자연락처DataGridViewTextBoxColumn.HeaderText = "보호자 연락처";
+            this.보호자연락처DataGridViewTextBoxColumn.Name = "보호자연락처DataGridViewTextBoxColumn";
+            this.보호자연락처DataGridViewTextBoxColumn.ReadOnly = true;
+            this.보호자연락처DataGridViewTextBoxColumn.Width = 120;
+            // 
+            // 주소DataGridViewTextBoxColumn
+            // 
+            this.주소DataGridViewTextBoxColumn.DataPropertyName = "주소";
+            this.주소DataGridViewTextBoxColumn.HeaderText = "주소";
+            this.주소DataGridViewTextBoxColumn.Name = "주소DataGridViewTextBoxColumn";
+            this.주소DataGridViewTextBoxColumn.ReadOnly = true;
+            this.주소DataGridViewTextBoxColumn.Width = 350;
             // 
             // dset_Waiting
             // 
@@ -237,6 +302,7 @@
             // btn_ToMainMenu
             // 
             this.btn_ToMainMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_ToMainMenu.Font = new System.Drawing.Font("배달의민족 도현", 15F);
             this.btn_ToMainMenu.Location = new System.Drawing.Point(8, 8);
             this.btn_ToMainMenu.Name = "btn_ToMainMenu";
             this.btn_ToMainMenu.Size = new System.Drawing.Size(633, 49);
@@ -383,74 +449,9 @@
             // cmbtn_Modify
             // 
             this.cmbtn_Modify.Name = "cmbtn_Modify";
-            this.cmbtn_Modify.Size = new System.Drawing.Size(180, 22);
+            this.cmbtn_Modify.Size = new System.Drawing.Size(126, 22);
             this.cmbtn_Modify.Text = "정보 수정";
             this.cmbtn_Modify.Click += new System.EventHandler(this.cmbtn_Modify_Click);
-            // 
-            // 상태DataGridViewTextBoxColumn
-            // 
-            this.상태DataGridViewTextBoxColumn.DataPropertyName = "상태";
-            this.상태DataGridViewTextBoxColumn.HeaderText = "상태";
-            this.상태DataGridViewTextBoxColumn.Name = "상태DataGridViewTextBoxColumn";
-            this.상태DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 담당선생님DataGridViewTextBoxColumn
-            // 
-            this.담당선생님DataGridViewTextBoxColumn.DataPropertyName = "담당 선생님";
-            this.담당선생님DataGridViewTextBoxColumn.HeaderText = "담당 선생님";
-            this.담당선생님DataGridViewTextBoxColumn.Name = "담당선생님DataGridViewTextBoxColumn";
-            this.담당선생님DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 아이디DataGridViewTextBoxColumn
-            // 
-            this.아이디DataGridViewTextBoxColumn.DataPropertyName = "아이디";
-            this.아이디DataGridViewTextBoxColumn.HeaderText = "아이디";
-            this.아이디DataGridViewTextBoxColumn.Name = "아이디DataGridViewTextBoxColumn";
-            this.아이디DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 이름DataGridViewTextBoxColumn
-            // 
-            this.이름DataGridViewTextBoxColumn.DataPropertyName = "이름";
-            this.이름DataGridViewTextBoxColumn.HeaderText = "이름";
-            this.이름DataGridViewTextBoxColumn.Name = "이름DataGridViewTextBoxColumn";
-            this.이름DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 입학점수DataGridViewTextBoxColumn
-            // 
-            this.입학점수DataGridViewTextBoxColumn.DataPropertyName = "입학 점수";
-            this.입학점수DataGridViewTextBoxColumn.HeaderText = "입학 점수";
-            this.입학점수DataGridViewTextBoxColumn.Name = "입학점수DataGridViewTextBoxColumn";
-            this.입학점수DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 성별DataGridViewTextBoxColumn
-            // 
-            this.성별DataGridViewTextBoxColumn.DataPropertyName = "성별";
-            this.성별DataGridViewTextBoxColumn.HeaderText = "성별";
-            this.성별DataGridViewTextBoxColumn.Name = "성별DataGridViewTextBoxColumn";
-            this.성별DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 연락처DataGridViewTextBoxColumn
-            // 
-            this.연락처DataGridViewTextBoxColumn.DataPropertyName = "연락처";
-            this.연락처DataGridViewTextBoxColumn.HeaderText = "연락처";
-            this.연락처DataGridViewTextBoxColumn.Name = "연락처DataGridViewTextBoxColumn";
-            this.연락처DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 보호자연락처DataGridViewTextBoxColumn
-            // 
-            this.보호자연락처DataGridViewTextBoxColumn.DataPropertyName = "보호자 연락처";
-            this.보호자연락처DataGridViewTextBoxColumn.HeaderText = "보호자 연락처";
-            this.보호자연락처DataGridViewTextBoxColumn.Name = "보호자연락처DataGridViewTextBoxColumn";
-            this.보호자연락처DataGridViewTextBoxColumn.ReadOnly = true;
-            this.보호자연락처DataGridViewTextBoxColumn.Width = 120;
-            // 
-            // 주소DataGridViewTextBoxColumn
-            // 
-            this.주소DataGridViewTextBoxColumn.DataPropertyName = "주소";
-            this.주소DataGridViewTextBoxColumn.HeaderText = "주소";
-            this.주소DataGridViewTextBoxColumn.Name = "주소DataGridViewTextBoxColumn";
-            this.주소DataGridViewTextBoxColumn.ReadOnly = true;
-            this.주소DataGridViewTextBoxColumn.Width = 350;
             // 
             // CounselView
             // 

@@ -30,27 +30,34 @@ namespace MiraePro.Windows.Pop
         {
             return base.ShowPop(aPopMode);
         }
+        
         DataRow SelectedRowOf_DGV { get; set; }
         CounselProceedPop CounselProceedPop { get; set; }
         private void dgv_Display_Tutor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             AssignSelectedTutor();
         }
+        private void btn_OK_Click(object sender, EventArgs e)
+        {
+            AssignSelectedTutor();
+        }
+        public string Tutor_ID { get; set; }
+        public string Tutor_Name { get; set; }
         void AssignSelectedTutor()
         {
             SelectedRowOf_DGV = GridAssist.SelectedRow(dgv_Display_Tutor);
 
             if (isNotNull(SelectedRowOf_DGV))
             {
-                CounselProceedPop.tutor_name = Convert.ToString(SelectedRowOf_DGV["이름"]);
-                CounselProceedPop.tutor_id = Convert.ToString(SelectedRowOf_DGV["아이디"]);
+                Tutor_ID = Convert.ToString(SelectedRowOf_DGV["아이디"]);
+                Tutor_Name = Convert.ToString(SelectedRowOf_DGV["이름"]);
                 DialogResult = DialogResult.OK;
             }
         }
         private void AssignNoTutor()
         {
-            CounselProceedPop.tutor_name = "배정 안됨";
-            CounselProceedPop.tutor_id = string.Empty;
+            Tutor_Name = "배정 안됨";
+            Tutor_ID = string.Empty;
             DialogResult = DialogResult.OK;
         }
 
@@ -65,10 +72,7 @@ namespace MiraePro.Windows.Pop
 
         }
 
-        private void btn_OK_Click(object sender, EventArgs e)
-        {
-            AssignSelectedTutor();
-        }
+        
 
         private void btn_Cancel_Click(object sender, EventArgs e)
         {

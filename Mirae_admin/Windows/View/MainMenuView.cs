@@ -50,5 +50,19 @@ namespace MiraePro.Windows.View
             App.Instance().MainForm.ExitProgram();
         }
 
+        private void MainMenuView_ClientSizeChanged(object sender, EventArgs e)
+        {
+            List<Control> controls = new List<Control>();
+            controls.Add(panel_Menu1);
+            controls.Add(panel_Menu2);
+            controls.Add(panel_Menu3);
+            controls.Add(panel_Menu4);
+            controls.Add(panel_Menu5);
+            controls.Add(panel_Menu6);
+            foreach(Control control in controls)
+            {
+                control.Size = new Size(control.Size.Width, (this.Size.Height-50) / controls.Count);
+            }
+        }
     }
 }

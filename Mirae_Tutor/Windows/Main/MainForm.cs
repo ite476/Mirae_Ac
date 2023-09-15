@@ -15,11 +15,16 @@ namespace Mirae_Tutor
 {
     public partial class MainForm : Form
     {
-        public DialogResult ShowPop(Type PopType, ePopMode aPopMode = ePopMode.None, object aParam = null)
+        public DialogResult ShowPop<T>(ePopMode aPopMode = ePopMode.None, object aParam = null)
+        {
+            return ShowPop(typeof(T), aPopMode, aParam);
+        }
+        private DialogResult ShowPop(Type PopType, ePopMode aPopMode = ePopMode.None, object aParam = null)
         {
             dynamic CurrentPop = Activator.CreateInstance(PopType);
             return CurrentPop.ShowPop(aPopMode, aParam);
         }
+        
         public void ShowView(Type aType)
         {
             HideAllView();

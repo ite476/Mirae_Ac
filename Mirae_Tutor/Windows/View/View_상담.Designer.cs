@@ -126,6 +126,7 @@
             // btn_ToMainMenu
             // 
             this.btn_ToMainMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_ToMainMenu.Font = new System.Drawing.Font("배달의민족 도현", 15F);
             this.btn_ToMainMenu.Location = new System.Drawing.Point(8, 8);
             this.btn_ToMainMenu.Name = "btn_ToMainMenu";
             this.btn_ToMainMenu.Size = new System.Drawing.Size(633, 49);
@@ -249,13 +250,13 @@
             this.comboBox1.TabIndex = 1;
             this.comboBox1.Text = "검색범주";
             // 
-            // View상담
+            // View_상담
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1249, 719);
             this.Controls.Add(this.panel_Base);
-            this.Name = "View상담";
+            this.Name = "View_상담";
             this.Text = "9";
             this.panel_Base.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

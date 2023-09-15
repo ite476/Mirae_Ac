@@ -84,6 +84,12 @@
     <Compile Include="Windows\Pop\CounselProceedPop.Designer.cs">
       <DependentUpon>CounselProceedPop.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Pop\CoursePop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Pop\CoursePop.Designer.cs">
+      <DependentUpon>CoursePop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Pop\TutorListPop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </Compile>
     <EmbeddedResource Include="Windows\Pop\CounselProceedPop.resx">
       <DependentUpon>CounselProceedPop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Pop\CoursePop.resx">
+      <DependentUpon>CoursePop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Pop\TutorListPop.resx">
       <DependentUpon>TutorListPop.cs</DependentUpon>

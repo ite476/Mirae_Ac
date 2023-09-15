@@ -11,19 +11,19 @@ namespace MiraePro.Manager
 {
     internal class ComponentManager
     {
-        internal void SetCategoryCbox(ComboBox aComboBox, bool isIncludingALLCategory = false)
+        internal void SetCategoryCbox_WithHakgeup(ComboBox aComboBox, bool includeALLCategory = false)
         {
-            DataTable _dt = App.Instance().DBManager.ReadCategory();
+            DataTable _dt = App.Instance().DBManager.ReadHakgeup();
 
             aComboBox.Items.Clear();
-            if (isIncludingALLCategory) 
+            if (includeALLCategory) 
             { aComboBox.Items.Add(new ComboItem("전체", "")); }
 
             foreach (DataRow _dr in _dt.Rows)
             {
-                string _ctg_code = Convert.ToString(_dr["ctg_code"]);
-                string _ctg_name = Convert.ToString(_dr["ctg_name"]);
-                aComboBox.Items.Add(new ComboItem(_ctg_name, _ctg_code));
+                string hakgeup_name = Convert.ToString(_dr["학급"]);
+                string hakgeup_code = Convert.ToString(_dr["학급코드"]);
+                aComboBox.Items.Add(new ComboItem(hakgeup_name, hakgeup_code));
             }
 
             if (_dt.Rows.Count > 0)

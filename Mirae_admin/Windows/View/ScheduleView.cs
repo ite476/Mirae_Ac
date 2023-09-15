@@ -1,6 +1,7 @@
 ﻿using Lib.Frame;
 using Lib.Utility;
 using MiraePro.Manager;
+using MiraePro.Windows.Pop;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,36 +24,96 @@ namespace MiraePro.Windows.View
 
         private void INIT()
         {
+            Current_HakGeupCode = null;
+            INIT_SearchOption();
+            INIT_cbox_Seed();
+            INIT_TimeTable();
+            ClearTimeTable();
+        }
+
+        int? Current_HakGeupCode { get; set; } = null;
+        private void INIT_SearchOption()
+        {
             tbox_Seed.Text = string.Empty;
             panel_cbox.Visible = false;
             panel_tbox.Visible = true;
             cbox_SearchField.SelectedIndex = 0;
-
-            for(int period = 1; period <= 8; period++)
+        }
+        private void INIT_cbox_Seed()
+        {
+            App.Instance().ComponentManager.SetCategoryCbox_WithHakgeup(cbox_Seed);
+        }
+        private void INIT_TimeTable()
+        {
+            for (int period = 1; period <= 8; period++)
             {
-                for (int wkday =  0; wkday < 7; wkday++)
+                for (int wkday = 0; wkday < 7; wkday++)
                 {
-                    Label foundLabel = GetLabelByIndex(wkday, period );
-                    foundLabel.Text = $"{Weekday[wkday]},{period}";
+                    Label foundLabel = GetLabelByIndex(wkday, period);
+                    foundLabel.Tag = new int[] { wkday, period };
+                    foundLabel.BorderStyle = BorderStyle.Fixed3D;
+                    foundLabel.Click += Click_Label_OnTimeTable;
                 }
             }
         }
-
-        string[] Weekday { get; } = new string[7]
+        private void Click_Label_OnTimeTable(object sender, EventArgs e)
         {
-            "Sun","Mon","Tue","Wed","Thu","Fri","Sat"
-        };
+            Label senderLabel = sender as Label;
+            if (senderLabel != null && isValid_TimeTableLabel(senderLabel) && Current_HakGeupCode != null)
+            {
+                DTable_SearchResult = ReadCourse_Specific_WithLabelTag(senderLabel);
+                List<object> Params = new List<object>
+                    {
+                        Current_HakGeupCode,
+                        (senderLabel.Tag as int[])[0] + 1,
+                        (senderLabel.Tag as int[])[1],
+                        DTable_SearchResult
+                    };
+                if (DTable_SearchResult == null || DTable_SearchResult.Rows.Count == 0)
+                {
+                    if (App.Instance().MainForm.ShowPop<CoursePop>(ePopMode.Add, Params) == DialogResult.OK)
+                    {
+                        SearchCourse();
+                    }
+                }
+                else if (DTable_SearchResult != null && DTable_SearchResult.Rows.Count == 1)
+                {
+                    if (App.Instance().MainForm.ShowPop<CoursePop>(ePopMode.Modify, Params) == DialogResult.OK)
+                    {
+                        SearchCourse();
+                    }
+                }
+                else
+                {
+                    throw new Exception("한 시간표 블록에 여러 값이 조회됩니다.");
+                }
+            }
+        }
+        private void ClearTimeTable()
+        {
+            for (int period = 1; period <= 8; period++)
+            {
+                for (int wkday = 0; wkday < 7; wkday++)
+                {
+                    Label foundLabel = GetLabelByIndex(wkday, period);
+                    foundLabel.Text = string.Empty;
+                }
+            }
+        }
+        
 
         private void btn_ToMainMenu_Click(object sender, EventArgs e)
         {
+            Current_HakGeupCode = null;
+            ClearTimeTable();
             App.Instance().MainForm.ShowView(typeof(MainMenuView));
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void cbox_SearchField_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbox_SearchField.SelectedIndex == 0)
             {
-                //cbox_Seed.SelectedIndex = 0;
                 panel_cbox.Visible = true;
                 panel_tbox.Visible = false;
             }
@@ -63,44 +124,33 @@ namespace MiraePro.Windows.View
                 panel_tbox.Visible = true;
             }
         }
-        Label GetLabelByIndex(int WeekdayIndex, int Period)
+
+
+        string[] Weekday { get; } = new string[7]
         {
-            return GetLabelByName(Weekday[WeekdayIndex], Period);
+            "Sun","Mon","Tue","Wed","Thu","Fri","Sat"
+        };
+        Label GetLabelByIndex(int aWeekdayIndex, int aPeriod)
+        {
+            return GetLabelByName(Weekday[aWeekdayIndex], aPeriod);
         }
-        Label GetLabelByName(string aWeekday, int Period)
+        Label GetLabelByName(string aWeekday, int aPeriod)
         {
-            string Keyword = $"label_{aWeekday}{Period}";
+            string Keyword = GetLabelName_ByStringInt(aWeekday, aPeriod);
             Control[] foundControls = this.Controls.Find(Keyword, true);
-            if (foundControls.Length > 0) 
+            if (foundControls.Length > 0)
             {
-                return foundControls[0] as Label;                
+                return foundControls[0] as Label;
             }
             return null;
         }
-
-        private void panel20_Paint(object sender, PaintEventArgs e)
+        private string GetLabelName_ByStringInt(string aWeekday, int aPeriod)
         {
-
+            return $"label_{aWeekday}{aPeriod}"; ;
         }
-
-        private void label9_Click(object sender, EventArgs e)
+        private string GetLabelName_ByIntInt(int aWeekdayIndex, int aPeriod)
         {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Label found = GetLabelByName(Weekday[1],1);
-            if (found != null)
-            {
-                found.Text = GetStringFor_TimeTable("과목", "담당 선생님");
-            }
-            
-        }
-
-        private string GetStringFor_TimeTable(string subject, string tutor)
-        {
-            return $"{subject}\r\n\r\n{tutor}";
+            return GetLabelName_ByStringInt(Weekday[aWeekdayIndex], aPeriod);
         }
 
         private void btn_Search_Click(object sender, EventArgs e)
@@ -108,11 +158,95 @@ namespace MiraePro.Windows.View
             SearchCourse();
         }
 
-        DataTable DTable_SearchResult;
+        DataTable DTable_SearchResult { get; set; }
         void SearchCourse()
+        {   
+            if(Check_CourseSearchOption_Validate_ToFind_OneAndOnly() == true)
+            {
+                DTable_SearchResult = ReadCourseBy_SearchOption();
+                SetTimeTableAs_DataTable(DTable_SearchResult);
+            }
+        }
+        
+        private bool Check_CourseSearchOption_Validate_ToFind_OneAndOnly()
         {
-            string _Field = cbox_SearchField.SelectedItem as string;
-            DTable_SearchResult = App.Instance().DBManager.ReadCourse(_Field, tbox_Seed.Text, cbox_Seed);
+            DTable_SearchResult = ReadDistinctCourseBy_SearchOption();
+            int _numberOfResult = DTable_SearchResult.Rows.Count;
+            if (_numberOfResult == 1)
+            {
+                Current_HakGeupCode = Convert.ToInt32( DTable_SearchResult.Rows[0]["학급코드"] );
+                return true;
+            }
+            else if (_numberOfResult > 1)
+            {
+                MessageBox.Show("검색된 학급이 2개 이상입니다.", "알림");
+                return false;
+            }
+            else
+            {
+                MessageBox.Show("검색된 학급이 없습니다.", "알림");
+                return false;
+            }
+        }
+        private DataTable ReadDistinctCourseBy_SearchOption()
+        {
+            string _Field = cbox_SearchField.SelectedItem.ToString();
+            string _Seed = GetSeedBy_VisibleOption();
+
+            return App.Instance().DBManager.ReadCourse_Distinct(_Field, _Seed);
+        }
+        private string GetSeedBy_VisibleOption()
+        {
+            if (panel_cbox.Visible == true)
+            {
+                return cbox_Seed.SelectedItem as string;
+            }
+            else if (panel_tbox.Visible == true)
+            {
+                return tbox_Seed.Text;
+            }
+            else
+            {
+                throw new Exception();
+            }
+        }
+
+        private DataTable ReadCourseBy_SearchOption()
+        {
+            string _Field = cbox_SearchField.SelectedItem.ToString();
+            string _Seed = GetSeedBy_VisibleOption();
+            return App.Instance().DBManager.ReadCourse(_Field, _Seed);
+        }
+        private void SetTimeTableAs_DataTable(DataTable dTable_SearchResult)
+        {
+            ClearTimeTable();
+            foreach(DataRow dr in DTable_SearchResult.Rows)
+            {
+                string wkday = Convert.ToString(dr["요일"]);
+                int period = Convert.ToInt32(dr["교시"]);
+                string description = string.Format("{0}\r\n\r\n{1}", Convert.ToString(dr["과목"]), Convert.ToString(dr["담당 선생님"]));
+                Label Label_ToSet = GetLabelByName(wkday,period);
+                Label_ToSet.Text = description;                
+            }
+        }
+
+        
+
+        
+
+        private DataTable ReadCourse_Specific_WithLabelTag(Label senderLabel)
+        {
+            if (isValid_TimeTableLabel(senderLabel) && Current_HakGeupCode != null)
+            {
+                int[] intTag = (int[])senderLabel.Tag;                
+                return App.Instance().DBManager.ReadCourse_Specific(Current_HakGeupCode, intTag[0] + 1, intTag[1]);
+            }
+            return null;
+        }
+
+        private bool isValid_TimeTableLabel(Label senderLabel)
+        {
+            return senderLabel.Tag.GetType() == typeof(int[]);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Lib.Control;
 using Lib.DB;
+using MiraePro.Windows.Pop;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -102,11 +103,11 @@ namespace MiraePro.Manager
         }
         #endregion
 
+
+
         
-      
-        internal int ModifyStaff(
-            string stf_org_id, string stf_id, string stf_name, string stf_password, string stf_gender,
-            DateTime stf_date_register, DateTime stf_date_retire, bool isRetire, string stf_work_state, string stf_picture)
+
+        public int ExecuteAndCommit(string aQuery)
         {
             int _result = 0;
 
@@ -114,62 +115,11 @@ namespace MiraePro.Manager
 
             if (_Connection == null) { return -999; }
             else
-            {
-                string _strQuery = "UPDATE bp_staff "
-                + "SET "
-                + $"stf_id = '{stf_id}', "
-                + $"stf_name = '{stf_name}', "
-                + $"stf_password = '{stf_password}', "
-                + $"stf_date_register = '{stf_date_register.ToString("yyyy-MM-dd")}', "
-                + $"stf_date_retire = '{((isRetire) ? stf_date_retire.ToString("yyyy-MM-dd") : "NULL")}', "
-                + $"stf_work_state = '{stf_work_state}', "
-                + $"stf_gender = '{stf_gender}', "
-                + $"stf_picture = {MakeToClobQuery(stf_picture)} "
-                + $"WHERE stf_id = '{stf_org_id}' ";
-
-                return m_OracleAssist.ExcuteQuery(_strQuery);
+            {                
+                return m_OracleAssist.ExcuteQuery(aQuery);
             }
-            return _result;
         }
 
-        internal int AddStaff(
-            string stf_id, string stf_name, string stf_password, string stf_gender,
-            DateTime stf_date_register, DateTime stf_date_retire, bool abRetire, string stf_work_state, string stf_picture)
-        {
-            int _result = 0;
-
-            DbConnection _Connection = m_OracleAssist.NewConnection();
-
-            if (_Connection == null) { return -999; }
-            else
-            {
-                string _strQuery =
-                    "INSERT INTO bp_staff( "
-                    + "stf_id, "
-                    + "stf_name, "
-                    + "stf_password, "
-                    + "stf_date_register, "
-                    + ((abRetire) ? "stf_date_retire, " : "")
-                    + "stf_work_state, "
-                    + "stf_gender, "
-                    + "stf_picture "
-                    + ") VALUES( "
-                    + $"'{stf_id}', "
-                    + $"'{stf_name}', "
-                    + $"'{stf_password}', "
-                    + $"'{stf_date_register.ToString("yyyy-MM-dd")}', "
-                    + ((abRetire) ? $"' {stf_date_retire.ToString("yyyy-MM-dd")} ', " : "")
-                    + $"'{stf_work_state}', "
-                    + $"'{stf_gender}', "
-                    + $"{MakeToClobQuery(stf_picture)} "
-                    + ") ";
-
-                return m_OracleAssist.ExcuteQuery(_strQuery);
-            }
-
-            return _result;
-        }
-        
 
         /// <summary>
         /// 보유 필드 : { 아이디 | 학생명 | 성별 | 연락처 | 주소 | 사진 | 등록일 | 학급명 | 보호자 연락처 | 출석률 | 평균 성적 }
@@ -177,7 +127,7 @@ namespace MiraePro.Manager
         /// <param name="aField"></param>
         /// <param name="aSeed"></param>
         /// <returns></returns>
-        internal DataTable ReadStudent(string aField, string aSeed)
+        public DataTable ReadStudent(string aField, string aSeed)
         {
             string _strQuery = 
                 "WITH Student_Attend_Rate AS ( " +
@@ -241,7 +191,7 @@ namespace MiraePro.Manager
         /// <param name="aField"></param>
         /// <param name="aSeed"></param>
         /// <returns></returns>
-        internal DataTable ReadTutor(string aField = null, string aSeed = null)
+        public DataTable ReadTutor(string aField = null, string aSeed = null)
         {
             
             string _strQuery = 
@@ -299,7 +249,7 @@ namespace MiraePro.Manager
         /// <param name="aSeed"></param>
         /// <param name="cbox_Seed"></param>
         /// <returns></returns>
-        internal DataTable ReadWaiting(string aField, string aSeed,ComboBox cbox_Seed = null)
+        public DataTable ReadWaiting(string aField, string aSeed)
         {
             string _strQuery =
                 "SELECT W.member_id 아이디, W.name 이름, W.step 상태, " +
@@ -314,12 +264,12 @@ namespace MiraePro.Manager
                 "LEFT JOIN Tutor T ON W.tutor_id = T.member_id ";
             if (Exist_String(aSeed))
             {
-                _strQuery += string.Format(GetStringFormat_Of_QueryCondition_AtWaitingQuery(aField, cbox_Seed), aSeed);
+                _strQuery += string.Format(GetStringFormat_Of_QueryCondition_AtWaitingQuery(aField), aSeed);
             }
             return ReadTable(_strQuery, "Waiting");
         }
 
-        private string GetStringFormat_Of_QueryCondition_AtWaitingQuery(string aField, ComboBox cbox_Seed)
+        private string GetStringFormat_Of_QueryCondition_AtWaitingQuery(string aField)
         {
             switch (aField)
             {
@@ -332,17 +282,7 @@ namespace MiraePro.Manager
                 case "아이디":
                     return "WHERE W.member_id = '{0}' ";
                 case "상태":
-                    string cbox_SeedString = cbox_Seed.SelectedItem.ToString();
-                    switch (cbox_SeedString) {
-                        case "상담":
-                        case "입학 테스트":
-                        case "입학 대기":
-                            return $"WHERE W.step = '{cbox_SeedString}'";
-                        default:
-                            throw new IndexOutOfRangeException();
-                    }
-                    break;
-                    
+                    return "WHERE W.step = '{0}'";
                 default:
                     throw new FieldNotFoundException();
             }
@@ -391,14 +331,154 @@ namespace MiraePro.Manager
             return _result;
         }
 
-        internal DataTable ReadCategory()
+        public DataTable ReadHakgeup()
         {
-            throw new NotImplementedException();
+            string _strQuery = 
+                "SELECT H.code 학급코드, H.name 학급, " +
+                "T.member_id \"담당 선생님 아이디\", T.name \"담당 선생님\" " +
+                "FROM Hakgeup H " +
+                "LEFT JOIN Tutor T ON H.tutor_id = T.member_id " +
+                "ORDER BY 학급 ASC ";
+
+            return ReadTable(_strQuery, "Hakgeup");
         }
 
-        internal DataTable ReadCourse(string aField, string aSeed, ComboBox aComboBox)
+        public DataTable ReadCourse(string aField, string aSeed)
         {
-            throw new NotImplementedException();
+            string _strQuery =
+                "SELECT H.code 학급코드, H.name 학급, " +
+                    "CASE " +
+                        "WHEN C.weekday = 1 THEN 'Sun' " +
+                        "WHEN C.weekday = 2 THEN 'Mon' " +
+                        "WHEN C.weekday = 3 THEN 'Tue' " +
+                        "WHEN C.weekday = 4 THEN 'Wed' " +
+                        "WHEN C.weekday = 5 THEN 'Thu' " +
+                        "WHEN C.weekday = 6 THEN 'Fri' " +
+                        "WHEN C.weekday = 7 or C.weekday = 0 THEN 'Sat' " +
+                    "ELSE NULL END 요일, " +
+                    "C.gyosi 교시, T.member_id \"담당 선생님 아이디\", T.name \"담당 선생님\", C.name 과목 " +
+                "FROM Course C " +
+                "JOIN Hakgeup H ON H.code = C.hakgeup_code " +
+                "LEFT JOIN Tutor T ON T.member_id = C.tutor_id ";
+            if (Exist_String(aSeed))
+            {
+                _strQuery += string.Format(GetStringFormat_Of_QueryCondition_AtCourseQuery(aField), aSeed);
+            }
+            return ReadTable(_strQuery, "Course");
+        }
+
+        private string GetStringFormat_Of_QueryCondition_AtCourseQuery(string aField)
+        {
+            switch (aField) 
+            {
+                case "학급 선택":
+                    return "WHERE H.code = '{0}' ";
+                case "학급명":
+                    return "WHERE H.name LIKE '%{0}%' ";
+                case "담당 선생님":
+                    return "WHERE T.name LIKE '%{0}%' ";
+                default:
+                    throw new FieldNotFoundException();
+            }
+        }
+
+        public DataTable ReadCourse_Distinct(string aField, string aSeed)
+        {
+            string _strQuery =
+                "SELECT DISTINCT hakgeup_code 학급코드 " +
+                "FROM course ";
+            if (Exist_String(aSeed))
+            {
+                _strQuery += string.Format(GetStringFormat_Of_QueryCondition_AtCourseQuery(aField), aSeed);
+            }
+            return ReadTable(_strQuery, "Course");
+        }
+
+        internal DataTable ReadCourse_Specific(int? current_HakGeupCode, int aWeekday, int aGyosi)
+        {
+            string _strQuery =
+                "SELECT H.code 학급코드, H.name 학급, " +
+                    "CASE " +
+                        "WHEN C.weekday = 1 THEN 'Sun' " +
+                        "WHEN C.weekday = 2 THEN 'Mon' " +
+                        "WHEN C.weekday = 3 THEN 'Tue' " +
+                        "WHEN C.weekday = 4 THEN 'Wed' " +
+                        "WHEN C.weekday = 5 THEN 'Thu' " +
+                        "WHEN C.weekday = 6 THEN 'Fri' " +
+                        "WHEN C.weekday = 7 or C.weekday = 0 THEN 'Sat' " +
+                    "ELSE NULL END 요일, " +
+                    "C.gyosi 교시, T.member_id \"담당 선생님 아이디\", T.name \"담당 선생님\", C.name 과목 " +
+                "FROM Course C " +
+                "JOIN Hakgeup H ON H.code = C.hakgeup_code " +
+                "LEFT JOIN Tutor T ON T.member_id = C.tutor_id " +
+                $"WHERE H.code = {current_HakGeupCode} and C.weekday = {aWeekday} and C.gyosi = {aGyosi} ";
+            return ReadTable(_strQuery, "Course");
+        }
+
+        internal string ReadHakgeupName(int hakGeupCode)
+        {
+            string _strQuery = 
+                "SELECT H.name " +
+                $"FROM HakGeup H WHERE H.code = {hakGeupCode} ";
+            return Convert.ToString(ReadScalar(_strQuery));
+            
+        }
+        public class Course
+        {
+            public int Code;
+            public int Weekday;
+            public int Gyosi;
+            public string Tutor_id;
+            public string name;
+            public Course(int Code, int Weekday, int Gyosi, string name, string tutor_id)
+            {
+                this.Code = Code;
+                this.Weekday = Weekday;
+                this.Gyosi = Gyosi;
+                this.name = name;
+                this.Tutor_id = tutor_id;
+            }
+
+            internal bool isVaild()
+            {
+                return (name != null && name.Length > 0) 
+                    && Tutor_id != null;
+            }
+        }
+        public int AddCourse(Course data)
+        {
+            string _strQuery =
+                "INSERT INTO course ( " +
+                "hakgeup_code, weekday, gyosi " +
+                (Exist_String(data.Tutor_id)? ", tutor_id " : "") +
+                (Exist_String(data.name)? ", name ": "" ) +
+                ") VALUES ( " +
+                $"{data.Code}, {data.Weekday}, {data.Gyosi} " +
+                (Exist_String(data.Tutor_id) ? $", '{data.Tutor_id}' " : "")+
+                (Exist_String(data.name) ? $", {data.name} " : "") +
+                ") ";
+
+            return ExecuteAndCommit(_strQuery);
+        }
+
+        internal int ModifyCourse(Course data)
+        {
+            string _strQuery =
+                "UPDATE Course "
+                + "SET "
+                + "tutor_id = " + (Exist_String(data.Tutor_id) ? $"'{data.Tutor_id}', " : "NULL, ")
+                + "name = " + (Exist_String(data.name) ? $"'{data.name}' " : "NULL ")
+                + $"WHERE hakgeup_code = {data.Code} and weekday = {data.Weekday} and gyosi = {data.Gyosi} " ;
+                
+            return ExecuteAndCommit(_strQuery) ;
+        }
+
+        internal string ReadTutor_Name(string tutor_id)
+        {
+            string _strQuery =
+                "SELECT T.name " +
+                $"FROM Tutor T WHERE T.member_id = '{tutor_id}' ";
+            return Convert.ToString(ReadScalar(_strQuery));
         }
     }
 }

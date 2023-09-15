@@ -199,6 +199,7 @@
             // 
             // lable_tutor
             // 
+            this.lable_tutor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lable_tutor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lable_tutor.Location = new System.Drawing.Point(10, 2);
             this.lable_tutor.Name = "lable_tutor";
@@ -358,11 +359,12 @@
             this.tbox_address.Size = new System.Drawing.Size(184, 21);
             this.tbox_address.TabIndex = 6;
             this.tbox_address.Visible = false;
-            this.tbox_address.TextChanged += new System.EventHandler(this.tbox_address_TextChanged);
+            this.tbox_address.TextChanged += new System.EventHandler(this.tbox_TextChanged);
             this.tbox_address.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Check_DoneEdit);
             // 
             // label_address
             // 
+            this.label_address.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label_address.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_address.Location = new System.Drawing.Point(10, 2);
             this.label_address.Name = "label_address";
@@ -410,7 +412,6 @@
             this.label_parentContact.TabIndex = 5;
             this.label_parentContact.Text = "-";
             this.label_parentContact.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_parentContact.Click += new System.EventHandler(this.label_parentContact_Click);
             this.label_parentContact.DoubleClick += new System.EventHandler(this.label_parentContact_DoubleClick);
             // 
             // panel14
@@ -432,11 +433,12 @@
             this.tbox_contact.Size = new System.Drawing.Size(184, 21);
             this.tbox_contact.TabIndex = 8;
             this.tbox_contact.Visible = false;
-            this.tbox_contact.TextChanged += new System.EventHandler(this.tbox_contact_TextChanged);
+            this.tbox_contact.TextChanged += new System.EventHandler(this.tbox_TextChanged);
             this.tbox_contact.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Check_DoneEdit);
             // 
             // label_contact
             // 
+            this.label_contact.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label_contact.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_contact.Location = new System.Drawing.Point(10, 2);
             this.label_contact.Name = "label_contact";
@@ -494,6 +496,7 @@
             // 
             // label_score
             // 
+            this.label_score.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label_score.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_score.Location = new System.Drawing.Point(10, 2);
             this.label_score.Name = "label_score";
@@ -521,11 +524,12 @@
             this.tbox_name.Size = new System.Drawing.Size(184, 21);
             this.tbox_name.TabIndex = 12;
             this.tbox_name.Visible = false;
-            this.tbox_name.TextChanged += new System.EventHandler(this.tbox_name_TextChanged);
+            this.tbox_name.TextChanged += new System.EventHandler(this.tbox_TextChanged);
             this.tbox_name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Check_DoneEdit);
             // 
             // label_name
             // 
+            this.label_name.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label_name.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_name.Location = new System.Drawing.Point(10, 2);
             this.label_name.Name = "label_name";

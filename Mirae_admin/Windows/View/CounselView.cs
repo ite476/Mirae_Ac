@@ -43,9 +43,29 @@ namespace MiraePro.Windows.View
         DataTable DTable_SearchResult;
         void SearchWaiting()
         {
-            string _Field = cbox_SearchField.SelectedItem as string;
-            DTable_SearchResult = App.Instance().DBManager.ReadWaiting(_Field, tbox_Seed.Text, cbox_Seed);
+            
+            DTable_SearchResult = ReadWaiting_BySearchOption(); 
             GridAssist.SetAuto_GridView_FromSourceTable(dgv_Display_Waiting, DTable_SearchResult);
+        }
+
+        private DataTable ReadWaiting_BySearchOption()
+        {
+            string _Field = cbox_SearchField.SelectedItem as string;
+            string _Seed;
+            if (panel_cbox.Visible == true)
+            {
+                _Seed = cbox_Seed.SelectedItem as string;
+            }
+            else if (panel_tbox.Visible == true)
+            {
+                _Seed = tbox_Seed.Text;
+            }
+            else
+            {
+                throw new Exception();
+            }
+            
+            return App.Instance().DBManager.ReadWaiting(_Field, _Seed);
         }
 
         private void cbox_SearchField_SelectedIndexChanged(object sender, EventArgs e)

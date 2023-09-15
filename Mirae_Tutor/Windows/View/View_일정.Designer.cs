@@ -93,6 +93,7 @@
             // btn_ToMainMenu
             // 
             this.btn_ToMainMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_ToMainMenu.Font = new System.Drawing.Font("배달의민족 도현", 15F);
             this.btn_ToMainMenu.Location = new System.Drawing.Point(8, 8);
             this.btn_ToMainMenu.Name = "btn_ToMainMenu";
             this.btn_ToMainMenu.Size = new System.Drawing.Size(633, 49);
@@ -117,13 +118,13 @@
             this.panel9.Size = new System.Drawing.Size(300, 65);
             this.panel9.TabIndex = 3;
             // 
-            // ScheduleView
+            // View_일정
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1249, 719);
             this.Controls.Add(this.panel_Base);
-            this.Name = "ScheduleView";
+            this.Name = "View_일정";
             this.Text = "ScheduleView";
             this.panel_Base.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
