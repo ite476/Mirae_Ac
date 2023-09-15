@@ -21,6 +21,16 @@ namespace MiraePro
          * 3.5.3 교직원 목록 관리
          * 3.5.4 수업 일정 관리
          */
+        public DialogResult ShowPop(Type PopType, ePopMode aPopMode = ePopMode.None, object aParam = null)
+        {
+            dynamic CurrentPop = Activator.CreateInstance(PopType);
+            return CurrentPop.ShowPop(aPopMode, aParam);
+        }
+        public DialogResult ShowPop<T>(ePopMode aPopMode = ePopMode.None, object aParam = null)
+        {
+            return ShowPop(typeof(T), aPopMode, aParam);
+        }
+
         public MainForm()
         {
             InitializeComponent();

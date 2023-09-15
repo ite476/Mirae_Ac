@@ -1,6 +1,7 @@
 ﻿using Lib.Frame;
 using Lib.Utility;
 using MiraePro.Manager;
+using MiraePro.Windows.Pop;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,6 +65,58 @@ namespace MiraePro.Windows.View
             }
         }
 
+        private void cbox_Seed_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_Display_Waiting_CellContentClick(object sender, DataGridViewCellEventArgs e) 
+        { 
+        }
+
+        private void dgv_Display_Waiting_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                App.Instance().MouseHitManager.Show_CMenu_At_MouseCursor(e, dgv_Display_Waiting, out SelectedRowOf_DGV, contextMenuStrip1);
+            }
+        }
+
+        DataRow SelectedRowOf_DGV;
+
+        private void dgv_Display_Waiting_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e) { }
+
+        
+
+        private void dgv_Display_Waiting_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ShowPop_CounselProceed();
+        }
+        private void ShowPop_CounselProceed()
+        {
+            SelectedRowOf_DGV = GridAssist.SelectedRow(dgv_Display_Waiting);
+            MessageBox.Show($"{SelectedRowOf_DGV["아이디"].ToString()} 선택!");
+
+            if (isNotNull(SelectedRowOf_DGV))
+            {
+                App.Instance().MainForm.ShowPop<CounselProceedPop>(ePopMode.Modify, SelectedRowOf_DGV["아이디"].ToString());
+            }
+        }
+
+        private bool isNotNull(object aObject)
+        {
+            return aObject != null;
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void cmbtn_Modify_Click(object sender, EventArgs e)
+        {
+            ShowPop_CounselProceed();
+        }
     }
     
 }

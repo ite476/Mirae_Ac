@@ -20,7 +20,11 @@ namespace Lib.Control
 
         public override string ToString()
         {
-            return Key; // + $" [{Value.ToString()}]"; // For Debug
+            return Key;
+        }
+        public string ToString_ForDebug()
+        {
+            return Key + $" [{Value.ToString()}]"; // For Debug
         }
     }
 }

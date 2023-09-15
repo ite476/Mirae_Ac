@@ -33,6 +33,16 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv_Display_Student = new System.Windows.Forms.DataGridView();
+            this.아이디DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.학생명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.성별DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.연락처DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.주소DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.등록일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.학급명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.보호자연락처DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.출석률DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.평균성적DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dset_student = new System.Data.DataSet();
             this.dataTable1 = new System.Data.DataTable();
             this.dataColumn1 = new System.Data.DataColumn();
@@ -62,16 +72,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.cbox_SearchField = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.아이디DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.학생명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.성별DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.연락처DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.주소DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.등록일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.학급명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.보호자연락처DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.출석률DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.평균성적DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_Base.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -148,6 +148,77 @@
             this.dgv_Display_Student.Size = new System.Drawing.Size(1229, 508);
             this.dgv_Display_Student.TabIndex = 0;
             this.dgv_Display_Student.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // 아이디DataGridViewTextBoxColumn
+            // 
+            this.아이디DataGridViewTextBoxColumn.DataPropertyName = "아이디";
+            this.아이디DataGridViewTextBoxColumn.HeaderText = "아이디";
+            this.아이디DataGridViewTextBoxColumn.Name = "아이디DataGridViewTextBoxColumn";
+            this.아이디DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 학생명DataGridViewTextBoxColumn
+            // 
+            this.학생명DataGridViewTextBoxColumn.DataPropertyName = "학생명";
+            this.학생명DataGridViewTextBoxColumn.HeaderText = "학생명";
+            this.학생명DataGridViewTextBoxColumn.Name = "학생명DataGridViewTextBoxColumn";
+            this.학생명DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 성별DataGridViewTextBoxColumn
+            // 
+            this.성별DataGridViewTextBoxColumn.DataPropertyName = "성별";
+            this.성별DataGridViewTextBoxColumn.HeaderText = "성별";
+            this.성별DataGridViewTextBoxColumn.Name = "성별DataGridViewTextBoxColumn";
+            this.성별DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 연락처DataGridViewTextBoxColumn
+            // 
+            this.연락처DataGridViewTextBoxColumn.DataPropertyName = "연락처";
+            this.연락처DataGridViewTextBoxColumn.HeaderText = "연락처";
+            this.연락처DataGridViewTextBoxColumn.Name = "연락처DataGridViewTextBoxColumn";
+            this.연락처DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 주소DataGridViewTextBoxColumn
+            // 
+            this.주소DataGridViewTextBoxColumn.DataPropertyName = "주소";
+            this.주소DataGridViewTextBoxColumn.HeaderText = "주소";
+            this.주소DataGridViewTextBoxColumn.Name = "주소DataGridViewTextBoxColumn";
+            this.주소DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 등록일DataGridViewTextBoxColumn
+            // 
+            this.등록일DataGridViewTextBoxColumn.DataPropertyName = "등록일";
+            this.등록일DataGridViewTextBoxColumn.HeaderText = "등록일";
+            this.등록일DataGridViewTextBoxColumn.Name = "등록일DataGridViewTextBoxColumn";
+            this.등록일DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 학급명DataGridViewTextBoxColumn
+            // 
+            this.학급명DataGridViewTextBoxColumn.DataPropertyName = "학급명";
+            this.학급명DataGridViewTextBoxColumn.HeaderText = "학급명";
+            this.학급명DataGridViewTextBoxColumn.Name = "학급명DataGridViewTextBoxColumn";
+            this.학급명DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 보호자연락처DataGridViewTextBoxColumn
+            // 
+            this.보호자연락처DataGridViewTextBoxColumn.DataPropertyName = "보호자 연락처";
+            this.보호자연락처DataGridViewTextBoxColumn.HeaderText = "보호자 연락처";
+            this.보호자연락처DataGridViewTextBoxColumn.Name = "보호자연락처DataGridViewTextBoxColumn";
+            this.보호자연락처DataGridViewTextBoxColumn.ReadOnly = true;
+            this.보호자연락처DataGridViewTextBoxColumn.Width = 120;
+            // 
+            // 출석률DataGridViewTextBoxColumn
+            // 
+            this.출석률DataGridViewTextBoxColumn.DataPropertyName = "출석률";
+            this.출석률DataGridViewTextBoxColumn.HeaderText = "출석률";
+            this.출석률DataGridViewTextBoxColumn.Name = "출석률DataGridViewTextBoxColumn";
+            this.출석률DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 평균성적DataGridViewTextBoxColumn
+            // 
+            this.평균성적DataGridViewTextBoxColumn.DataPropertyName = "평균 성적";
+            this.평균성적DataGridViewTextBoxColumn.HeaderText = "평균 성적";
+            this.평균성적DataGridViewTextBoxColumn.Name = "평균성적DataGridViewTextBoxColumn";
+            this.평균성적DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dset_student
             // 
@@ -376,77 +447,6 @@
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // 아이디DataGridViewTextBoxColumn
-            // 
-            this.아이디DataGridViewTextBoxColumn.DataPropertyName = "아이디";
-            this.아이디DataGridViewTextBoxColumn.HeaderText = "아이디";
-            this.아이디DataGridViewTextBoxColumn.Name = "아이디DataGridViewTextBoxColumn";
-            this.아이디DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 학생명DataGridViewTextBoxColumn
-            // 
-            this.학생명DataGridViewTextBoxColumn.DataPropertyName = "학생명";
-            this.학생명DataGridViewTextBoxColumn.HeaderText = "학생명";
-            this.학생명DataGridViewTextBoxColumn.Name = "학생명DataGridViewTextBoxColumn";
-            this.학생명DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 성별DataGridViewTextBoxColumn
-            // 
-            this.성별DataGridViewTextBoxColumn.DataPropertyName = "성별";
-            this.성별DataGridViewTextBoxColumn.HeaderText = "성별";
-            this.성별DataGridViewTextBoxColumn.Name = "성별DataGridViewTextBoxColumn";
-            this.성별DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 연락처DataGridViewTextBoxColumn
-            // 
-            this.연락처DataGridViewTextBoxColumn.DataPropertyName = "연락처";
-            this.연락처DataGridViewTextBoxColumn.HeaderText = "연락처";
-            this.연락처DataGridViewTextBoxColumn.Name = "연락처DataGridViewTextBoxColumn";
-            this.연락처DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 주소DataGridViewTextBoxColumn
-            // 
-            this.주소DataGridViewTextBoxColumn.DataPropertyName = "주소";
-            this.주소DataGridViewTextBoxColumn.HeaderText = "주소";
-            this.주소DataGridViewTextBoxColumn.Name = "주소DataGridViewTextBoxColumn";
-            this.주소DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 등록일DataGridViewTextBoxColumn
-            // 
-            this.등록일DataGridViewTextBoxColumn.DataPropertyName = "등록일";
-            this.등록일DataGridViewTextBoxColumn.HeaderText = "등록일";
-            this.등록일DataGridViewTextBoxColumn.Name = "등록일DataGridViewTextBoxColumn";
-            this.등록일DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 학급명DataGridViewTextBoxColumn
-            // 
-            this.학급명DataGridViewTextBoxColumn.DataPropertyName = "학급명";
-            this.학급명DataGridViewTextBoxColumn.HeaderText = "학급명";
-            this.학급명DataGridViewTextBoxColumn.Name = "학급명DataGridViewTextBoxColumn";
-            this.학급명DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 보호자연락처DataGridViewTextBoxColumn
-            // 
-            this.보호자연락처DataGridViewTextBoxColumn.DataPropertyName = "보호자 연락처";
-            this.보호자연락처DataGridViewTextBoxColumn.HeaderText = "보호자 연락처";
-            this.보호자연락처DataGridViewTextBoxColumn.Name = "보호자연락처DataGridViewTextBoxColumn";
-            this.보호자연락처DataGridViewTextBoxColumn.ReadOnly = true;
-            this.보호자연락처DataGridViewTextBoxColumn.Width = 120;
-            // 
-            // 출석률DataGridViewTextBoxColumn
-            // 
-            this.출석률DataGridViewTextBoxColumn.DataPropertyName = "출석률";
-            this.출석률DataGridViewTextBoxColumn.HeaderText = "출석률";
-            this.출석률DataGridViewTextBoxColumn.Name = "출석률DataGridViewTextBoxColumn";
-            this.출석률DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 평균성적DataGridViewTextBoxColumn
-            // 
-            this.평균성적DataGridViewTextBoxColumn.DataPropertyName = "평균 성적";
-            this.평균성적DataGridViewTextBoxColumn.HeaderText = "평균 성적";
-            this.평균성적DataGridViewTextBoxColumn.Name = "평균성적DataGridViewTextBoxColumn";
-            this.평균성적DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // StudentView
             // 

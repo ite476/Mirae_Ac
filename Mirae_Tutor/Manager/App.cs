@@ -97,11 +97,7 @@ namespace Mirae_Tutor.Manager
             MessageBox.Show("미구현 기능입니다.");
         }
 
-        public DialogResult ShowPop(Type PopType, ePopMode aPopMode = ePopMode.None, object aParam = null)
-        {
-            dynamic CurrentPop = Activator.CreateInstance(PopType);
-            return CurrentPop.ShowPop(aPopMode, aParam);
-        }
+        
 
     }
 }

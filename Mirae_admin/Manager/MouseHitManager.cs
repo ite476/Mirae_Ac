@@ -7,18 +7,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Mirae_Tutor.Manager
+namespace MiraePro.Manager
 {
     internal class MouseHitManager
     {
-        public void Show_CMenu_At_MouseCursor(MouseEventArgs e, DataGridView dataGridView, out DataRow selectedDataRow, ContextMenuStrip contextMenuStrip, bool isTestRun = false)
+        public void Show_CMenu_At_MouseCursor(MouseEventArgs e, DataGridView dataGridView, 
+            out DataRow selectedDataRow, ContextMenuStrip contextMenuStrip, bool isTestRun = false)
         {
             DataGridView.HitTestInfo _hitTestInfo = dataGridView.HitTest(e.X, e.Y);
             if (isValidHit(dataGridView, out selectedDataRow, _hitTestInfo) || isTestRun)
             { contextMenuStrip.Show(dataGridView.PointToScreen(e.Location)); }
         }
 
-        bool isValidHit(DataGridView theDataGridView, out DataRow selectedDataRow, DataGridView.HitTestInfo theHitTestInfo)
+        bool isValidHit(DataGridView theDataGridView, out DataRow selectedDataRow, 
+            DataGridView.HitTestInfo theHitTestInfo)
         {
             bool isValidHit = false;
             selectedDataRow = null;

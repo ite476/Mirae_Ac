@@ -15,11 +15,21 @@ namespace Mirae_Tutor
 {
     public partial class MainForm : Form
     {
+        public DialogResult ShowPop(Type PopType, ePopMode aPopMode = ePopMode.None, object aParam = null)
+        {
+            dynamic CurrentPop = Activator.CreateInstance(PopType);
+            return CurrentPop.ShowPop(aPopMode, aParam);
+        }
+        public void ShowView(Type aType)
+        {
+            HideAllView();
+            GetView(aType).Visible = true;
+        }
+
         public MainForm()
         {
             InitializeComponent();
-            InitializeMainForm();
-            
+            InitializeMainForm();            
         }
 
         private void InitializeMainForm()
@@ -50,11 +60,7 @@ namespace Mirae_Tutor
             ShowView(typeof(View_로그인));
         }
         
-        public void ShowView(Type aType)
-        {
-            HideAllView();
-            GetView(aType).Visible = true;
-        }
+        
 
         void HideAllView()
         {

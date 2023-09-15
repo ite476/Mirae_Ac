@@ -496,13 +496,13 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Pop시험정보수정
+            // Pop_시험정보수정
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(415, 532);
             this.Controls.Add(this.panel_Base);
-            this.Name = "Pop시험정보수정";
+            this.Name = "Pop_시험정보수정";
             this.Text = "TestInfoPop";
             this.panel_Base.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

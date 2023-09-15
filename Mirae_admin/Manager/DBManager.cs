@@ -102,92 +102,8 @@ namespace MiraePro.Manager
         }
         #endregion
 
-        #region <<< 직원 데이터 관련 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-        /// <summary>
-        /// ID / 비밀번호로 직원 로그인 시도 결과 DataTable 반환
-        /// </summary>
-        /// <param name="aID"></param>
-        /// <param name="aPassword"></param>
-        /// <returns></returns>
-        public DataTable ReadStaff(string aID, string aPassword)
-        {
-            string _strFormat =
-                " SELECT stf_ID, stf_Name, Stf_Date_Register, Stf_Gender, "
-                + "CASE WHEN Stf_Password = '{1}' THEN 1 ELSE 0 END isCorrectPassword, "
-                + "CASE WHEN Stf_Date_Retire is null THEN 1 WHEN Stf_Date_Retire > Sysdate THEN 1 ELSE 0 END isNotRetired, "
-                + "CASE WHEN Stf_Work_State = 'ON' THEN 1 ELSE 0 END isOnWork "
-                + "FROM Bp_Staff "
-                + "WHERE stf_id = '{0}' "
-                ;
-            string _strQuery = string.Format(_strFormat, aID, aPassword);
-
-            return ReadTable(_strQuery, "Staff");
-
-        }
-
-        /// <summary>
-        /// 검색 테이블 Bp_Staff : 출력 필드 { Stf_ID, Stf_Name, Stf_Date_Register, Stf_Date_Retire, Stf_Work_State, Stf_Gender }
-        /// </summary>
-        /// <param name="Field"></param>
-        /// <param name="aKeyword"></param>
-        /// <returns></returns>
-        public DataTable SearchStaff(string aKeyword, string Field = "Stf_ID", bool includePicture = false)
-        {
-            string _TableName = "Staff";
-
-            string _strFormat =
-                "SELECT Stf_ID, Stf_Name, Stf_Date_Register, Stf_Date_Retire, Stf_Work_State, Stf_Gender "
-                + ((includePicture) ? ", Stf_Picture " : "")
-                + "FROM BP_Staff ";
-
-            if (aKeyword.Length > 0)
-            {
-                if (Field.ToLower() == "stf_id")
-                {
-                    _strFormat += "WHERE {0} = '{1}' ";
-                }
-                else
-                {
-                    _strFormat += "WHERE {0} LIKE '%{1}%' ";
-                }
-
-            }
-
-
-            string _strQuery = string.Format(_strFormat, Field, aKeyword);
-
-            return ReadTable(_strQuery, _TableName);
-
-        }
-
-        /// <summary>
-        /// BP_Staff : { Stf_ID, Stf_Name, Stf_Password, Stf_Date_Register, Stf_Date_Retire, Stf_Work_State, Stf_Gender, Stf_Picture } 
-        /// </summary>
-        /// <param name="aKeyword"></param>
-        /// <returns></returns>
-        public DataRow SearchStaff(string aKeyword)
-        {
-            string _TableName = "Staff";
-
-            string _strFormat =
-                "SELECT Stf_ID, Stf_Name, Stf_Password, Stf_Date_Register, Stf_Date_Retire, Stf_Work_State, Stf_Gender, Stf_Picture "
-                + "FROM BP_Staff ";
-
-
-            if (aKeyword.Length > 0)
-            {
-                _strFormat += "WHERE Stf_ID = '{0}' "; ;
-            }
-
-            string _strQuery = string.Format(_strFormat, aKeyword);
-            DataTable _dt = ReadTable(_strQuery, _TableName);
-            foreach (DataRow _dr in _dt.Rows)
-            {
-                return _dr;
-            }
-            return null;
-        }
-
+        
+      
         internal int ModifyStaff(
             string stf_org_id, string stf_id, string stf_name, string stf_password, string stf_gender,
             DateTime stf_date_register, DateTime stf_date_retire, bool isRetire, string stf_work_state, string stf_picture)
@@ -253,261 +169,7 @@ namespace MiraePro.Manager
 
             return _result;
         }
-        #endregion
-
-        #region <<< 장르 데이터 관련 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-        internal DataTable ReadCategory()
-        {
-            string _strQuery = "SELECT Ctg_Code, Ctg_Name FROM BP_Category";
-
-            return ReadTable(_strQuery, "BP_Category");
-        }
-
-
-        #endregion
-
-        #region <<< 도서 데이터 관련 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-        /// <summary>
-        /// <para>
-        /// aComparison >> {"==", "=", "LIKE"} :: { "==", "LIKE" }는 문자열로 판단함</para>
-        /// <para>
-        /// aSeed 문자열 변환 시 길이가 0 이면 전체 반환</para>
-        /// <para>
-        /// 반환 필드명 { Bk_Code, Bk_Title, Bk_Writer, Bk_Publisher, Bk_Price, Bk_Year_Publish, 
-        /// Bk_Date_Register, Bk_Date_Delete, Bk_Picture, Ctg.Ctg_Code, Ctg.Ctg_Name, Bk_State }</para>
-        /// </summary>
-        /// <param name="aField"></param>
-        /// <param name="aComparison"></param>
-        /// <param name="aSeed"></param>
-        /// <returns></returns>
-        internal DataTable ReadBook(string aField, string aComparison = "=", string aSeed = "")
-        {
-            string _strQuery = "SELECT "
-                
-
-                + "Bk_Code, Bk_Title, Bk_Writer, Bk_Publisher, Bk_Price, Bk_Year_Publish, "
-                + "Bk_Date_Register, Bk_Date_Delete, Bk_Picture, Ctg.Ctg_Code, Ctg.Ctg_Name, "
-                + "nvl(( "
-                    + "SELECT case when Rnt_Date_Return is null and sysdate <= Rnt_Date_Limit  then '대여중' "
-                    + "when Rnt_Date_Return is null then '연체중' end "
-                    + "FROM BP_Rent Rnt "
-                    + "WHERE Rnt.Bk_Code = Bk.Bk_Code ), '대여가능') Bk_State "
-                + "FROM BP_Book Bk "
-                + "JOIN BP_Category Ctg " + "ON Bk.Ctg_Code = Ctg.Ctg_Code ";
-            if (aSeed.Length > 0)
-            {
-                string _Seed = aSeed;
-
-                switch (aComparison)
-                {
-                    case "==":
-                        aComparison = "=";
-                        _Seed = $"'{_Seed}'";
-                        break;
-                    case "LIKE":
-                        _Seed = $"'%{_Seed}%'";
-                        break;
-                    default:
-                        break;
-                }
-
-                _strQuery += $"WHERE Bk.{aField} {aComparison} {_Seed}";
-            }
-
-            return ReadTable(_strQuery, "BP_Book");
-
-        }
-
-        internal int AddBook(
-            string ctg_code, int seq_book, string bk_title, string bk_writer, string bk_publisher,
-            int bk_price, int bk_year_publish, DateTime bk_date_register, string bk_picture)
-        {
-            int _result = 0;
-
-            DbConnection _Connection = m_OracleAssist.NewConnection();
-
-            if (_Connection == null) { return -999; }
-            else
-            {
-                string _strQuery =
-                    "INSERT INTO BP_Book( "
-                    + "bk_code, "
-                    + "bk_title, "
-                    + "bk_writer, "
-                    + "bk_publisher, "
-                    + "bk_price, "
-                    + "bk_year_publish, "
-                    + "bk_date_register, "
-                    + "bk_picture, "
-                    + "ctg_code "
-                    + ") VALUES( "
-                        + $"'{ctg_code}{seq_book:0000}', "
-                        + $"'{bk_title}', "
-                        + $"'{bk_writer}', "
-                        + $"'{bk_publisher}', "
-                        + $"{bk_price}, "
-                        + $"{bk_year_publish}, "
-                        + $"'{(bk_date_register).ToString("yyyy-MM-dd")}', "
-                        + $"{MakeToClobQuery(bk_picture)}, "
-                        + $"'{ctg_code}'"
-                    + ") ";
-                return m_OracleAssist.ExcuteQuery(_strQuery);
-            }            
-        }
-
-        internal int ModifyBook(
-            string bk_code, string bk_title, string bk_writer, string bk_publisher, 
-            int bk_price, int bk_year_publish, DateTime bk_date_register, string bk_picture, string ctg_code)
-        {
-            int _result = 0;
-
-            DbConnection _Connection = m_OracleAssist.NewConnection();
-
-            if (_Connection == null) { return -999; }
-            else
-            {
-                string _strQuery = 
-                    "UPDATE bp_book SET " + 
-                    $"bk_code = '{bk_code}', " + 
-                    $"bk_title = '{bk_title}', " + 
-                    $"bk_writer = '{bk_writer}', " + 
-                    $"bk_publisher = '{bk_publisher}', " + 
-                    $"bk_price = {bk_price}, " + 
-                    $"bk_year_publish = {bk_year_publish}, " + 
-                    $"bk_date_register = '{bk_date_register.ToString("yyyy-MM-dd")}', " + 
-                    $"bk_picture = {MakeToClobQuery(bk_picture)}, " + 
-                    $"ctg_code = '{ctg_code}' "+ $"WHERE bk_code = '{bk_code}' ";
-
-                return m_OracleAssist.ExcuteQuery(_strQuery);
-            }
-            return _result;
-        }
-
-        #endregion
-
-        #region <<< 회원 데이터 관련 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-        /// <summary>
-        /// <para>
-        /// aComparison >> {"==", "=", "LIKE"} :: { "==", "LIKE" }는 문자열로 판단함</para>
-        /// <para>
-        /// aSeed 문자열 변환 시 길이가 0 이면 전체 반환</para>
-        /// <para>
-        /// 반환 필드명 { Mbr.Mbr_Ucode, Mbr_Name, Mbr_ID, Mbr_Password, Mbr_Gender, Mbr_Contact, Mbr_Address, Mbr_Picture, Mbr_Date_Ban, Count_Rent, Count_OverDue }
-        /// </para>
-        /// </summary>
-        /// <param name="aField"></param>
-        /// <param name="aComparison"></param>
-        /// <param name="aSeed"></param>
-        /// <returns></returns>
-        internal DataTable ReadMember(string aField, string aComparison, object aSeed)
-        {
-            string _strQuery =
-                "WITH Mbr_Count AS ( " +
-                "SELECT Mbr.Mbr_Ucode, count(Rnt_ucode) - count(Rnt_Date_Return) Count_Rent, " +
-                    "count(nvl2(Rnt_Date_Return, 0, 1)) Count_OverDue " +
-                "FROM BP_Member Mbr JOIN BP_Rent Rnt ON Mbr.Mbr_Ucode = Rnt.Mbr_Ucode " +
-                "GROUP BY Mbr.Mbr_Ucode ) " +
-                "SELECT Mbr.Mbr_Ucode, Mbr_Name, Mbr_ID, Mbr_Password, Mbr_Gender, Mbr_Contact, Mbr_Address, " +
-                    "Mbr_Picture, Mbr_Date_Ban, " +
-                    "nvl(Count_Rent, 0) Count_Rent, nvl(Count_OverDue, 0) Count_OverDue " +
-                "FROM BP_Member Mbr " +
-                "LEFT JOIN Mbr_Count Cnt ON Mbr.Mbr_Ucode = Cnt.Mbr_Ucode " +
-                ((aField == "bk_title") ? $"JOIN BP_Rent Rnt ON Mbr.Mbr_Ucode = Rnt.MBr_Ucode " : "");
-
-            if (Convert.ToString(aSeed).Length > 0)
-            {
-                string _Seed = Convert.ToString(aSeed);
-
-                switch (aComparison)
-                {
-                    case "==":
-                        aComparison = "=";
-                        _Seed = $" '{_Seed}' ";
-                        break;
-                    case "LIKE":
-                        _Seed = $" '%{_Seed}%' ";
-                        break;
-                    default:
-                        _Seed = $" {_Seed} ";
-                        break;
-                }
-
-                switch(aField)
-                {
-                    case "bk_title":
-                        _strQuery += $"WHERE Rnt.{aField} {aComparison} {_Seed} ";
-                        break;
-                    case "count_rent":
-                    case "count_overdue":
-                        aField = $" nvl({aField},0) ";
-                        _strQuery += $"WHERE {aField} {aComparison} {_Seed}";
-                        break;
-                    default:
-                        _strQuery += $"WHERE Mbr.{aField} {aComparison} {_Seed} ";                        
-                        break;
-                }                
-                
-            }
-            return ReadTable(_strQuery, "BP_Member");
-        }
-
-        internal int AddMember(
-            int mbr_ucode, string mbr_id, string mbr_name, string mbr_password, 
-            string mbr_contact, string mbr_address, string mbr_gender, string mbr_picture)
-        {
-            int _result = 0;
-
-            DbConnection _Connection = m_OracleAssist.NewConnection();
-
-            if (_Connection == null) { return -999; }
-            else
-            {
-                string _strColumns = "",
-                       _strValues = "";
-
-                _strColumns += "mbr_ucode, ";
-                _strValues += $"'{mbr_ucode}', ";
-
-                _strColumns += "mbr_id, ";
-                _strValues += $" '{mbr_id}', ";
-
-                _strColumns += "mbr_name, ";
-                _strValues += $" '{mbr_name}', ";
-
-                _strColumns += "mbr_password, ";
-                _strValues += $" '{mbr_password}', ";
-
-                _strColumns += "mbr_contact, ";
-                _strValues += $" '{mbr_contact}', ";
-
-                _strColumns += "mbr_address, ";
-                _strValues += $" '{mbr_address}', ";
-
-                _strColumns += "mbr_gender, ";
-                _strValues += $" '{mbr_gender}', ";
-
-                _strColumns += "mbr_picture ";
-                _strValues += $" {MakeToClobQuery(mbr_picture)} ";
-
-
-                string _strQuery = $"INSERT INTO BP_Member ( {_strColumns} ) VALUES ( {_strValues} ) ";
-
-                return m_OracleAssist.ExcuteQuery(_strQuery);
-            }
-
-
-            throw new NotImplementedException();
-        }
-
-
-        internal void SearchTest()
-        {
-            string _strQuery = " SELECT * FROM member ";
-
-            MessageBox.Show(ReadTable(_strQuery,"TEST").ToString());
-        }
+        
 
         /// <summary>
         /// 보유 필드 : { 아이디 | 학생명 | 성별 | 연락처 | 주소 | 사진 | 등록일 | 학급명 | 보호자 연락처 | 출석률 | 평균 성적 }
@@ -541,7 +203,7 @@ namespace MiraePro.Manager
                 "LEFT JOIN Student_Attend_Rate SAR ON S.member_id = SAR.member_id ";
 
 
-            if (Check_Str_Exists(aSeed))
+            if (Exist_String(aSeed))
             {
                 _strQuery += string.Format(GetStringFormat_Of_QueryCondition_AtStudentQuery(aField), aSeed);
             }
@@ -549,9 +211,9 @@ namespace MiraePro.Manager
             return ReadTable(_strQuery, "student");
         }        
 
-        bool Check_Str_Exists(string aStr) 
+        bool Exist_String(string aStr) 
         {
-            return (aStr != null || aStr.Length > 0);
+            return (aStr != null && aStr.Length > 0);
         }
 
         private string GetStringFormat_Of_QueryCondition_AtStudentQuery(string aField)
@@ -579,7 +241,7 @@ namespace MiraePro.Manager
         /// <param name="aField"></param>
         /// <param name="aSeed"></param>
         /// <returns></returns>
-        internal DataTable ReadTutor(string aField, string aSeed)
+        internal DataTable ReadTutor(string aField = null, string aSeed = null)
         {
             
             string _strQuery = 
@@ -604,7 +266,7 @@ namespace MiraePro.Manager
                 "LEFT JOIN Count_HakGeup H ON T.member_id = H.id " +
                 "LEFT JOIN Count_Waiting W ON T.member_id = W.id ";
 
-            if (Check_Str_Exists(aSeed))
+            if (Exist_String(aSeed))
             {
                 _strQuery += string.Format(GetStringFormat_Of_QueryCondition_AtTutorQuery(aField), aSeed);
             }
@@ -629,27 +291,114 @@ namespace MiraePro.Manager
             }            
         }
 
-        
 
-        internal DataTable ReadWaiting(string aField, string aSeed,ComboBox cbox_Seed)
-        {            
+        /// <summary>
+        /// { 아이디 | 이름 | 상태 | 담당 선생님 | 입학 점수 | 성별 | 연락처 | 보호자 연락처 | 주소 | 사진 | 담당 선생님 아이디 | 보호자 아이디 }
+        /// </summary>
+        /// <param name="aField"></param>
+        /// <param name="aSeed"></param>
+        /// <param name="cbox_Seed"></param>
+        /// <returns></returns>
+        internal DataTable ReadWaiting(string aField, string aSeed,ComboBox cbox_Seed = null)
+        {
             string _strQuery =
-                "" +
-                "아이디 이름 상태 담당 선생님 입학 점수 성별 연락처 보호자 연락처 주소 사진";
-            if (Check_Str_Exists(aSeed))
+                "SELECT W.member_id 아이디, W.name 이름, W.step 상태, " +
+                "nvl(T.name,'배정 안됨') \"담당 선생님\", W.score \"입학 점수\", " +
+                "CASE WHEN W.gender = 'M' THEN '남성' " +
+                "WHEN W.gender = 'W' or W.gender = 'F' THEN '여성' " +
+                "ELSE NULL END 성별, W.contact 연락처, " +
+                "nvl(P.contact,'-') \"보호자 연락처\", W.address 주소, W.picture 사진, " +
+                "T.member_id \"담당 선생님 아이디\", P.member_id \"보호자 아이디\" " +
+                "FROM Waiting W " +
+                "LEFT JOIN Parent P ON W.parent_id = P.member_id " +
+                "LEFT JOIN Tutor T ON W.tutor_id = T.member_id ";
+            if (Exist_String(aSeed))
             {
                 _strQuery += string.Format(GetStringFormat_Of_QueryCondition_AtWaitingQuery(aField, cbox_Seed), aSeed);
             }
-            throw new NotImplementedException();
+            return ReadTable(_strQuery, "Waiting");
         }
 
         private string GetStringFormat_Of_QueryCondition_AtWaitingQuery(string aField, ComboBox cbox_Seed)
         {
+            switch (aField)
+            {
+                case "이름":
+                    return "WHERE W.name LIKE '%{0}%' ";
+                case "담당 선생님":
+                    return "WHERE T.name LIKE '%{0}%' ";
+                case "연락처":
+                    return "WHERE W.contact LIKE '%{0}%' ";
+                case "아이디":
+                    return "WHERE W.member_id = '{0}' ";
+                case "상태":
+                    string cbox_SeedString = cbox_Seed.SelectedItem.ToString();
+                    switch (cbox_SeedString) {
+                        case "상담":
+                        case "입학 테스트":
+                        case "입학 대기":
+                            return $"WHERE W.step = '{cbox_SeedString}'";
+                        default:
+                            throw new IndexOutOfRangeException();
+                    }
+                    break;
+                    
+                default:
+                    throw new FieldNotFoundException();
+            }
+        }
+
+        internal int ModifyWaiting(
+            string member_id, string step, int score, 
+            string name, string gender, string contact, 
+            string address, string picture, string parent_id, string tutor_id)
+        {
+
+            int _result = 0;
+
+            DbConnection _Connection = m_OracleAssist.NewConnection();
+
+            if (_Connection == null) { return -999; }
+            else
+            {
+                string DB_GenderValue;
+                switch (gender)
+                {
+                    case "남성":
+                        DB_GenderValue = "'M'"; break;
+                    case "여성":
+                        DB_GenderValue = "'W'"; break;
+                    default:
+                        DB_GenderValue = "NULL"; break;
+                }
+                string _strQuery = "UPDATE Waiting "
+                + "SET "
+                + $"member_id = '{member_id}', "
+                + $"step = '{step}', "
+                + $"score = " + ((score > -1) ? $"{score}, " : "NULL, ")
+                + $"name = '{name}', "
+                + $"gender = {DB_GenderValue}, " 
+                + $"contact = '{contact}', "
+                + $"address = '{address}', "
+                + $"parent_id = " + ( (Exist_String(parent_id))? $"'{parent_id}', " : "NULL, " )
+                + $"tutor_id = " + ((Exist_String(tutor_id)) ? $"'{tutor_id}', " : "NULL, ")
+                + $"picture = {MakeToClobQuery(picture)} "
+
+                + $"WHERE member_id = '{member_id}' ";
+
+                return m_OracleAssist.ExcuteQuery(_strQuery);
+            }
+            return _result;
+        }
+
+        internal DataTable ReadCategory()
+        {
             throw new NotImplementedException();
         }
 
-
-
-        #endregion
+        internal DataTable ReadCourse(string aField, string aSeed, ComboBox aComboBox)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

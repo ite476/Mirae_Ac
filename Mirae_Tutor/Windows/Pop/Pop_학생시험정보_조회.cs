@@ -37,14 +37,14 @@ namespace Mirae_Tutor.Windows.Pop
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
-            { App.Instance().MouseHitManager.Show_CMenu_At_MouseCursor(e, dataGridView1, m_CurrentDataRow, contextMenuStrip1, true); }
+            { App.Instance().MouseHitManager.Show_CMenu_At_MouseCursor(e, dataGridView1, out m_CurrentDataRow, contextMenuStrip1, true); }
         }
 
-        DataRow m_CurrentDataRow { get; set; }
+        DataRow m_CurrentDataRow;
 
         private void 수정ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            App.Instance().ShowPop(typeof(Pop_시험정보수정));
+            App.Instance().MainForm.ShowPop<Pop_시험정보수정>();
         }
 
         private void 삭제ToolStripMenuItem_Click(object sender, EventArgs e)
