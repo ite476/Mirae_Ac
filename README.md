@@ -13,7 +13,7 @@
 
 
 ## 개발환경
-Visual Studio C# - Winform .NET Framework 4.8.1
+Visual Studio C# - Winform .NET Framework 4.8.1 <br/>
 Oracle SE Database
 
 ## 주요기능
